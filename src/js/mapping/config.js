@@ -23,12 +23,35 @@ export const MappingConfig = {
     /**
      * Map tile layers configuration
      *
-     * Note: Using only free tile layers that don't require API keys
+     * Includes both free tile layers and Geoapify premium styles:
+     * - Geoapify Dark Purple: Dark mode with purple roads (DEFAULT - matches app theme)
+     * - Geoapify Dark Matter: Clean minimal dark map
+     * - Geoapify Street: Bright colorful street map
      * - OpenStreetMap: Free, no API key required
-     * - ESRI Satellite: Free, no API key required
-     * - ESRI Topographic: Free, no API key required
+     * - ESRI Satellite: Free satellite imagery
+     * - ESRI Topographic: Free topographic map
+     *
+     * Geoapify tiles are proxied through /api/map-tiles to hide API key
      */
     tileLayers: {
+        'Geoapify Dark Purple': {
+            url: '/api/map-tiles?style=dark-matter-purple-roads&z={z}&x={x}&y={y}',
+            attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+            maxZoom: 20,
+            requiresProxy: true
+        },
+        'Geoapify Dark Matter': {
+            url: '/api/map-tiles?style=dark-matter&z={z}&x={x}&y={y}',
+            attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+            maxZoom: 20,
+            requiresProxy: true
+        },
+        'Geoapify Street': {
+            url: '/api/map-tiles?style=osm-bright&z={z}&x={x}&y={y}',
+            attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+            maxZoom: 20,
+            requiresProxy: true
+        },
         'OpenStreetMap': {
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -51,8 +74,9 @@ export const MappingConfig = {
 
     /**
      * Default tile layer to use
+     * Set to 'Geoapify Dark Purple' to match app's dark theme (gray-900 background)
      */
-    defaultTileLayer: 'OpenStreetMap',
+    defaultTileLayer: 'Geoapify Dark Purple',
 
     /**
      * Coordinate system formats and validation

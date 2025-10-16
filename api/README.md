@@ -49,6 +49,7 @@ This directory contains serverless functions that act as secure proxies for exte
    - Your functions will be available at:
      - `https://your-project.vercel.app/api/weather`
      - `https://your-project.vercel.app/api/forecast`
+     - `https://your-project.vercel.app/api/map-tiles`
 
 ---
 
@@ -223,6 +224,48 @@ GET /api/forecast?lat=38.8977&lon=-77.0365&units=imperial&cnt=24
 
 ---
 
+### 3. Map Tiles API (`/api/map-tiles`)
+
+**Purpose**: Get map tiles from Geoapify for Leaflet mapping
+
+**Method**: GET
+
+**Query Parameters**:
+- `style` (required): Map style name (e.g., `dark-matter`, `osm-bright`)
+- `z` (required): Zoom level (0-20)
+- `x` (required): Tile X coordinate
+- `y` (required): Tile Y coordinate
+- `retina` (optional): `true` for high-DPI displays (default: `false`)
+
+**Allowed Styles**:
+- `dark-matter` - Clean dark base map
+- `dark-matter-purple-roads` - Dark with purple roads (DEFAULT)
+- `dark-matter-yellow-roads` - Dark with yellow roads
+- `osm-bright` - Bright colorful street map
+- Plus 14+ additional styles (see `/api/map-tiles.js` for full list)
+
+**Example Request**:
+```
+GET /api/map-tiles?style=dark-matter-purple-roads&z=13&x=2342&y=3134
+```
+
+**Example Response**:
+- Returns PNG image (binary data)
+- Content-Type: `image/png`
+- Cached for 24 hours
+
+**Error Responses**:
+- `400 Bad Request`: Missing or invalid parameters
+- `404 Not Found`: Tile doesn't exist (common at high zoom or ocean areas)
+- `429 Too Many Requests`: Rate limit exceeded (500 requests per 15 minutes)
+- `500 Internal Server Error`: Server or API error
+
+**Rate Limits**:
+- Geoapify Free Tier: 3,000 credits/day = 12,000 tiles/day (1 tile = 0.25 credits)
+- Proxy Rate Limit: 500 requests per 15 minutes per IP
+
+---
+
 ## Security Features
 
 ### 1. API Key Protection
@@ -231,7 +274,8 @@ GET /api/forecast?lat=38.8977&lon=-77.0365&units=imperial&cnt=24
 - ✅ Never committed to version control
 
 ### 2. Rate Limiting
-- ✅ 100 requests per 15 minutes per IP address
+- ✅ Weather/Forecast: 100 requests per 15 minutes per IP address
+- ✅ Map Tiles: 500 requests per 15 minutes per IP address (higher for frequent tile requests)
 - ✅ Prevents API abuse and excessive costs
 - ✅ Returns `429 Too Many Requests` when limit exceeded
 

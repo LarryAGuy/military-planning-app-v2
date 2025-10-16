@@ -103,6 +103,21 @@ export class MapTool {
                 });
             }
 
+            // Configure Leaflet.draw icon path for local hosting
+            if (window.L && window.L.Draw) {
+                // Set the image path for Leaflet.draw toolbar icons
+                window.L.drawLocal = window.L.drawLocal || {};
+                window.L.drawLocal.draw = window.L.drawLocal.draw || {};
+                window.L.drawLocal.draw.toolbar = window.L.drawLocal.draw.toolbar || {};
+                window.L.drawLocal.draw.toolbar.buttons = window.L.drawLocal.draw.toolbar.buttons || {};
+
+                // Override the default image path for Leaflet.draw
+                if (window.L.Draw.Toolbar) {
+                    window.L.Draw.Toolbar.prototype.options = window.L.Draw.Toolbar.prototype.options || {};
+                    window.L.Draw.Toolbar.prototype.options.imagePath = './libs/leaflet-draw/images/';
+                }
+            }
+
             console.log('✅ All mapping libraries loaded successfully');
         } catch (error) {
             console.error('❌ Failed to load mapping libraries:', error);

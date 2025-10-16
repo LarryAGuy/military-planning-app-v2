@@ -115,21 +115,12 @@ export class CDNLoader {
         console.log(`📦 Loading library: ${libraryName}`);
 
         try {
-            // Try to load from cache first
-            const cached = await this.loadFromCache(libraryName, config);
-            if (cached) {
-                console.log(`✅ Loaded from cache: ${libraryName}`);
-                this.loadedLibraries.add(libraryName);
-                return;
-            }
-
-            // If not cached, load from CDN
+            // CACHING DISABLED: CSP violations when injecting cached scripts as inline content
+            // Since we're loading from local libs/ directory, caching is unnecessary anyway
+            // Load directly from local files
             await this.loadFromCDN(libraryName, config);
-            console.log(`✅ Loaded from CDN: ${libraryName}`);
+            console.log(`✅ Loaded library: ${libraryName}`);
             this.loadedLibraries.add(libraryName);
-
-            // Cache for future use
-            await this.saveToCache(libraryName, config);
 
         } catch (error) {
             console.error(`❌ Failed to load library: ${libraryName}`, error);
