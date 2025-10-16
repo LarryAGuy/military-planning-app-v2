@@ -23,72 +23,65 @@ export class CDNLoader {
     }
 
     /**
-     * Library configurations with CDN URLs and SRI hashes
+     * Library configurations with LOCAL paths
      *
-     * SRI hashes generated using OpenSSL:
-     * curl -s "URL" | openssl dgst -sha384 -binary | openssl base64 -A
+     * All libraries are now hosted locally to:
+     * - Eliminate CSP issues with external CDNs
+     * - Improve performance (no external requests)
+     * - Enable offline functionality (required for military use)
+     * - Increase security (no dependency on external CDNs)
      *
-     * Generated: October 16, 2025
+     * Libraries downloaded from:
+     * - Leaflet 1.9.4: https://unpkg.com/leaflet@1.9.4/dist/
+     * - Leaflet.draw 1.0.4: https://unpkg.com/leaflet-draw@1.0.4/dist/
+     * - MGRS 2.0.0: https://unpkg.com/mgrs@2.0.0/dist/
+     * - Proj4 2.9.0: https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/
+     * - SunCalc 1.9.0: https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.9.0/
+     * - HTML2Canvas 1.4.1: https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/
      *
-     * To update SRI hashes:
-     * 1. Run: curl -s "CDN_URL" | openssl dgst -sha384 -binary | openssl base64 -A
-     * 2. Replace the integrity value with: sha384-[generated_hash]
+     * Downloaded: October 16, 2025
      */
     getLibraryConfig() {
         return {
             'leaflet-css': {
                 type: 'css',
-                url: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-                integrity: 'sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H',
-                crossorigin: 'anonymous'
+                url: './libs/leaflet/leaflet.css',
+                global: null
             },
             'leaflet-js': {
                 type: 'js',
-                url: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
-                integrity: 'sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH',
-                crossorigin: 'anonymous',
+                url: './libs/leaflet/leaflet.js',
                 global: 'L' // Global variable name
             },
             'leaflet-draw-css': {
                 type: 'css',
-                url: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css',
-                integrity: 'sha384-NZLkVuBRMEeB4VeZz27WwTRvlhec30biQ8Xx7zG7JJnkvEKRg5qi6BNbEXo9ydwv',
-                crossorigin: 'anonymous'
+                url: './libs/leaflet-draw/leaflet.draw.css',
+                global: null
             },
             'leaflet-draw-js': {
                 type: 'js',
-                url: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js',
-                integrity: 'sha384-JP5UPxIO2Tm2o79Fb0tGYMa44jkWar53aBoCbd8ah0+LcCDoohTIYr+zIXyfGIJN',
-                crossorigin: 'anonymous',
+                url: './libs/leaflet-draw/leaflet.draw.js',
                 global: 'L.Draw',
                 dependencies: ['leaflet-js'] // Requires Leaflet to be loaded first
             },
             'html2canvas': {
                 type: 'js',
-                url: 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
-                integrity: 'sha384-ZZ1pncU3bQe8y31yfZdMFdSpttDoPmOZg2wguVK9almUodir1PghgT0eY7Mrty8H',
-                crossorigin: 'anonymous',
+                url: './libs/html2canvas/html2canvas.min.js',
                 global: 'html2canvas'
             },
             'mgrs': {
                 type: 'js',
-                url: 'https://unpkg.com/mgrs@2.0.0/dist/mgrs.min.js',
-                integrity: 'sha384-RmO6SJTELtlt0Nbepcs8iHuxvnz1yG13tFvxemQPFcy3bJWDoE51HOmV299bHLyd',
-                crossorigin: 'anonymous',
+                url: './libs/mgrs/mgrs.js',
                 global: 'mgrs'
             },
             'suncalc': {
                 type: 'js',
-                url: 'https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.9.0/suncalc.min.js',
-                integrity: 'sha384-Ssj6wXFm/aTdsC1FeDLrGxP3/PooxBGcOqehkmt8CbKQOcei4CDaRbreAUvdFNrq',
-                crossorigin: 'anonymous',
+                url: './libs/suncalc/suncalc.js',
                 global: 'SunCalc'
             },
             'proj4': {
                 type: 'js',
-                url: 'https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js',
-                integrity: 'sha384-U14wzrePlI+UpXk1Jpe45fK/C0yeI7rtwKzi9eM3Lj7LYjXlHNy0YacuWZIk7Hic',
-                crossorigin: 'anonymous',
+                url: './libs/proj4/proj4.js',
                 global: 'proj4'
             }
         };
@@ -183,9 +176,9 @@ export class CDNLoader {
     }
 
     /**
-     * Load library from CDN with SRI verification
-     * 
-     * @param {string} libraryName - Name of the library
+     * Load library from local path
+     *
+     * @param {string} libraryName - Name of the library (unused but kept for compatibility)
      * @param {object} config - Library configuration
      * @returns {Promise<void>}
      */
@@ -195,8 +188,6 @@ export class CDNLoader {
                 const link = document.createElement('link');
                 link.rel = 'stylesheet';
                 link.href = config.url;
-                link.integrity = config.integrity;
-                link.crossOrigin = config.crossorigin;
                 link.onload = () => resolve();
                 link.onerror = () => reject(new Error(`Failed to load CSS: ${config.url}`));
                 document.head.appendChild(link);
@@ -204,8 +195,6 @@ export class CDNLoader {
             } else if (config.type === 'js') {
                 const script = document.createElement('script');
                 script.src = config.url;
-                script.integrity = config.integrity;
-                script.crossOrigin = config.crossorigin;
                 script.onload = () => {
                     // Verify global variable is available
                     if (config.global && !this.isGlobalAvailable(config.global)) {
