@@ -92,6 +92,17 @@ export class MapTool {
                 proj4: window.proj4
             };
 
+            // Configure Leaflet icon path for local hosting
+            if (window.L && window.L.Icon && window.L.Icon.Default) {
+                window.L.Icon.Default.prototype.options.imagePath = './libs/leaflet/images/';
+                // Explicitly set icon URLs
+                window.L.Icon.Default.mergeOptions({
+                    iconUrl: './libs/leaflet/images/marker-icon.png',
+                    iconRetinaUrl: './libs/leaflet/images/marker-icon-2x.png',
+                    shadowUrl: './libs/leaflet/images/marker-shadow.png'
+                });
+            }
+
             console.log('✅ All mapping libraries loaded successfully');
         } catch (error) {
             console.error('❌ Failed to load mapping libraries:', error);
