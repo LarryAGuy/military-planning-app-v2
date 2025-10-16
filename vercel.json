@@ -26,7 +26,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; font-src 'self' data:; img-src 'self' data: https://*.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self' https://api.openweathermap.org https://api.geoapify.com;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; font-src 'self' data:; img-src 'self' data: https://*.openstreetmap.org https://*.tile.openstreetmap.org https://server.arcgisonline.com; connect-src 'self' https://api.openweathermap.org https://api.geoapify.com https://*.tile.openstreetmap.org https://server.arcgisonline.com;"
         },
         {
           "key": "X-Content-Type-Options",

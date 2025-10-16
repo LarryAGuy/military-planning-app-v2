@@ -22,28 +22,18 @@ export const MappingConfig = {
 
     /**
      * Map tile layers configuration
-     * 
-     * Note: Geoapify layers require API key from serverless proxy
-     * ESRI satellite layer is free and does not require API key
+     *
+     * Note: Using only free tile layers that don't require API keys
+     * - OpenStreetMap: Free, no API key required
+     * - ESRI Satellite: Free, no API key required
+     * - ESRI Topographic: Free, no API key required
      */
     tileLayers: {
-        'Geoapify Street': {
-            url: '/api/map-tiles?style=osm-bright&z={z}&x={x}&y={y}',
-            attribution: '© Geoapify | © OpenStreetMap contributors',
-            maxZoom: 18,
-            requiresProxy: true
-        },
-        'Geoapify Carto': {
-            url: '/api/map-tiles?style=osm-carto&z={z}&x={x}&y={y}',
-            attribution: '© Geoapify | © OpenStreetMap contributors',
-            maxZoom: 18,
-            requiresProxy: true
-        },
-        'Geoapify Liberty': {
-            url: '/api/map-tiles?style=osm-liberty&z={z}&x={x}&y={y}',
-            attribution: '© Geoapify | © OpenStreetMap contributors',
-            maxZoom: 18,
-            requiresProxy: true
+        'OpenStreetMap': {
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19,
+            requiresProxy: false
         },
         'ESRI Satellite': {
             url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
@@ -51,9 +41,9 @@ export const MappingConfig = {
             maxZoom: 19,
             requiresProxy: false
         },
-        'OpenStreetMap': {
-            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        'ESRI Topographic': {
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+            attribution: 'Tiles © <a href="https://www.esri.com/">Esri</a> — Source: Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
             maxZoom: 19,
             requiresProxy: false
         }
@@ -62,7 +52,7 @@ export const MappingConfig = {
     /**
      * Default tile layer to use
      */
-    defaultTileLayer: 'ESRI Satellite',
+    defaultTileLayer: 'OpenStreetMap',
 
     /**
      * Coordinate system formats and validation
