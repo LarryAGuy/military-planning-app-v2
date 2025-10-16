@@ -55,3 +55,13 @@ temp/
 
 # Vercel deployment metadata
 .vercel/
+
+# Internal documentation - do not commit to public repository
+# These files contain sensitive technical information for internal use only
+*.md
+!README.md
+!api/README.md
+!docs/README.md
+!scripts/validation/README.md
+!src/js/workspace/initializers/README.md
+!tests/README.md
