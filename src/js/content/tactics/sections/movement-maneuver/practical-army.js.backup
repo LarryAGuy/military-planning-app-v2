@@ -1,0 +1,714 @@
+/**
+ * Army-Level Movement & Maneuver Practical Examples
+ * European Theater LSCO - NATO Article 5 Scenario
+ * Strategic-Operational Command Level (4-Star General)
+ */
+
+export function getArmyTacticsExample() {
+  return `
+    <div style="padding: 20px; background: #0f172a; min-height: 100vh;">
+
+      <!-- Army Command Authority Context -->
+      <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
+        <h2 style="color: #f8fafc; font-size: 22px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center;">
+          <i class="fas fa-star" style="margin-right: 12px; color: #2563eb; font-size: 20px;"></i>
+          Army-Level Movement & Maneuver Practical Examples
+        </h2>
+
+        <div style="background: rgba(37, 99, 235, 0.1); border-left: 4px solid #2563eb; padding: 16px; border-radius: 6px;">
+          <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 8px 0;">
+            <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+            Army Command Authority Context
+          </h4>
+          <p style="color: #d1fae5; font-size: 12px; line-height: 1.5; margin: 0;">
+            Army-level movement and maneuver operations coordinate multi-corps strategic deployment across 800-1,200km frontage, integrating 3-4 Corps with 150,000-200,000 personnel. Command Level: 4-Star General (Army Commander) - U.S. Army Europe equivalent. Geographic Scope: Multi-national operational area with strategic-operational level movement coordination across European theater sectors.
+          </p>
+        </div>
+      </div>
+
+      <!-- Army-Level Movement Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Multi-Corps Strategic Deployment (Blue Theme - Friendly/Command) -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(37, 99, 235, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(37, 99, 235, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(37, 99, 235, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-chess-king" style="margin-right: 12px; color: #2563eb; font-size: 16px;"></i>
+            Multi-Corps Strategic Deployment
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation European Shield - Army Deployment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Mission:</strong> Deploy U.S. Army Europe with 3 Corps (XVIII Airborne, V Corps, VII Corps) across Central European corridor</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Timeline:</strong> 120-day strategic deployment with 45-day operational positioning</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Geographic Scope:</strong> Germany to Poland, 1,000km frontage across 4 national boundaries</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Force Structure:</strong> 180,000 personnel, 3 Corps HQ, 9 Divisions, integrated air-land operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army-Level Movement Coordination</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Corps Synchronization:</strong> XVIII Airborne Corps (Northern sector), V Corps (Central sector), VII Corps (Southern sector)</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Strategic Mobility:</strong> 280 C-17 sorties, 85 C-5 sorties, 8 LMSR vessels for heavy equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Reception Operations:</strong> Ramstein, Grafenwoehr, Bergen-Hohne coordination with German Army</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Operational Movement:</strong> Multi-modal transportation across European rail and highway networks</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army-Level Movement Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Multi-Corps Coordination:</strong> Synchronizing 3 Corps movements across 1,000km frontage with different arrival timelines</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Host Nation Integration:</strong> Coordinating with German, Polish, Czech, and Slovak military and civilian authorities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Logistics Synchronization:</strong> Establishing Army-level sustainment networks supporting 180,000 personnel</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Operational Security:</strong> Maintaining OPSEC across multi-national movement corridors and staging areas</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Decision Points</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Corps Deployment Sequence:</strong> Determining priority of Corps deployment based on threat assessment and strategic objectives</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Operational Boundaries:</strong> Establishing Corps boundaries and coordination measures across 1,000km frontage</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Reserve Allocation:</strong> Positioning Army-level reserves and strategic assets for maximum operational flexibility</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Coalition Integration:</strong> Integrating U.S. Army operations with German, British, and French Army commands</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operational Maneuver Coordination (Red Theme - Enemy/Threats) -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(220, 38, 38, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(220, 38, 38, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(220, 38, 38, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-chess-board" style="margin-right: 12px; color: #dc2626; font-size: 16px;"></i>
+            Operational Maneuver Coordination
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #dc2626; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #fca5a5; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Saber Strike - Multi-Corps Maneuver</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Scale:</strong> 165,000 personnel from U.S. Army Europe with 3 Corps conducting operational maneuver</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Duration:</strong> 90-day operational phase with 30-day positioning, 45-day maneuver, 15-day reset</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Geographic Span:</strong> Northern Germany to Eastern Poland, 800km operational depth</p>
+              <p style="margin: 0;"><strong style="color: #fca5a5;">Objective:</strong> Demonstrate Army-level operational maneuver and multi-Corps coordination capabilities</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #dc2626; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #fca5a5; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Maneuver Phases</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Phase 1 (Days 1-30):</strong> Corps deployment and operational positioning across assigned sectors</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Phase 2 (Days 31-60):</strong> Multi-Corps coordinated advance with integrated air-land operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Phase 3 (Days 61-75):</strong> Operational objectives seizure and consolidation operations</p>
+              <p style="margin: 0;"><strong style="color: #fca5a5;">Phase 4 (Days 76-90):</strong> Transition to defensive operations and strategic reset</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #dc2626; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #fca5a5; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army-Level Coordination Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Corps Synchronization:</strong> Maintaining operational tempo across 3 Corps with different capabilities and timelines</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Logistics Coordination:</strong> Sustaining 165,000 personnel across 800km operational depth</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Air-Land Integration:</strong> Coordinating Army aviation assets with Corps and Division operations</p>
+              <p style="margin: 0;"><strong style="color: #fca5a5;">Coalition Interoperability:</strong> Integrating with German, Polish, and Baltic nation forces</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #dc2626; position: relative; z-index: 1;">
+            <h4 style="color: #fca5a5; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Operational Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Main Effort Designation:</strong> Assigning main effort to specific Corps based on operational priorities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Reserve Employment:</strong> Committing Army-level reserves to exploit success or reinforce threatened sectors</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #fca5a5;">Boundary Adjustments:</strong> Modifying Corps boundaries based on operational developments</p>
+              <p style="margin: 0;"><strong style="color: #fca5a5;">Operational Tempo:</strong> Controlling operational pace to maintain Army-level coherence and sustainability</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row: Additional Army-Level Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Strategic Logistics Coordination (Amber Theme - Logistics) -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(245, 158, 11, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(245, 158, 11, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(245, 158, 11, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-truck" style="margin-right: 12px; color: #f59e0b; font-size: 16px;"></i>
+            Strategic Logistics Coordination
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Logistic Shield - Army Sustainment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Mission:</strong> Establish Army-level sustainment networks supporting 180,000 personnel across 1,000km frontage</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Timeline:</strong> 60-day establishment phase with continuous 180-day sustainment operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Geographic Scope:</strong> Strategic supply lines from German ports to Polish forward operating bases</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Logistics Structure:</strong> 3 Corps Support Commands, 12 Brigade Support Battalions, integrated host nation support</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-National Integration -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(37, 99, 235, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(37, 99, 235, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(37, 99, 235, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-handshake" style="margin-right: 12px; color: #2563eb; font-size: 16px;"></i>
+            Multi-National Integration
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Allied Spirit - Coalition Army Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Scale:</strong> 195,000 personnel from 8 NATO nations conducting integrated Army-level operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Duration:</strong> 120-day exercise with 45-day preparation, 60-day execution, 15-day assessment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Geographic Span:</strong> Multi-national training areas across Germany, Poland, and Czech Republic</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Objective:</strong> Demonstrate NATO Article 5 collective defense through integrated Army-level operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Coalition Integration Framework</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Command Structure:</strong> U.S. Army Europe (Lead), German Army (Deputy), British Army (Northern Sector), French Army (Southern Sector)</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Interoperability Standards:</strong> NATO STANAG 2084 (movement coordination), STANAG 3680 (logistics interoperability)</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Communication Systems:</strong> Integrated NATO Secret Network with national COMSEC overlays</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Logistics Integration:</strong> Multinational logistics coordination centers with standardized fuel, ammunition, and medical support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army-Level Coalition Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Language Barriers:</strong> Coordinating operations across 8 different languages with standardized NATO terminology</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Equipment Compatibility:</strong> Integrating different national equipment standards and maintenance procedures</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">National Caveats:</strong> Managing operational restrictions and rules of engagement variations across coalition partners</p>
+              <p style="margin: 0;"><strong style="color: #60a5fa;">Cultural Integration:</strong> Harmonizing different military cultures and operational procedures at Army level</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #2563eb; position: relative; z-index: 1;">
+            <h4 style="color: #60a5fa; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Coalition Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Force Integration:</strong> Assigning coalition forces to Corps based on capabilities and national preferences</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Command Relationships:</strong> Establishing clear command and control relationships while respecting national sovereignty</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #60a5fa;">Operational Planning:</strong> Balancing military effectiveness with political sensitivities and national interests</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Distributing shared resources and capabilities across multinational Corps structures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Row: Advanced Army-Level Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Strategic Reserve Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-chess-rook" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Strategic Reserve Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Strategic Hammer - Army Reserve Commitment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Deploy Army-level strategic reserve (82nd Airborne Division + supporting elements) to exploit operational success</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 72-hour rapid deployment with 24-hour alert, 48-hour movement, immediate operational employment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Strategic airlift from CONUS to forward operating bases in Eastern Europe</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 18,000 personnel, airborne-qualified, with organic air mobility and fire support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Strategic Reserve Deployment Phases</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Phase 1 (Hours 0-24):</strong> Alert notification, personnel recall, equipment preparation and loading</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Phase 2 (Hours 24-48):</strong> Strategic airlift execution with 120 C-17 sorties across 24-hour period</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Phase 3 (Hours 48-72):</strong> Reception, staging, and forward deployment to operational objectives</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Phase 4 (Hours 72+):</strong> Operational employment and integration with existing Corps operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Reserve Employment Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timing Coordination:</strong> Synchronizing reserve commitment with ongoing Corps operations across 1,000km frontage</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Airspace Management:</strong> Coordinating strategic airlift with ongoing air operations and air defense systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Logistics Integration:</strong> Establishing immediate sustainment for rapidly deployed forces</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Command Integration:</strong> Integrating reserve forces into existing Corps command structures</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Reserve Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Commitment Criteria:</strong> Determining conditions for strategic reserve employment based on operational opportunities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Employment Location:</strong> Selecting optimal deployment zones to maximize operational impact</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Assignment:</strong> Defining specific missions for reserve forces within overall Army operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Follow-on Forces:</strong> Planning for additional strategic reinforcement and sustainment</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Air-Land Integration -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-plane" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Air-Land Integration
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Iron Eagle - Army Aviation Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scale:</strong> 180,000 ground personnel with 450 Army aviation assets conducting integrated air-land operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Duration:</strong> 75-day exercise with 30-day preparation, 30-day execution, 15-day assessment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Span:</strong> Multi-Corps operations across 800km frontage with integrated aviation support</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Objective:</strong> Demonstrate Army-level air-land integration and aviation support to ground operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Aviation Assets Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Attack Aviation:</strong> 3 Attack Helicopter Battalions (AH-64 Apache) providing close combat support to Corps operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Assault Aviation:</strong> 4 Assault Helicopter Battalions (UH-60 Black Hawk) conducting air mobility operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Cargo Aviation:</strong> 2 Cargo Helicopter Battalions (CH-47 Chinook) supporting logistics and heavy lift operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Reconnaissance Aviation:</strong> 3 Cavalry Squadrons with OH-58 Kiowa providing reconnaissance and security</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Air-Land Integration Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Airspace Coordination:</strong> Managing 450 aviation assets across 800km frontage with ground-based air defense systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Weather Dependencies:</strong> Coordinating air-land operations across varying European weather conditions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fuel Logistics:</strong> Establishing forward arming and refueling points (FARP) supporting sustained aviation operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Maintenance Support:</strong> Providing field maintenance for complex aviation systems across dispersed operational areas</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Aviation Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Asset Allocation:</strong> Distributing aviation assets among Corps based on mission priorities and threat assessment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Prioritization:</strong> Balancing close combat support, air mobility, and reconnaissance requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Management:</strong> Managing aviation risk while maintaining operational effectiveness across multiple Corps</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Integration Timing:</strong> Synchronizing aviation operations with ground maneuver and fires</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Row: Comprehensive Army-Level Case Studies -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Historical Case Study: Operation Reforger -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-history" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Historical Case Study: Operation Reforger
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Reforger 87 - Army-Level Strategic Deployment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Historical Context:</strong> Cold War strategic deployment exercise demonstrating U.S. Army Europe reinforcement capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scale:</strong> 125,000 personnel with 2 Corps (III Corps, XVIII Airborne Corps) deploying from CONUS to Germany</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 30-day strategic deployment with 10-day alert, 15-day movement, 5-day operational positioning</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> CONUS to West Germany with forward deployment to Fulda Gap and North German Plain</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Strategic Deployment Lessons</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Airlift Capacity:</strong> Strategic airlift limitations required 18-day movement window for personnel and priority equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Sealift Requirements:</strong> Heavy equipment required 45-day sealift with pre-positioned equipment sets in Germany</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Host Nation Support:</strong> German military and civilian infrastructure critical for reception and onward movement</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Logistics Challenges:</strong> Establishing sustainment networks for 125,000 personnel across 600km frontage</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Modern Applications</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Contemporary Relevance:</strong> Reforger principles apply to current NATO Article 5 scenarios in Eastern Europe</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Enhanced Capabilities:</strong> Modern strategic mobility improvements reduce deployment timelines by 40%</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Digital command and control systems improve coordination and situational awareness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Alliance Evolution:</strong> Expanded NATO membership provides additional staging areas and support capabilities</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Strategic Implications</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Deterrence Value:</strong> Demonstrated capability to rapidly deploy Army-level forces enhances strategic deterrence</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Alliance Cohesion:</strong> Joint exercises strengthen NATO interoperability and political solidarity</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Readiness:</strong> Regular deployment exercises maintain Army-level readiness for contingency operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Strategic Flexibility:</strong> Proven deployment capabilities provide options for multiple contingency scenarios</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contemporary Operations: Multi-Domain Integration -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-network-wired" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Multi-Domain Integration
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Convergence 25 - Multi-Domain Army Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scale:</strong> 175,000 personnel conducting integrated land, air, maritime, space, and cyber operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Duration:</strong> 90-day exercise with 30-day preparation, 45-day execution, 15-day assessment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Span:</strong> European theater with global space and cyber domain integration</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Objective:</strong> Demonstrate Army-level multi-domain operations and cross-domain effects</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Multi-Domain Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Land Domain:</strong> 3 Corps with integrated fires, maneuver, and protection capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Air Domain:</strong> Army aviation integrated with Air Force and allied air operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Maritime Domain:</strong> Coastal and riverine operations supporting land operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Space/Cyber Domains:</strong> Integrated space-based ISR and cyber operations supporting ground forces</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Army Movement & Maneuver Lessons Learned -->
+      <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
+        <h2 style="color: #f8fafc; font-size: 22px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center;">
+          <i class="fas fa-graduation-cap" style="margin-right: 12px; color: #10b981; font-size: 20px;"></i>
+          Army Movement & Maneuver Lessons Learned
+        </h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 20px;">
+            <h3 style="color: #34d399; font-size: 16px; font-weight: 600; margin: 0 0 16px 0;">
+              <i class="fas fa-lightbulb" style="margin-right: 8px;"></i>
+              Strategic Deployment Lessons
+            </h3>
+            <div style="color: #e2e8f0; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 12px 0;"><strong style="color: #6ee7b7;">Planning Horizon:</strong> Army-level strategic deployment requires 18-24 month planning cycles with detailed host nation coordination and diplomatic clearances across multiple sovereign territories.</p>
+              <p style="margin: 0 0 12px 0;"><strong style="color: #6ee7b7;">Logistics Complexity:</strong> Sustaining 150,000+ personnel across 1,000km frontage requires pre-positioned equipment sets, strategic partnerships, and redundant supply lines through multiple national infrastructures.</p>
+              <p style="margin: 0 0 12px 0;"><strong style="color: #6ee7b7;">Command Integration:</strong> Multi-Corps coordination demands sophisticated command and control systems with real-time situational awareness across strategic distances and multiple time zones.</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Coalition Dynamics:</strong> Army-level coalition operations require extensive cultural preparation, standardized procedures, and flexible command structures accommodating national sovereignty concerns.</p>
+            </div>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 20px;">
+            <h3 style="color: #34d399; font-size: 16px; font-weight: 600; margin: 0 0 16px 0;">
+              <i class="fas fa-cogs" style="margin-right: 8px;"></i>
+              Operational Coordination Lessons
+            </h3>
+            <div style="color: #e2e8f0; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 12px 0;"><strong style="color: #6ee7b7;">Synchronization Challenges:</strong> Coordinating 3 Corps operations across 800km frontage requires standardized battle rhythm, clear decision authorities, and redundant communication systems.</p>
+              <p style="margin: 0 0 12px 0;"><strong style="color: #6ee7b7;">Reserve Management:</strong> Army-level strategic reserves must maintain 72-hour deployment capability while providing operational flexibility for multiple contingency scenarios.</p>
+              <p style="margin: 0 0 12px 0;"><strong style="color: #6ee7b7;">Air-Land Integration:</strong> Managing 450+ aviation assets requires sophisticated airspace coordination, weather contingency planning, and distributed maintenance capabilities.</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Multi-Domain Effects:</strong> Army-level operations increasingly require integration across land, air, maritime, space, and cyber domains with specialized staff expertise and technical capabilities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Row: Advanced Army-Level Scenarios -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Crisis Response Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-exclamation-triangle" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Crisis Response Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Rapid Guardian - Crisis Response Deployment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scenario:</strong> Rapid deployment of U.S. Army Europe in response to Article 5 activation following aggression against Baltic States</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 96-hour crisis response with immediate alert, 48-hour deployment, 48-hour operational positioning</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 155,000 personnel with 2 Corps (XVIII Airborne, V Corps) plus Army-level enablers</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> CONUS/Germany to Estonia, Latvia, Lithuania with 1,200km strategic movement</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Crisis Response Phases</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Phase 1 (Hours 0-24):</strong> NATO Article 5 activation, U.S. Presidential authorization, Army alert and preparation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Phase 2 (Hours 24-48):</strong> Strategic airlift execution with 200 C-17 sorties, advance party deployment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Phase 3 (Hours 48-72):</strong> Main body deployment, equipment reception, initial operational positioning</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Phase 4 (Hours 72-96):</strong> Operational deployment, sector assignment, integration with allied forces</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Crisis Response Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Political Coordination:</strong> Synchronizing military deployment with NATO political decision-making and diplomatic initiatives</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Strategic Mobility:</strong> Competing for limited strategic airlift assets with other deploying forces and humanitarian operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Host Nation Capacity:</strong> Managing reception capabilities in small Baltic nations with limited infrastructure</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Operational Tempo:</strong> Maintaining unit readiness during rapid deployment while ensuring operational effectiveness</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Crisis Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Force Prioritization:</strong> Determining which Corps deploys first based on readiness, capabilities, and strategic requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Deployment Routes:</strong> Selecting optimal deployment corridors considering threat, capacity, and political factors</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Balancing speed of deployment with force protection and operational security</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Coalition Integration:</strong> Coordinating with European allies while maintaining U.S. command authority and operational flexibility</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sustainment Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-cogs" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Sustainment Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Enduring Support - Army Sustainment Network</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Establish and maintain Army-level sustainment operations supporting 180,000 personnel across European theater</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 365-day continuous operations with 90-day establishment, 180-day sustainment, 95-day transition</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Strategic supply lines from North Sea ports to forward operating bases in Eastern Europe</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Logistics Structure:</strong> 1 Theater Sustainment Command, 3 Expeditionary Sustainment Commands, 15 Brigade Support Battalions</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Sustainment Network Architecture</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Strategic Level:</strong> Rotterdam, Hamburg, Antwerp ports with rail and highway distribution networks</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Level:</strong> Kaiserslautern, Grafenwoehr, Poznan logistics hubs with forward distribution points</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Tactical Level:</strong> Brigade Support Areas with Class I-IX supply operations and maintenance capabilities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Medical Support:</strong> Role 1-4 medical facilities with strategic medical evacuation to CONUS</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Sustainment Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Supply Chain Security:</strong> Protecting 1,200km supply lines across multiple national boundaries and potential threat areas</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Infrastructure Capacity:</strong> Managing European rail gauge differences and highway weight restrictions for military equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Host Nation Coordination:</strong> Integrating with 8 different national logistics systems and regulatory frameworks</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Demand Forecasting:</strong> Predicting consumption rates for 180,000 personnel across varying operational tempos</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Sustainment Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Distributing limited sustainment assets among 3 Corps based on mission priority and consumption rates</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Management:</strong> Balancing efficiency with redundancy in supply chain operations and stockage levels</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Capability Gaps:</strong> Identifying and mitigating sustainment shortfalls through host nation support and commercial augmentation</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Operational Priorities:</strong> Adjusting sustainment priorities based on changing operational requirements and threat conditions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth Row: Specialized Army Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Information Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-broadcast-tower" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Information Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Information Shield - Army IO Campaign</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct Army-level information operations supporting strategic deployment and coalition building</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 180-day campaign with 60-day preparation, 90-day execution, 30-day assessment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> European theater with global information environment considerations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Target Audiences:</strong> Allied populations, neutral nations, adversary decision-makers, U.S. domestic audience</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Information Operations Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Public Affairs:</strong> Strategic communication supporting deployment narrative and alliance solidarity</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Military Information Support:</strong> Operations targeting adversary decision-making and neutral nation perceptions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Cyber Operations:</strong> Defensive cyber operations protecting Army networks and offensive operations supporting maneuver</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Electronic Warfare:</strong> Spectrum operations supporting communications security and adversary disruption</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Operations Integration -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-mask" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Special Operations Integration
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Silent Vanguard - SOF-Conventional Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Integrate Special Operations Forces with Army conventional operations for enhanced operational effectiveness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 120-day operation with 30-day preparation, 75-day execution, 15-day transition</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> European theater with emphasis on contested and denied areas</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 1 Special Forces Group, 1 Ranger Regiment, 160th SOAR elements integrated with conventional Corps</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">SOF Integration Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Reconnaissance Operations:</strong> Special Forces teams providing strategic reconnaissance and target acquisition for Corps operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Direct Action:</strong> Ranger elements conducting raids and seizure operations supporting conventional maneuver</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Foreign Internal Defense:</strong> Special Forces training and advising allied and partner nation forces</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Aviation Support:</strong> 160th SOAR providing specialized aviation support for SOF and conventional operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Integration Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Command Relationships:</strong> Balancing SOF operational security requirements with conventional force coordination needs</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Intelligence Sharing:</strong> Managing classified information flow between SOF and conventional intelligence systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Tempo:</strong> Synchronizing SOF and conventional operational timelines and decision cycles</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Resource Competition:</strong> Coordinating competing requirements for aviation, intelligence, and logistics support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander SOF Integration Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Allocation:</strong> Assigning SOF missions that complement and enhance conventional operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Balancing SOF operational security with conventional force support requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Coordination Mechanisms:</strong> Establishing liaison and coordination procedures between SOF and conventional commands</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Success Metrics:</strong> Defining measures of effectiveness for integrated SOF-conventional operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh Row: Future Operations and Innovation -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Future Warfare Concepts -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-rocket" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Future Warfare Concepts
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Future Force 2030 - Next-Generation Army Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Concept:</strong> Army-level operations incorporating artificial intelligence, autonomous systems, and advanced technologies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 180-day experimental exercise with 60-day preparation, 90-day execution, 30-day analysis</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 150,000 personnel with experimental units testing next-generation capabilities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> AI-enabled command systems, autonomous logistics, robotic combat vehicles</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Emerging Technologies</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Artificial Intelligence:</strong> AI-enabled decision support systems for Army-level planning and execution</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Autonomous Systems:</strong> Unmanned ground and aerial vehicles supporting reconnaissance and logistics</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Advanced Materials:</strong> Next-generation protective equipment and lightweight combat systems</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Quantum Technologies:</strong> Quantum communication systems and computing capabilities for secure operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Implementation Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Incorporating experimental technologies into existing Army systems and procedures</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Requirements:</strong> Developing new training programs for next-generation capabilities and technologies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Ethical Considerations:</strong> Managing ethical implications of autonomous systems and AI-enabled warfare</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Cost Management:</strong> Balancing innovation investment with current operational requirements and budget constraints</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Army Commander Innovation Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Adoption:</strong> Determining which emerging technologies to integrate into Army operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Management:</strong> Balancing innovation benefits with operational risk and reliability requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Distributing limited research and development resources across competing priorities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Timeline Planning:</strong> Establishing realistic timelines for technology development and operational integration</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lessons Learned Integration -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-book-open" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Lessons Learned Integration
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Knowledge Transfer - Army Learning Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Integrate lessons learned from recent operations into Army-level training and doctrine development</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 365-day continuous process with quarterly assessment and annual doctrine updates</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scope:</strong> Analysis of operations in Iraq, Afghanistan, Syria, and European exercises</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Integration:</strong> Incorporation into training programs, doctrine publications, and equipment development</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Key Lessons Learned</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Urban Operations:</strong> Army-level coordination requirements for complex urban terrain and civilian considerations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Coalition Warfare:</strong> Cultural integration challenges and communication requirements in multinational operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Hybrid Threats:</strong> Countering irregular warfare tactics integrated with conventional operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Information Environment:</strong> Managing information operations and social media impact on military operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Implementation Framework</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Doctrine Development:</strong> Updating FM 3-0 Operations and supporting publications with recent operational experience</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Integration:</strong> Incorporating lessons learned into Combat Training Center rotations and professional military education</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Modernization:</strong> Informing capability development and acquisition programs with operational requirements</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Organizational Changes:</strong> Adapting Army structure and processes based on operational experience and future requirements</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}

@@ -1,0 +1,381 @@
+/* Layout Components CSS */
+
+/* Main layout structure */
+/* Note: #app uses flex-1 from Tailwind classes to take available space between disclaimer banners */
+/* The body element uses h-screen, overflow-hidden, flex, flex-col to create viewport-constrained layout */
+
+/* Header styling */
+#main-header {
+    z-index: 40;
+}
+
+/* Main content area */
+#main-content {
+    min-height: 0; /* Allow flex shrinking */
+}
+
+/* Sidebar styling */
+#sidebar {
+    min-width: 350px; /* Updated to 350px */
+    max-width: 350px;
+}
+
+/* Center wrapper for time reference and workspace */
+#center-wrapper {
+    min-width: 0; /* Allow flex shrinking */
+}
+
+/* Workspace styling - Updated for flexible layout */
+#workspace {
+    min-width: 0; /* Allow flex shrinking */
+    flex: 1; /* Take remaining space after time reference */
+    padding: 25px 1.5rem 1.5rem 1.5rem; /* Top separation from time reference, maintain other padding */
+}
+
+/* Right Sidebar Responsive Behavior */
+#right-sidebar {
+    transition: width 0.3s ease, transform 0.3s ease;
+    z-index: 35;
+}
+
+/* Desktop: 1920px+ */
+@media (min-width: 1920px) {
+    #right-sidebar {
+        width: 350px;
+        min-width: 350px;
+        max-width: 350px;
+    }
+}
+
+/* Large Desktop: 1600px-1919px */
+@media (min-width: 1600px) and (max-width: 1919px) {
+    #right-sidebar {
+        width: 350px;
+        min-width: 350px;
+        max-width: 350px;
+    }
+}
+
+/* Laptop: 1366px-1599px */
+@media (min-width: 1366px) and (max-width: 1599px) {
+    #right-sidebar {
+        width: 350px;
+        min-width: 350px;
+        max-width: 350px;
+    }
+    
+    /* Auto-collapse non-essential sections on smaller laptops */
+    #right-sidebar .section-container[data-section="operation-info"] .section-content,
+    #right-sidebar .section-container[data-section="ai-assistant"] .section-content {
+        display: none;
+    }
+    
+    #right-sidebar .section-container[data-section="operation-info"] .section-toggle,
+    #right-sidebar .section-container[data-section="ai-assistant"] .section-toggle {
+        transform: rotate(180deg);
+    }
+}
+
+/* Tablet: 768px-1365px */
+@media (min-width: 768px) and (max-width: 1365px) {
+    #right-sidebar {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        height: 100vh;
+        width: 350px;
+        background: rgba(31, 41, 55, 0.95);
+        backdrop-filter: blur(10px);
+        border-left: 1px solid rgb(75, 85, 99);
+        z-index: 50;
+    }
+    
+    #right-sidebar.sidebar-open {
+        right: 0;
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Add overlay when sidebar is open */
+    body.sidebar-overlay::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 45;
+    }
+}
+
+/* Mobile: <768px */
+@media (max-width: 767px) {
+    #right-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        height: 100vh;
+        width: 100vw;
+        background: rgb(31, 41, 55);
+        z-index: 50;
+    }
+    
+    #right-sidebar.sidebar-open {
+        right: 0;
+    }
+    
+    /* Adjust sidebar header for mobile */
+    #right-sidebar .flex.items-center.justify-between {
+        padding: 1rem;
+        border-bottom: 2px solid rgb(75, 85, 99);
+    }
+    
+    /* Larger touch targets for mobile */
+    #right-sidebar .section-header {
+        padding: 1rem;
+        min-height: 48px;
+    }
+    
+    #right-sidebar button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Collapsed sidebar state */
+#right-sidebar.collapsed {
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+}
+
+#right-sidebar.collapsed .flex-1 {
+    display: none;
+}
+
+#right-sidebar.collapsed .section-container {
+    display: none;
+}
+
+/* Floating Action Button for Tablet/Mobile */
+.sidebar-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    background: rgb(147, 51, 234); /* purple-600 */
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 40;
+    transition: all 0.3s ease;
+}
+
+.sidebar-fab:hover {
+    background: rgb(126, 34, 206); /* purple-700 */
+    transform: scale(1.1);
+}
+
+.sidebar-fab i {
+    color: white;
+    font-size: 20px;
+}
+
+/* Show FAB on tablet and mobile */
+@media (max-width: 1365px) {
+    .sidebar-fab {
+        display: flex;
+    }
+}
+
+/* Footer styling - Footer removed, content relocated to sidebar */
+#main-footer {
+    display: none; /* Hide footer - content moved to sidebar */
+}
+
+/* Navigation Dropdown Styling */
+.dropdown-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.dropdown-content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 0.25rem;
+}
+
+.dropdown-toggle .fa-chevron-down {
+    transition: transform 0.2s ease-in-out;
+}
+
+.dropdown-toggle .fa-chevron-down.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Navigation sub-item styling */
+.nav-sub-item {
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-sub-item:hover {
+    border-left-color: #3b82f6;
+    background-color: rgba(75, 85, 99, 0.5);
+}
+
+.nav-sub-item.bg-blue-600 {
+    border-left-color: #1d4ed8;
+    background-color: #2563eb;
+}
+
+/* Military content styling */
+.military-content {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+.military-content h2 {
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.military-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.military-content h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Time Reference Component Styling */
+.time-reference-area {
+    position: relative;
+    z-index: 30;
+    width: 100%;
+    flex-shrink: 0; /* Don't shrink when expanded */
+    font-family: 'Courier New', monospace;
+}
+
+.time-reference-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.time-reference-area .collapsed {
+    min-height: 56px;
+}
+
+.time-reference-area .expanded {
+    min-height: auto;
+}
+
+.time-reference-area .transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for clickable area */
+.time-reference-area #time-reference-clickable:hover {
+    background-color: #4b5563 !important;
+}
+
+/* Time zone cards responsive grid */
+.time-reference-area .grid {
+    min-height: 0;
+}
+
+.time-reference-area .overflow-x-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+}
+
+.time-reference-area .overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+}
+
+.time-reference-area .overflow-x-auto::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 3px;
+}
+
+.time-reference-area .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+
+.time-reference-area .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Time zone card styling */
+.time-reference-area .bg-gray-700 {
+    min-width: 140px;
+    border: 1px solid #374151;
+    background-color: #374151;
+}
+
+.time-reference-area .bg-gray-700:hover {
+    border-color: #4b5563;
+    background-color: #4b5563;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling for time reference */
+.time-reference-area button {
+    transition: all 0.2s ease-in-out;
+}
+
+.time-reference-area button:hover {
+    transform: translateY(-1px);
+}
+
+.time-reference-area button:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments for time reference */
+@media (max-width: 1200px) {
+    .time-reference-area .bg-gray-700 {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    #workspace {
+        padding-top: 15px; /* Reduced separation on mobile */
+    }
+
+    .time-reference-area .collapsed {
+        min-height: 48px;
+    }
+
+    .time-reference-area .bg-gray-700 {
+        min-width: 100px;
+    }
+
+    .time-reference-area .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .time-reference-area .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .time-reference-content {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

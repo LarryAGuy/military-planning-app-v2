@@ -1,0 +1,351 @@
+/**
+ * Comprehensive Classification UI Styles
+ * Tabbed interface for DoD/IC classification system
+ * @version 2.0.1 - Compact design
+ */
+
+.classification-ui-comprehensive {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 0;
+    margin: 12px 0;
+}
+
+/* Tabs */
+.classification-tabs {
+    display: flex;
+    background: #0f172a;
+    border-bottom: 2px solid #334155;
+    border-radius: 6px 6px 0 0;
+    overflow-x: auto;
+}
+
+.classification-tab {
+    flex: 1;
+    min-width: 100px;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.classification-tab:hover {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+.classification-tab.active {
+    background: #1e293b;
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+}
+
+.classification-tab i {
+    font-size: 14px;
+}
+
+/* Tab Content */
+.classification-tab-content {
+    padding: 12px;
+    min-height: 180px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-panel h3 {
+    color: #60a5fa;
+    font-size: 16px;
+    margin: 0 0 6px 0;
+}
+
+.tab-description {
+    color: #94a3b8;
+    font-size: 11px;
+    margin: 0 0 12px 0;
+}
+
+/* Classification Level Grid */
+.classification-level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+}
+
+.classification-level-btn {
+    padding: 10px 12px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.classification-level-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.classification-level-btn.selected {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3);
+}
+
+.classification-level-btn i {
+    font-size: 16px;
+}
+
+/* Control Grid */
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.control-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 10px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-checkbox:hover {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.control-checkbox input[type="checkbox"] {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.control-checkbox input[type="checkbox"]:checked + .control-label {
+    color: #60a5fa;
+}
+
+.control-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: #e2e8f0;
+}
+
+.control-label strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.control-label small {
+    font-size: 10px;
+    color: #94a3b8;
+}
+
+/* SCI Gamma Compartment - Special styling for G (requires SI) */
+.sci-gamma-compartment {
+    border-left: 3px solid #f59e0b;
+}
+
+.sci-gamma-compartment .control-label small {
+    color: #fbbf24;
+    font-style: italic;
+}
+
+/* Release Authority Section */
+.release-authority-section {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #334155;
+}
+
+.release-authority-section h4 {
+    color: #34d399;
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+.release-authority-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.country-selector label {
+    display: block;
+    color: #e2e8f0;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.country-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 6px;
+}
+
+.country-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 6px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 10px;
+    color: #e2e8f0;
+}
+
+.country-checkbox:hover {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.country-checkbox input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.country-checkbox input[type="checkbox"]:checked + span {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.custom-release label {
+    display: block;
+    color: #e2e8f0;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.custom-release input[type="text"] {
+    width: 100%;
+    padding: 6px 10px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    color: #e2e8f0;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+}
+
+.custom-release input[type="text"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.1);
+}
+
+/* Classification Display - REMOVED (redundant with OPORD header badge) */
+/* Classification is now displayed in the OPORD Draft Tool header badge */
+/* which updates dynamically via the 'classification:changed' event */
+
+/*
+.classification-display {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: #0f172a;
+    border-top: 1px solid #334155;
+    border-radius: 0 0 6px 6px;
+}
+
+.classification-banner {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.classification-portion {
+    color: #94a3b8;
+    font-size: 11px;
+    text-align: center;
+}
+
+.classification-portion code {
+    background: #1e293b;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #60a5fa;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 600;
+}
+*/
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .classification-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .classification-tab {
+        flex: 1 1 50%;
+    }
+    
+    .classification-level-grid,
+    .control-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .country-checkboxes {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+}
+
+/* WCAG 2.1 AA Compliance */
+.classification-tab:focus,
+.classification-level-btn:focus,
+.control-checkbox:focus-within,
+.country-checkbox:focus-within,
+.custom-release input:focus {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+

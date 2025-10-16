@@ -1,0 +1,750 @@
+/**
+ * Movement & Maneuver - Regiment Level Practical Examples
+ * Comprehensive tactical scenarios for Regiment-level operations
+ */
+
+export function getRegimentTacticsExample() {
+  return `
+    <div style="padding: 20px; background: #0f172a; min-height: 100vh;">
+      <!-- Header Container -->
+      <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
+        <h2 style="color: #f8fafc; font-size: 22px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center;">
+          <i class="fas fa-medal" style="margin-right: 12px; color: #10b981; font-size: 20px;"></i>
+          Regiment-Level Movement & Maneuver Practical Examples
+        </h2>
+
+        <!-- Command Authority Context -->
+        <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 16px; border-radius: 6px;">
+          <h3 style="color: #6ee7b7; font-size: 16px; font-weight: 600; margin: 0 0 12px 0;">Regiment Command Authority Context</h3>
+          <div style="color: #e5e7eb; font-size: 14px; line-height: 1.6;">
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Command Level:</strong> Colonel (O-6) - Regiment Commander with specialized operational command authority</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel:</strong> 2,000-3,500 personnel across specialized battalions and companies</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> 10-20km specialized operational frontage with mission-specific depth</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Level:</strong> Specialized tactical operations with unique regimental capabilities</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Examples:</strong> 75th Ranger Regiment, 160th Special Operations Aviation Regiment</p>
+            <p style="margin: 0;"><strong style="color: #6ee7b7;">Decision Authority:</strong> Specialized mission coordination, regimental fires, and unique capability employment</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- First Row: Core Regiment Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Specialized Regiment Deployment -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-parachute-box" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Specialized Regiment Deployment
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Ranger Strike - Airborne Regiment Deployment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Deploy Airborne Regiment to secure critical airfield in Lithuanian border region</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 48-hour rapid deployment with 12-hour preparation, 24-hour movement, 12-hour consolidation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> 15km operational area around Šiauliai Airfield</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 2,800 personnel with 3 Airborne Battalions, 1 Support Battalion</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment Specialized Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Airborne Operations:</strong> Parachute assault and air-land operations with specialized equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Rapid Deployment:</strong> Global response capability with 18-hour deployment readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Light Infantry:</strong> Specialized light infantry tactics optimized for rapid deployment</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Direct Action:</strong> Precision operations against high-value targets and critical infrastructure</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Coordination</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">1st Battalion:</strong> Secure airfield runway and control tower with immediate defensive positions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">2nd Battalion:</strong> Establish perimeter security and conduct reconnaissance operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">3rd Battalion:</strong> Conduct direct action missions against enemy air defense systems</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Support Battalion:</strong> Provide logistics, communications, and specialized support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment Commander Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Prioritization:</strong> Sequencing Battalion missions based on operational priorities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Balancing mission accomplishment with force protection in high-risk environment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Distributing specialized equipment and capabilities among Battalions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Contingency Planning:</strong> Preparing alternate plans for changing tactical situations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regiment Aviation Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-helicopter" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Aviation Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Night Stalker - Special Operations Aviation</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide specialized aviation support for Regiment operations in Lithuanian sector</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 72-hour continuous aviation operations with 24/7 on-call support</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Aviation operations across 15km Regiment operational area</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Aviation Assets:</strong> 4 MH-60 Black Hawks, 2 MH-47 Chinooks, 2 AH-6 Little Birds</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized Aviation Missions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Special Operations Transport:</strong> MH-60s conducting infiltration and exfiltration operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Heavy Lift Operations:</strong> MH-47s providing heavy lift and specialized cargo transport</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Close Air Support:</strong> AH-6s providing precision close air support and reconnaissance</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Night Operations:</strong> Specialized night vision and low-visibility operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Aviation Coordination Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Precision Requirements:</strong> Extremely precise navigation and timing for special operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Weather Limitations:</strong> Operating in challenging Baltic weather with minimal visibility</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Threat Environment:</strong> Operating in contested airspace with advanced air defense systems</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Maintenance Complexity:</strong> Maintaining specialized aircraft with unique requirements</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment Aviation Commander Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Acceptance:</strong> Evaluating mission feasibility based on weather, threat, and aircraft capability</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Crew Selection:</strong> Matching specialized crews with specific mission requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Mitigation:</strong> Implementing risk mitigation measures for high-risk operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Contingency Planning:</strong> Preparing backup plans for mission-critical aviation operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row: Regiment Intelligence and Logistics -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Regiment Intelligence Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-eye" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Intelligence Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Intel Fusion - Regiment Intelligence Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide specialized intelligence support for Regiment operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 intelligence operations with 8-hour battle rhythm cycles</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Intelligence collection across 15km Regiment area of interest</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Intelligence Assets:</strong> 1 Military Intelligence Company, specialized collection teams</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized Intelligence Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Target Acquisition:</strong> Precision target identification and tracking for direct action missions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technical Intelligence:</strong> Analysis of enemy equipment and technical capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Counterintelligence:</strong> Protection of Regiment operations and personnel from enemy intelligence</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Tactical SIGINT:</strong> Signals intelligence supporting immediate tactical operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Intelligence Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Multi-Source Fusion:</strong> Integrating intelligence from multiple collection disciplines</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Real-Time Analysis:</strong> Providing immediate intelligence support to ongoing operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Predictive Analysis:</strong> Anticipating enemy actions and identifying emerging threats</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Coalition Sharing:</strong> Coordinating intelligence sharing with Lithuanian and NATO partners</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment S-2 Intelligence Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">High-Value Targets:</strong> Identifying and tracking high-value targets in complex environment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Time-Sensitive Intelligence:</strong> Providing actionable intelligence within compressed timelines</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Security Classification:</strong> Managing highly classified intelligence while enabling tactical effectiveness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Incorporating advanced intelligence technologies and systems</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regiment Logistics Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-boxes" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Logistics Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Rapid Supply - Regiment Logistics Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide specialized logistics support for 2,800 Regiment personnel</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 21-day sustained logistics operations with rapid resupply capability</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Logistics support across 15km Regiment operational area</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Logistics Structure:</strong> 1 Regiment Support Battalion, specialized supply teams</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized Logistics Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Rapid Resupply:</strong> Air-delivered supplies supporting high-tempo operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Specialized Equipment:</strong> Maintenance and supply of unique Regiment equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Medical Support:</strong> Enhanced medical capabilities including trauma surgery</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Communications Support:</strong> Specialized communications equipment and maintenance</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Logistics Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Specialized Requirements:</strong> Supporting unique equipment and operational requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Rapid Deployment:</strong> Establishing logistics support in compressed timelines</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Security Considerations:</strong> Protecting logistics operations in high-threat environments</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Sustainability:</strong> Maintaining operations with limited logistics footprint</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment S-4 Logistics Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Priority Management:</strong> Balancing competing logistics requirements across specialized units</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Evaluating logistics risks in contested environments</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Innovation Integration:</strong> Incorporating new logistics technologies and methods</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Contingency Planning:</strong> Preparing alternate logistics plans for disrupted operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Row: Historical Case Study and Future Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Historical Case Study -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-history" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Historical Case Study: 75th Ranger Regiment
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">75th Ranger Regiment Operation Urgent Fury - Historical Analysis</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Historical Context:</strong> 75th Ranger Regiment airborne assault demonstrating Regiment-level rapid deployment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scale:</strong> 2,500 personnel with 2 Ranger Battalions conducting airborne assault into Grenada</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 36-hour rapid deployment with immediate tactical operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Multiple objectives across Point Salines Airfield and surrounding areas</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment Tactical Lessons</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Rapid Deployment:</strong> Regiment-level airborne operations require extensive coordination and specialized training</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Battalion Coordination:</strong> Maintaining Regiment coherence during simultaneous Battalion operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Specialized Equipment:</strong> Importance of specialized equipment for unique Regiment missions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Adaptability:</strong> Ability to adapt to changing tactical situations and unexpected challenges</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Modern Applications</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Contemporary Relevance:</strong> 75th Ranger Regiment principles apply to current European rapid deployment scenarios</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Modern C4ISR systems enhance Regiment coordination capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Precision Operations:</strong> Enhanced precision capabilities support complex Regiment missions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Coalition Operations:</strong> Rapid deployment lessons apply to NATO Article 5 scenarios</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment Commander Historical Insights</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Command:</strong> Decentralized execution critical for successful Regiment operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Standards:</strong> Maintaining extremely high training standards essential for mission success</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Readiness:</strong> Specialized equipment must be maintained at highest readiness levels</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Leadership Development:</strong> Developing leaders capable of independent operations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Regiment Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-rocket" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Future Regiment Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Future Regiment 2030 - Next-Generation Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Concept:</strong> Regiment-level operations incorporating AI, autonomous systems, and advanced technologies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 21-day experimental exercise with 7-day preparation, 10-day execution, 4-day analysis</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 3,000 personnel with experimental units testing next-generation capabilities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> AI-enabled command systems, autonomous logistics, robotic support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Emerging Regiment Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Artificial Intelligence:</strong> AI-enabled decision support for Regiment-level planning and execution</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Autonomous Systems:</strong> Unmanned systems supporting reconnaissance, logistics, and fires</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Advanced Communications:</strong> Next-generation communication systems for Regiment networks</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Precision Fires:</strong> Enhanced precision fires supporting Regiment tactical operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Future Operational Concepts</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Multi-Domain Operations:</strong> Integrated operations across land, air, maritime, space, and cyber domains</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Distributed Operations:</strong> Dispersed operations with enhanced connectivity and coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Adaptive Planning:</strong> Real-time plan adaptation based on AI analysis and battlefield conditions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Human-Machine Teaming:</strong> Integration of human decision-making with machine capabilities</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Future Regiment Commander Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Effectively integrating new technologies while maintaining tactical effectiveness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Information Management:</strong> Processing and acting on increased information flow from multiple sources</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Ethical Considerations:</strong> Managing ethical implications of autonomous systems and AI</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Evolution:</strong> Adapting training programs to prepare soldiers for future operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Row: Regiment Special Operations and Training -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Regiment Special Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-user-secret" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Special Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Shadow Strike - Regiment Direct Action</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct Regiment-level direct action operations against high-value targets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 36-hour operation with 12-hour preparation, 18-hour execution, 6-hour extraction</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Multiple target areas across 20km operational zone</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 2,500 personnel with specialized direct action capabilities</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Direct Action Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Precision Raids:</strong> Simultaneous precision raids against multiple high-value targets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Hostage Rescue:</strong> Complex hostage rescue operations in urban and rural environments</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Infrastructure Strikes:</strong> Precision strikes against critical enemy infrastructure</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Counter-Terrorism:</strong> Counter-terrorism operations against high-value terrorist targets</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Special Operations Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Security:</strong> Maintaining operational security while coordinating complex operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Precision Requirements:</strong> Achieving precision effects while minimizing collateral damage</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Time Sensitivity:</strong> Operating within compressed timelines and fleeting opportunities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Intelligence Dependence:</strong> Heavy reliance on accurate and timely intelligence</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Regiment Commander SO Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Authorization:</strong> Evaluating mission feasibility and authorizing high-risk operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Allocating specialized assets and personnel to critical missions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Management:</strong> Balancing mission success with acceptable risk levels</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Contingency Planning:</strong> Preparing contingency plans for mission complications</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Multi-Target Coordination</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Synchronization:</strong> Coordinating simultaneous operations across multiple target areas</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication Security:</strong> Maintaining secure communications during sensitive operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Extraction Coordination:</strong> Coordinating extraction operations for multiple teams</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Intelligence Integration:</strong> Real-time intelligence integration during ongoing operations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regiment Training Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-dumbbell" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Training Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Elite Ready - Regiment Training Program</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct comprehensive Regiment-level training maintaining elite readiness standards</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 365-day continuous training cycle with monthly assessments and quarterly validation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Training areas in United States, Germany, and Lithuania</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Structure:</strong> Progressive training from individual to Regiment-level collective training</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized Training Programs</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Individual Training:</strong> Elite-level individual skills training and certification programs</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Small Unit Training:</strong> Squad and platoon-level specialized training exercises</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Battalion Training:</strong> Battalion-level complex training scenarios and live-fire exercises</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Regiment Training:</strong> Regiment-level command post exercises and full-scale operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Training Standards and Assessment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Elite Standards:</strong> Maintaining extremely high training standards exceeding conventional forces</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Continuous Assessment:</strong> Ongoing assessment and evaluation of individual and unit performance</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Realistic Training:</strong> Training scenarios replicating actual operational conditions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Innovation Integration:</strong> Incorporating new training methods and technologies</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Training Challenges and Solutions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Intensity:</strong> Managing intensive training requirements with limited resources</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel Retention:</strong> Maintaining elite personnel through demanding training programs</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Safety Management:</strong> Balancing realistic training with safety requirements</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Operational Tempo:</strong> Balancing training requirements with operational deployments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Row: Regiment Medical and Maintenance Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Regiment Medical Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-plus-circle" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Medical Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Medical Elite - Regiment Medical Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide specialized medical support for 2,800 Regiment personnel</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 45-day continuous medical operations with enhanced trauma capability</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Medical support across 15km Regiment operational area</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Medical Structure:</strong> 1 Regiment Medical Company, specialized trauma teams</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized Medical Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Trauma Surgery:</strong> Advanced trauma surgery capabilities in forward locations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Critical Care:</strong> Intensive care capabilities for critically wounded personnel</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Rapid Evacuation:</strong> Specialized medical evacuation for high-risk operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Preventive Medicine:</strong> Enhanced preventive medicine for high-tempo operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Medical Operations Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">High-Risk Operations:</strong> Providing medical support during high-risk special operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Remote Locations:</strong> Operating in remote locations with limited medical infrastructure</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Specialized Training:</strong> Maintaining specialized medical training for unique requirements</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Equipment Maintenance:</strong> Maintaining specialized medical equipment in harsh conditions</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regiment Lessons Learned -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-lightbulb" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Lessons Learned
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Learn Elite - Regiment Lessons Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Capture, analyze, and integrate lessons learned from Regiment operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> Continuous lessons learned process with monthly comprehensive reviews</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scope:</strong> All Regiment operations, training exercises, and deployment activities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Integration:</strong> Lessons learned integration into doctrine, training, and procedures</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Key Regiment Lessons</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Elite Standards:</strong> Maintaining elite standards requires continuous investment and attention</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Specialized Equipment:</strong> Specialized equipment requires specialized maintenance and support</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel Selection:</strong> Rigorous personnel selection critical for Regiment success</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Command:</strong> Decentralized execution essential for complex Regiment operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Lessons Implementation Process</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Collection:</strong> Systematic collection of observations from all Regiment activities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Analysis:</strong> Thorough analysis to identify patterns and systemic issues</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Dissemination:</strong> Sharing lessons learned across Regiment and with higher headquarters</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Implementation:</strong> Incorporating lessons into training, procedures, and operational planning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth Row: Regiment Command and Control and Readiness -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Regiment Command and Control -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-sitemap" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Command and Control
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Command Elite - Regiment C2 Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Establish and operate Regiment command and control supporting specialized operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 command and control operations with 8-hour battle rhythm cycles</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Command and control across 15km Regiment operational area</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">C2 Structure:</strong> Main CP, Forward CP, and Mobile CP configurations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized C2 Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Command:</strong> Decentralized execution with centralized planning and coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Secure Communications:</strong> Advanced secure communications for sensitive operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Real-Time Intelligence:</strong> Integration of real-time intelligence into command decisions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Rapid Decision-Making:</strong> Accelerated decision-making processes for time-sensitive operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">C2 Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Security:</strong> Maintaining operational security while enabling effective command and control</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication Security:</strong> Balancing communication security with operational effectiveness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mobility Requirements:</strong> Maintaining C2 capability while supporting mobile operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Integrating advanced technologies while maintaining reliability</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Future C2 Technologies</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">AI Decision Support:</strong> Artificial intelligence supporting Regiment-level decision-making</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Quantum Communications:</strong> Quantum-encrypted communications for ultimate security</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Augmented Reality:</strong> AR-enabled command visualization and situational awareness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Cloud Computing:</strong> Cloud-based C2 systems with enhanced scalability and reliability</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regiment Readiness Assessment -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-clipboard-check" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Readiness Assessment
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Status Elite - Regiment Readiness Evaluation</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct comprehensive Regiment readiness assessment for global deployment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> Monthly assessments with quarterly comprehensive evaluation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Assessment Scope:</strong> Personnel, equipment, training, and logistics readiness evaluation</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Readiness Metrics:</strong> Elite readiness standards exceeding conventional force requirements</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Elite Readiness Assessment Areas</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel Readiness:</strong> Elite personnel standards, specialized training, and security clearances</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Readiness:</strong> Specialized equipment operational status and maintenance condition</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Readiness:</strong> Advanced training certification and specialized skill proficiency</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Readiness:</strong> Capability to execute specialized missions within deployment timelines</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Readiness Improvement Strategies</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Continuous Improvement:</strong> Implementing continuous improvement processes for elite readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Optimization:</strong> Optimizing specialized resources to maximize readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Innovation Integration:</strong> Incorporating new technologies and methods to enhance readiness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Predictive Analytics:</strong> Using data analytics to predict and prevent readiness degradation</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Elite Standards Maintenance</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Standards Enforcement:</strong> Rigorous enforcement of elite standards across all Regiment elements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Performance Monitoring:</strong> Continuous monitoring of individual and unit performance</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Corrective Actions:</strong> Immediate corrective actions for readiness deficiencies</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Excellence Culture:</strong> Maintaining culture of excellence and continuous improvement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh Row: Regiment Coalition Operations -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Regiment Coalition Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-handshake" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Coalition Operations
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Allied Elite - NATO Integration</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Integrate Regiment capabilities with NATO special operations forces</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 30-day coalition exercise with 15 NATO partner nations</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Partners:</strong> UK SAS, German KSK, French COS, Polish GROM, Lithuanian ARAS</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Integration Areas:</strong> Command structures, communications, logistics, and operational procedures</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Coalition Challenges and Solutions</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Language Barriers:</strong> Implementing standardized NATO terminology and communication protocols</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Compatibility:</strong> Ensuring interoperability of specialized equipment and systems</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Cultural Integration:</strong> Building trust and understanding among diverse military cultures</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Security Protocols:</strong> Harmonizing security clearances and information sharing procedures</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Specialized Coalition Capabilities</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Joint Planning:</strong> Integrated planning processes combining Regiment and partner capabilities</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Cross-Training:</strong> Exchange programs developing interoperability and shared expertise</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combined Operations:</strong> Executing complex operations with integrated multinational teams</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Intelligence Sharing:</strong> Secure intelligence sharing networks supporting coalition operations</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Future Coalition Evolution</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Shared technology platforms enhancing coalition effectiveness</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Standardization:</strong> Continued standardization of procedures and equipment</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Evolution:</strong> Advanced coalition training programs and exercises</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Capability Development:</strong> Joint development of next-generation special operations capabilities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eighth Row: Regiment Innovation and Excellence -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Regiment Innovation and Excellence -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-trophy" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Regiment Innovation and Excellence
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Innovation Programs</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Innovation:</strong> Regiment-led development of next-generation capabilities</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Tactical Innovation:</strong> Continuous development of new tactics and procedures</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Innovation:</strong> Revolutionary training methods and technologies</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Equipment Innovation:</strong> Specialized equipment development and modification</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Excellence Standards</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Elite Performance:</strong> Maintaining performance standards exceeding all other units</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Continuous Improvement:</strong> Never-ending pursuit of operational excellence</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Leadership Development:</strong> Developing leaders who exemplify Regiment values</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Success:</strong> Achieving 100% mission success rate through excellence</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Legacy and Future</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Historical Legacy:</strong> Building upon decades of Regiment excellence and tradition</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Future Vision:</strong> Preparing for next-generation warfare and challenges</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Knowledge Transfer:</strong> Sharing Regiment expertise with broader military community</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Continuous Evolution:</strong> Adapting to emerging threats while maintaining core values</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+export default getRegimentTacticsExample;

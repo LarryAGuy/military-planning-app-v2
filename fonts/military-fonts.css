@@ -1,0 +1,52 @@
+/* Military Planning App V2 - Font Definitions */
+
+/* Import FontAwesome from local installation */
+@import url('./fontawesome-free-7.0.0-web/css/all.min.css');
+
+/* Military-style monospace fonts */
+@font-face {
+    font-family: 'Military Mono';
+    src: local('Consolas'), local('Monaco'), local('Courier New'), monospace;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Military Mono';
+    src: local('Consolas Bold'), local('Monaco Bold'), local('Courier New Bold'), monospace;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Custom CSS variables for military styling */
+:root {
+    --military-primary: #1f2937;
+    --military-secondary: #374151;
+    --military-accent: #3b82f6;
+    --military-danger: #dc2626;
+    --military-warning: #f59e0b;
+    --military-success: #16a34a;
+    --military-text: #ffffff;
+    --military-text-muted: #9ca3af;
+    --military-border: #4b5563;
+}
+
+/* Base typography */
+body {
+    font-family: 'Military Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+    line-height: 1.5;
+    letter-spacing: 0.025em;
+}
+
+/* Military classification colors */
+.classification-unclassified { color: #16a34a; }
+.classification-cui { color: #f59e0b; }
+.classification-confidential { color: #3b82f6; }
+.classification-secret { color: #dc2626; }
+.classification-topsecret { color: #7c2d12; }
+
+/* Military unit colors */
+.unit-friendly { color: #2563eb; }
+.unit-enemy { color: #dc2626; }
+.unit-neutral { color: #16a34a; }
+.unit-unknown { color: #f59e0b; }

@@ -1,0 +1,662 @@
+/**
+ * Movement & Maneuver - Battalion Level Practical Examples
+ * Comprehensive tactical scenarios for Battalion-level operations
+ */
+
+export function getBattalionTacticsExample() {
+  return `
+    <div style="padding: 20px; background: #0f172a; min-height: 100vh;">
+      <!-- Header Container -->
+      <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
+        <h2 style="color: #f8fafc; font-size: 22px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center;">
+          <i class="fas fa-flag" style="margin-right: 12px; color: #10b981; font-size: 20px;"></i>
+          Battalion-Level Movement & Maneuver Practical Examples
+        </h2>
+
+        <!-- Command Authority Context -->
+        <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 16px; border-radius: 6px;">
+          <h3 style="color: #6ee7b7; font-size: 16px; font-weight: 600; margin: 0 0 12px 0;">Battalion Command Authority Context</h3>
+          <div style="color: #e5e7eb; font-size: 14px; line-height: 1.6;">
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Command Level:</strong> Lieutenant Colonel (O-5) - Battalion Commander with tactical command authority</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel:</strong> 400-800 personnel across 3-4 companies and support elements</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> 5-10km tactical frontage with 3-5km depth</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Level:</strong> Tactical operations with direct engagement of enemy forces</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Examples:</strong> Infantry Battalion, Armor Battalion, Artillery Battalion</p>
+            <p style="margin: 0;"><strong style="color: #6ee7b7;">Decision Authority:</strong> Tactical fires, company task organization, and direct combat operations</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- First Row: Core Battalion Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Tactical Deployment -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-chess-knight" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Tactical Deployment
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Iron Spear - Infantry Battalion Assault</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct Battalion-level assault to secure key terrain in Lithuanian border region</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 72-hour operation with 24-hour preparation, 36-hour assault, 12-hour consolidation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> 8km frontage with 4km depth around Kaunas defensive positions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 650 personnel with 3 Rifle Companies, 1 Weapons Company, 1 HHC</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Tactical Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combined Arms:</strong> Integration of infantry, armor, artillery, and engineer assets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Direct Fire:</strong> Company-level direct fire systems and crew-served weapons</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Indirect Fire:</strong> Battalion mortar section and artillery fire support</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Mobility:</strong> Tactical mobility with organic and attached transportation</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Company Task Organization</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Alpha Company:</strong> Main effort assault on Hill 247 with engineer support</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Bravo Company:</strong> Supporting effort securing left flank and blocking positions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Charlie Company:</strong> Reserve force prepared for exploitation or reinforcement</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Weapons Company:</strong> Direct support with mortars, anti-tank, and machine guns</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Commander Tactical Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scheme of Maneuver:</strong> Determining main and supporting efforts based on terrain analysis</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fire Support:</strong> Coordinating indirect fires to support company movements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Reserve Employment:</strong> Positioning and employing reserve company for maximum effect</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Risk Management:</strong> Balancing speed of advance with force protection measures</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battalion Fires Coordination -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-crosshairs" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Fires Coordination
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Fire Storm - Battalion Fires Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Coordinate integrated fires supporting Battalion tactical operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 48-hour fires coordination with continuous fire support</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Fires coordination across 8km Battalion frontage</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Fire Assets:</strong> 6x 120mm mortars, 1 Artillery Battery, CAS on-call</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Integrated Fires Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mortar Fires:</strong> Battalion 120mm mortar section providing immediate fire support</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Artillery Support:</strong> Brigade artillery providing reinforcing fires and deep targets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Close Air Support:</strong> Coordinated CAS missions supporting company operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Direct Fire:</strong> Company direct fire systems integrated with indirect fires</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Fires Coordination Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Target Acquisition:</strong> Identifying and engaging time-sensitive targets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fratricide Prevention:</strong> Preventing friendly fire during close combat operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Ammunition Management:</strong> Managing limited ammunition across multiple fire systems</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Communication:</strong> Maintaining communications with multiple fire support elements</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Fire Support Officer Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Target Prioritization:</strong> Prioritizing targets based on Battalion commander's intent</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Asset Allocation:</strong> Allocating fire support assets among company teams</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timing Coordination:</strong> Synchronizing fires with maneuver operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Effects Assessment:</strong> Assessing fire effects and adjusting fire plans</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row: Battalion Intelligence and Logistics -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Intelligence Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-binoculars" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Intelligence Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Intel Watch - Battalion Intelligence Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide tactical intelligence support for Battalion operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 intelligence operations with 4-hour battle rhythm cycles</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Intelligence collection across 8km Battalion area of operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Intelligence Assets:</strong> Battalion S-2 section, company scouts, attached MI team</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Intelligence Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Reconnaissance:</strong> Company scout teams conducting tactical reconnaissance</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Surveillance:</strong> Observation posts and surveillance systems monitoring enemy activity</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Target Acquisition:</strong> Identifying and tracking high-value targets</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Threat Assessment:</strong> Analyzing enemy capabilities and likely courses of action</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Intelligence Integration Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Time Sensitivity:</strong> Processing intelligence to support immediate tactical decisions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Information Fusion:</strong> Integrating intelligence from multiple sources and echelons</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication:</strong> Disseminating intelligence to company commanders rapidly</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Accuracy:</strong> Ensuring intelligence accuracy under time pressure</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion S-2 Intelligence Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Collection Management:</strong> Directing reconnaissance and surveillance assets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Analysis Prioritization:</strong> Prioritizing intelligence analysis based on commander's requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Threat Warning:</strong> Providing early warning of enemy threats and activities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Intelligence Preparation:</strong> Conducting intelligence preparation of the battlefield</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battalion Logistics Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-cogs" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Logistics Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Sustain Force - Battalion Logistics Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide comprehensive logistics support for 650 Battalion personnel</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 14-day sustained logistics operations with daily resupply</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Logistics support across 8km Battalion area of operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Logistics Structure:</strong> Battalion S-4 section, company supply teams, forward support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Logistics Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Supply Operations:</strong> Class I, III, and V supply operations supporting combat operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Maintenance Support:</strong> Field maintenance and recovery operations for Battalion equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Medical Support:</strong> Battalion aid station and medical evacuation capabilities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Transportation:</strong> Organic transportation supporting tactical mobility</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Logistics Coordination Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Forward Positioning:</strong> Positioning logistics assets to support advancing companies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Ammunition Management:</strong> Managing ammunition consumption during high-intensity operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Casualty Evacuation:</strong> Evacuating casualties while maintaining operational tempo</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Security:</strong> Protecting logistics operations in contested environments</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion S-4 Logistics Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Prioritization:</strong> Prioritizing logistics support based on tactical situation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Distribution Planning:</strong> Planning logistics distribution to support company operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Assessing logistics risks and implementing mitigation measures</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Contingency Planning:</strong> Preparing alternate logistics plans for changing situations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Row: Battalion Training and Medical Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Training Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-chalkboard-teacher" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Training Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Train Hard - Battalion Training Program</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct comprehensive Battalion-level training maintaining tactical readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 365-day training cycle with monthly field training exercises</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Training areas in Germany, Lithuania, and Poland</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Structure:</strong> Progressive training from individual to Battalion-level collective training</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Training Programs</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Individual Training:</strong> Soldier-level tactical skills and weapons proficiency</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Squad Training:</strong> Small unit tactics and team coordination exercises</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Company Training:</strong> Company-level tactical exercises and live-fire training</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Battalion Training:</strong> Battalion-level field training exercises and command post exercises</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Training Standards and Assessment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combat Readiness:</strong> Maintaining high combat readiness standards across all companies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Performance Assessment:</strong> Regular assessment and evaluation of unit performance</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Realistic Training:</strong> Training scenarios replicating actual combat conditions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Safety Management:</strong> Comprehensive safety programs for high-risk training</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Training Challenges and Solutions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Constraints:</strong> Managing training with limited resources and time</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Tempo:</strong> Balancing training requirements with operational deployments</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel Turnover:</strong> Maintaining training standards with personnel changes</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Incorporating new training technologies and methods</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battalion Medical Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-medkit" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Medical Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Life Saver - Battalion Medical Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide comprehensive medical support for 650 Battalion personnel</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 medical operations with surge capacity for combat operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Medical support across 8km Battalion area of operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Medical Structure:</strong> Battalion aid station, company medics, evacuation assets</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Medical Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Immediate Care:</strong> Company medics providing immediate life-saving treatment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Battalion Aid Station:</strong> Advanced medical care and stabilization</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Medical Evacuation:</strong> Ground and air evacuation to higher medical facilities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Preventive Medicine:</strong> Health protection and disease prevention measures</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Medical Operations Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mass Casualty Events:</strong> Managing multiple casualties during intense combat</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Forward Positioning:</strong> Positioning medical assets to support advancing companies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Evacuation Coordination:</strong> Coordinating medical evacuation under fire</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Resource Management:</strong> Managing limited medical supplies and personnel</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Surgeon Medical Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Triage Decisions:</strong> Making critical triage decisions during mass casualty events</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Allocating medical resources among company teams</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Evacuation Priorities:</strong> Determining medical evacuation priorities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Assessing medical risks and implementing protective measures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Row: Battalion Lessons Learned and Future Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Lessons Learned -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-clipboard-list" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Lessons Learned
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Learn Forward - Battalion Lessons Integration</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Capture, analyze, and integrate lessons learned from Battalion operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> Continuous lessons learned process with weekly comprehensive reviews</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scope:</strong> All Battalion operations, training exercises, and deployment activities</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Integration:</strong> Lessons learned integration into tactics, training, and procedures</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Key Battalion Lessons</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combined Arms:</strong> Effective combined arms integration critical for tactical success</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication:</strong> Reliable communications essential for coordinated operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Logistics Forward:</strong> Forward positioning of logistics assets improves responsiveness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Realism:</strong> Realistic training directly correlates to combat effectiveness</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Lessons Implementation Process</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Collection:</strong> Systematic collection of observations from all Battalion activities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Analysis:</strong> Thorough analysis to identify tactical improvements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Dissemination:</strong> Sharing lessons learned across Battalion and with Brigade</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Implementation:</strong> Incorporating lessons into training and tactical procedures</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battalion Future Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-satellite" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Future Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Future Battalion 2030 - Next-Generation Tactics</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Concept:</strong> Battalion-level operations incorporating advanced technologies and tactics</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 14-day experimental exercise with advanced technology integration</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 700 personnel with experimental units and technologies</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Focus:</strong> AI-enabled systems, autonomous platforms, enhanced communications</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Emerging Battalion Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">AI-Enhanced Command:</strong> Artificial intelligence supporting tactical decision-making</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Autonomous Systems:</strong> Unmanned systems supporting reconnaissance and logistics</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Enhanced Sensors:</strong> Advanced sensor systems improving situational awareness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Precision Fires:</strong> Enhanced precision fires capabilities at Battalion level</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Future Tactical Concepts</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Distributed Operations:</strong> Highly distributed operations with enhanced connectivity</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Multi-Domain Integration:</strong> Integration of operations across multiple domains</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Adaptive Tactics:</strong> Real-time tactical adaptation based on AI analysis</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Human-Machine Teaming:</strong> Optimized integration of human and machine capabilities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Row: Battalion Command and Control and Historical Case Study -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Command and Control -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-broadcast-tower" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Command and Control
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Command Forward - Battalion C2 Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Establish and operate Battalion command and control supporting tactical operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 command and control operations with 4-hour battle rhythm cycles</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Command and control across 8km Battalion area of operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">C2 Structure:</strong> Main CP, Tactical CP, and Forward CP configurations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical C2 Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Command:</strong> Decentralized execution with centralized planning and intent</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Digital Communications:</strong> Digital command and control systems supporting rapid coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Situational Awareness:</strong> Real-time situational awareness across all company teams</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Rapid Decision-Making:</strong> Accelerated decision-making processes for tactical operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">C2 Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication Security:</strong> Maintaining secure communications while enabling rapid coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mobility Requirements:</strong> Maintaining C2 capability during rapid tactical movements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Information Overload:</strong> Managing information flow to prevent decision paralysis</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Electronic Warfare:</strong> Operating C2 systems in contested electromagnetic environments</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Commander C2 Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Command Post Positioning:</strong> Positioning command posts to optimize control and survivability</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication Priorities:</strong> Establishing communication priorities and redundancy</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Information Management:</strong> Managing information flow to support decision-making</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Delegation Authority:</strong> Delegating appropriate authority to subordinate commanders</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battalion Historical Case Study -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-monument" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Historical Case Study: 2nd Battalion, 503rd PIR
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Market Garden - Historical Analysis</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Historical Context:</strong> 2nd Battalion, 503rd PIR operations demonstrating Battalion-level airborne assault</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scale:</strong> 650 personnel conducting airborne assault and defensive operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 9-day operation with airborne assault and sustained defense</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Operations around Arnhem Bridge and surrounding areas</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Tactical Lessons</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Airborne Operations:</strong> Battalion-level airborne operations require extensive coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Urban Combat:</strong> Urban combat operations demand specialized tactics and training</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Logistics Challenges:</strong> Sustained operations require robust logistics planning</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Leadership:</strong> Strong leadership critical during extended combat operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Modern Applications</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Contemporary Relevance:</strong> Historical lessons apply to current European rapid deployment scenarios</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Enhancement:</strong> Modern technology enhances traditional Battalion capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Urban Operations:</strong> Urban combat lessons inform current Battalion training</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Coalition Integration:</strong> Historical coalition lessons improve NATO interoperability</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Commander Historical Insights</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Tactical Flexibility:</strong> Maintaining tactical flexibility essential for changing situations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Management:</strong> Effective resource management critical for sustained operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication:</strong> Reliable communications vital for coordinated Battalion operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Morale Maintenance:</strong> Maintaining unit morale during extended combat operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth Row: Battalion Innovation and Excellence -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Innovation and Excellence -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-award" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Innovation and Excellence
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Innovation</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Tactical Development:</strong> Battalion-led development of innovative tactical procedures</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Innovation:</strong> Revolutionary training methods and simulation technologies</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Innovation:</strong> Field testing and modification of tactical equipment</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Process Innovation:</strong> Streamlining tactical processes for improved efficiency</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Excellence Standards</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combat Excellence:</strong> Maintaining superior combat performance standards</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Excellence:</strong> Achieving excellence in all training and readiness metrics</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Leadership Excellence:</strong> Developing leaders who exemplify Battalion values</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Excellence:</strong> Achieving mission success through tactical excellence</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Legacy and Future</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Unit Legacy:</strong> Building upon Battalion history and traditions of excellence</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Future Readiness:</strong> Preparing for next-generation tactical challenges</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Knowledge Sharing:</strong> Sharing tactical expertise with broader military community</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Continuous Evolution:</strong> Adapting to emerging threats while maintaining tactical focus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh Row: Battalion Maintenance and Readiness -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Battalion Maintenance Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-tools" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Maintenance Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Maintain Ready - Battalion Equipment Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide comprehensive maintenance support for Battalion equipment and vehicles</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 maintenance operations with predictive maintenance programs</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Scope:</strong> 150 vehicles, weapons systems, and communication equipment</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Maintenance Structure:</strong> Battalion maintenance section, company maintenance teams</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Maintenance Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Field Maintenance:</strong> On-site repair and maintenance of tactical equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Recovery Operations:</strong> Battlefield recovery and evacuation of damaged equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Preventive Maintenance:</strong> Scheduled maintenance preventing equipment failures</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Parts Management:</strong> Supply chain management for maintenance parts and components</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battalion Maintenance Officer Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Priority Management:</strong> Prioritizing maintenance support based on operational requirements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Allocation:</strong> Allocating maintenance assets among company teams</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Readiness Assessment:</strong> Monitoring equipment readiness and operational capability</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Innovation Integration:</strong> Incorporating new maintenance technologies and procedures</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battalion Readiness Assessment -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-chart-line" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Battalion Readiness Assessment
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Status Forward - Battalion Readiness Evaluation</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct comprehensive Battalion readiness assessment for tactical deployment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> Weekly assessments with monthly comprehensive evaluation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Assessment Scope:</strong> Personnel, equipment, training, and logistics readiness evaluation</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Readiness Metrics:</strong> Tactical readiness standards for combat operations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Tactical Readiness Assessment Areas</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel Readiness:</strong> Soldier training, certification, and physical fitness standards</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Readiness:</strong> Tactical equipment operational status and maintenance condition</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Readiness:</strong> Unit training certification and tactical proficiency</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Readiness:</strong> Capability to execute tactical missions within deployment timelines</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Readiness Improvement Strategies</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Continuous Improvement:</strong> Implementing continuous improvement processes for tactical readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Resource Optimization:</strong> Optimizing resources to maximize Battalion readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Enhancement:</strong> Enhancing training programs to improve readiness metrics</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Performance Monitoring:</strong> Continuous monitoring of readiness performance indicators</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+export default getBattalionTacticsExample;

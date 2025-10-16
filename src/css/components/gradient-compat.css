@@ -1,0 +1,64 @@
+/* Cross-browser gradient and color rendering normalization for JPP Step 7 and shared components
+   - Ensures consistent sRGB compositing and blending in Firefox, Chrome, Edge, Safari
+   - Maintains established 4-color cycling pattern using rgba(R,G,B,A)
+   - Preserves gradient backgrounds and WCAG 2.1 AA contrast
+*/
+
+/* Scope to JPP Step 7 Plan Development content area */
+#plan-development-content-area {
+  /* Ensure dark color-scheme UI surfaces consistently across engines */
+  color-scheme: dark;
+}
+
+/* Normalize how backgrounds with gradients are composited */
+#plan-development-content-area [style*="linear-gradient"],
+#plan-development-content-area [style*="radial-gradient"] {
+  /* Create an isolated stacking context so semi-transparent gradient layers
+     composite consistently and do not blend with ancestors differently by engine */
+  isolation: isolate;
+
+  /* Make blending explicit and consistent */
+  mix-blend-mode: normal;
+  background-blend-mode: normal;
+
+  /* Clip backgrounds the same across engines (notably around border-radius) */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+/* Normalize border rendering that interacts visually with semi-transparent fills */
+#plan-development-content-area [style*="border-radius"],
+#plan-development-content-area [style*="border:"] {
+  /* Prevent subpixel antialias differences around rounded corners */
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+/* Prefer sRGB interpolation for gradients where supported */
+@supports (background: linear-gradient(in srgb, red, blue)) {
+  /* We cannot override inline background-image values, but ensuring isolation
+     and explicit blend mode above removes engine-dependent compositing. For
+     newly-authored CSS, prefer `linear-gradient(in srgb, ...)` to lock color
+     space interpolation. */
+}
+
+/* Accessibility helpers: ensure contrasts for light text on colored cards */
+#plan-development-content-area .text-on-colored,
+#plan-development-content-area [style*="color: #e5e7eb"],
+#plan-development-content-area [style*="color: #d1d5db"] {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+}
+
+/* Utility: opt-in class for any container needing these normalizations */
+.jpp-plan-dev-root {
+  color-scheme: dark;
+}
+.jpp-plan-dev-root [style*="linear-gradient"],
+.jpp-plan-dev-root [style*="radial-gradient"] {
+  isolation: isolate;
+  mix-blend-mode: normal;
+  background-blend-mode: normal;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Git
+.git/
+.gitignore
+
+# Tests
+__tests__/
+*.test.js
+*.spec.js
+coverage/
+
+# Documentation (not needed in production)
+*.md
+!README.md
+
+# Development files
+.vscode/
+.idea/
+*.log
+.DS_Store
+
+# Validation scripts (not needed in production)
+scripts/validation/
+
+# Vercel
+.vercel/
+

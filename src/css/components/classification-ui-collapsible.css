@@ -1,0 +1,382 @@
+/**
+ * Classification UI Collapsible Styles
+ * 
+ * Styles for the collapsible Classification UI component
+ * Includes smooth transitions, accessibility features, and responsive design
+ * 
+ * @version 1.0.0
+ * @date 2025-10-06
+ */
+
+/* Classification UI Header - Entire header is clickable */
+.classification-ui-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px;
+    background: #2d3748;
+    border: 1px solid #4a5568;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    flex-wrap: nowrap !important;
+    min-height: 48px;
+}
+
+.classification-ui-header:hover {
+    background: #4a5568;
+    border-color: #63b3ed;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.classification-ui-header:focus {
+    outline: 2px solid #63b3ed;
+    outline-offset: 2px;
+    background: #4a5568;
+}
+
+.classification-ui-header:active {
+    transform: translateY(0);
+    background: #2d3748;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.classification-ui-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 16px;
+    font-weight: 600;
+    color: #e2e8f0;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+    pointer-events: none; /* Prevent text selection */
+    flex: 1;
+    white-space: nowrap;
+    line-height: 1.2;
+    /* Override any default h3 styles */
+    border: none !important;
+    background: none !important;
+    text-align: left !important;
+}
+
+.classification-ui-title i {
+    color: #63b3ed;
+}
+
+/* Chevron Icon */
+.classification-ui-chevron {
+    color: #e2e8f0;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    display: inline-block !important;
+    flex-shrink: 0;
+    line-height: 1;
+    vertical-align: middle;
+    margin-left: auto;
+}
+
+.classification-ui-header:hover .classification-ui-chevron {
+    color: #63b3ed;
+    transform: scale(1.1);
+}
+
+/* Additional specificity to override any conflicting styles */
+.classification-ui-comprehensive .classification-ui-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+}
+
+.classification-ui-comprehensive .classification-ui-header .classification-ui-title {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 !important;
+}
+
+.classification-ui-comprehensive .classification-ui-header .classification-ui-chevron {
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+    align-self: center !important;
+}
+
+/* Debug styles - remove if layout is working correctly */
+.classification-ui-header * {
+    box-sizing: border-box !important;
+}
+
+/* Ensure no floating or positioning interferes */
+.classification-ui-header,
+.classification-ui-header * {
+    float: none !important;
+    position: static !important;
+}
+
+/* Force inline layout for chevron */
+.classification-ui-chevron {
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Ultra-specific overrides to ensure proper layout */
+.classification-ui-comprehensive .classification-ui-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+}
+
+.classification-ui-comprehensive .classification-ui-header .classification-ui-title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.classification-ui-comprehensive .classification-ui-header .classification-ui-chevron {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    align-self: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+}
+
+/* Override any global h3 styles that might interfere */
+.classification-ui-comprehensive .classification-ui-header h3.classification-ui-title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    text-align: left !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    color: #e2e8f0 !important;
+    flex: 1 1 auto !important;
+}
+
+/* Compact Display */
+.classification-ui-compact {
+    padding: 8px 16px;
+    background: #1a202c;
+    border: 1px solid #4a5568;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    display: none;
+}
+
+.classification-compact-banner {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Container */
+.classification-ui-content {
+    background: #1a202c;
+    border: 1px solid #4a5568;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* When collapsed, hide content with smooth transition */
+.classification-ui-content[style*="display: none"] {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.classification-ui-content[style*="display: block"] {
+    max-height: none;
+    opacity: 1;
+}
+
+/* Ensure tabs and content maintain proper styling */
+.classification-ui-content .classification-tabs {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #4a5568;
+}
+
+.classification-ui-content .classification-tab-content {
+    border-radius: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .classification-ui-header {
+        padding: 10px 12px;
+    }
+
+    .classification-ui-title {
+        font-size: 14px;
+    }
+
+    .classification-ui-chevron {
+        font-size: 12px;
+    }
+
+    .classification-ui-compact {
+        padding: 6px 12px;
+    }
+
+    .classification-compact-banner {
+        font-size: 11px;
+        padding: 3px 6px;
+        min-width: 100px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .classification-ui-header {
+        border-width: 2px;
+        border-color: #ffffff;
+    }
+    
+    .classification-ui-toggle {
+        border-width: 2px;
+        border-color: #ffffff;
+    }
+    
+    .classification-ui-toggle:focus {
+        outline-width: 3px;
+    }
+    
+    .classification-ui-content {
+        border-width: 2px;
+        border-color: #ffffff;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .classification-ui-toggle,
+    .classification-ui-content {
+        transition: none;
+    }
+    
+    .classification-ui-toggle:hover {
+        transform: none;
+    }
+    
+    .classification-ui-toggle:active {
+        transform: none;
+    }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+    .classification-ui-header {
+        background: #1a1a1a;
+        border-color: #333333;
+    }
+    
+    .classification-ui-title {
+        color: #ffffff;
+    }
+    
+    .classification-ui-toggle {
+        border-color: #333333;
+        color: #ffffff;
+    }
+    
+    .classification-ui-toggle:hover {
+        background: #333333;
+        border-color: #4a9eff;
+        color: #4a9eff;
+    }
+    
+    .classification-ui-content,
+    .classification-ui-compact {
+        background: #0d1117;
+        border-color: #333333;
+    }
+}
+
+/* Focus Management */
+.classification-ui-comprehensive:focus-within .classification-ui-header {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 1px #63b3ed;
+}
+
+/* Animation for smooth expand/collapse */
+.classification-ui-content {
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+/* Ensure proper z-index for dropdown elements */
+.classification-ui-comprehensive {
+    position: relative;
+    z-index: 10;
+}
+
+/* Accessibility improvements */
+.classification-ui-header[aria-expanded="true"] {
+    background: #4a5568;
+}
+
+.classification-ui-header[aria-expanded="false"] {
+    background: #2d3748;
+}
+
+/* Loading state (if needed) */
+.classification-ui-comprehensive.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.classification-ui-comprehensive.loading .classification-ui-toggle {
+    cursor: not-allowed;
+}
+
+/* Error state styling */
+.classification-ui-comprehensive.error .classification-ui-header {
+    border-color: #e53e3e;
+    background: #2d1b1b;
+}
+
+.classification-ui-comprehensive.error .classification-ui-title {
+    color: #feb2b2;
+}
+
+/* Success state for saved preferences */
+.classification-ui-comprehensive.saved .classification-ui-header {
+    border-color: #38a169;
+    transition: border-color 0.5s ease;
+}
+
+/* Compact display hover effects */
+.classification-compact-banner:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+    cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .classification-compact-banner:hover {
+        transform: none;
+    }
+}

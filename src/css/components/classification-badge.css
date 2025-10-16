@@ -1,0 +1,158 @@
+/**
+ * Classification Badge Component Styles
+ * 
+ * Styles for the classification badge that displays current
+ * classification level and opens modal when clicked.
+ */
+
+/* ============================================================================
+   Classification Badge
+   ========================================================================== */
+
+.classification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+.classification-badge:hover {
+    opacity: 0.9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+.classification-badge:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.classification-badge:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Icon styling */
+.classification-badge i {
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+/* Text styling */
+.classification-badge-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ============================================================================
+   Classification Level Colors
+   ========================================================================== */
+
+/* UNCLASSIFIED - Green */
+.classification-badge[style*="background: rgb(92, 184, 92)"],
+.classification-badge[style*="background: #5cb85c"] {
+    background: #5cb85c !important;
+}
+
+/* CUI - Purple */
+.classification-badge[style*="background: rgb(139, 92, 246)"],
+.classification-badge[style*="background: #8b5cf6"] {
+    background: #8b5cf6 !important;
+}
+
+/* CONFIDENTIAL - Blue */
+.classification-badge[style*="background: rgb(0, 102, 204)"],
+.classification-badge[style*="background: #0066cc"] {
+    background: #0066cc !important;
+}
+
+/* SECRET - Red */
+.classification-badge[style*="background: rgb(220, 38, 38)"],
+.classification-badge[style*="background: #dc2626"] {
+    background: #dc2626 !important;
+}
+
+/* TOP SECRET - Orange */
+.classification-badge[style*="background: rgb(255, 102, 0)"],
+.classification-badge[style*="background: #ff6600"] {
+    background: #ff6600 !important;
+}
+
+/* ============================================================================
+   Responsive Behavior
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .classification-badge {
+        padding: 6px 10px;
+        font-size: 11px;
+        max-width: 150px;
+    }
+    
+    .classification-badge i {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .classification-badge {
+        padding: 6px 8px;
+        font-size: 10px;
+        max-width: 120px;
+    }
+    
+    .classification-badge-text {
+        max-width: 80px;
+    }
+}
+
+/* ============================================================================
+   Accessibility Enhancements
+   ========================================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .classification-badge {
+        border: 2px solid #ffffff;
+    }
+    
+    .classification-badge:focus {
+        outline: 3px solid #ffffff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .classification-badge {
+        transition: none;
+    }
+}
+
+/* Focus visible (keyboard navigation) */
+.classification-badge:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ============================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .classification-badge {
+        border: 2px solid currentColor;
+        box-shadow: none;
+    }
+}
+

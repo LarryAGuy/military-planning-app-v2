@@ -1,0 +1,684 @@
+/**
+ * Movement & Maneuver - Platoon Level Practical Examples
+ * Comprehensive tactical scenarios for Platoon-level operations
+ */
+
+export function getPlatoonTacticsExample() {
+  return `
+    <div style="padding: 20px; background: #0f172a; min-height: 100vh;">
+      <!-- Header Container -->
+      <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
+        <h2 style="color: #f8fafc; font-size: 22px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center;">
+          <i class="fas fa-users" style="margin-right: 12px; color: #10b981; font-size: 20px;"></i>
+          Platoon-Level Movement & Maneuver Practical Examples
+        </h2>
+
+        <!-- Command Authority Context -->
+        <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 16px; border-radius: 6px;">
+          <h3 style="color: #6ee7b7; font-size: 16px; font-weight: 600; margin: 0 0 12px 0;">Platoon Command Authority Context</h3>
+          <div style="color: #e5e7eb; font-size: 14px; line-height: 1.6;">
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Command Level:</strong> Lieutenant (O-1/O-2) - Platoon Leader with direct tactical leadership authority</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel:</strong> 20-40 personnel across 3-4 squads and support elements</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> 500m-1km platoon frontage with direct tactical engagement</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Operational Level:</strong> Direct tactical operations with immediate small unit engagement</p>
+            <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Examples:</strong> Rifle Platoon, Weapons Platoon, Engineer Platoon</p>
+            <p style="margin: 0;"><strong style="color: #6ee7b7;">Decision Authority:</strong> Squad employment, direct fire control, and immediate action drills</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- First Row: Core Platoon Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Tactical Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-running" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Tactical Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Small Unit - Platoon Tactical Assault</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct Platoon-level tactical assault in Lithuanian border region</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24-hour tactical operation with 4-hour preparation, 16-hour execution, 4-hour consolidation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> 800m platoon frontage with single tactical objective</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 30 personnel with 3 rifle squads, 1 weapons squad</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Tactical Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Direct Fire:</strong> Platoon-level direct fire with organic weapons systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Small Unit Maneuver:</strong> Coordinated squad maneuver with fire and movement</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Close Combat:</strong> Close combat operations with fire team tactics</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Tactical Control:</strong> Direct tactical control of subordinate squads</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Squad Task Organization</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">1st Squad:</strong> Main effort assault with base of fire and assault elements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">2nd Squad:</strong> Supporting effort with flanking maneuver</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">3rd Squad:</strong> Reserve and security for platoon operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Weapons Squad:</strong> Direct fire support and overwatch positions</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Leader Tactical Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Analysis:</strong> Analyzing tactical situation and assigning squad missions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fire Control:</strong> Controlling direct fire and coordinating with supporting fires</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Maneuver Control:</strong> Controlling squad maneuver and tactical movement</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Risk Management:</strong> Managing tactical risks and soldier safety</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platoon Battle Drills -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-bolt" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Battle Drills
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battle Drill 1A - Squad Attack</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Execution:</strong> Coordinated squad attack with fire and maneuver</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fire Support:</strong> Base of fire element providing suppressive fires</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Maneuver:</strong> Assault element conducting flanking maneuver</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Control:</strong> Platoon leader controlling squad coordination</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battle Drill 2A - React to Contact</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Immediate Action:</strong> Immediate return of fire and seek cover</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Assessment:</strong> Rapid assessment of enemy situation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Response:</strong> Appropriate tactical response based on enemy strength</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Control:</strong> Platoon leader maintaining control during contact</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battle Drill 3A - Break Contact</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Suppression:</strong> Suppressive fires to enable disengagement</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Movement:</strong> Coordinated movement to break contact</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Security:</strong> Rear security during withdrawal</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Rally:</strong> Rally at designated rally point</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Battle Drill Execution Standards</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Speed:</strong> Rapid execution of battle drills under combat stress</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Precision:</strong> Precise execution of individual and collective tasks</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Coordination:</strong> Effective coordination between squads and fire teams</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Adaptability:</strong> Adapting battle drills to specific tactical situations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row: Platoon Leadership and Training -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Leadership Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-user-tie" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Leadership Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Lead Small - Platoon Leadership Development</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Develop and demonstrate small unit leadership at platoon level</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 365-day leadership development program with continuous assessment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Leadership development across all platoon operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Leadership Structure:</strong> Platoon leader, platoon sergeant, squad leaders</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Small Unit Leadership Principles</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Lead by Example:</strong> Demonstrating standards and expectations through personal example</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Know Your Soldiers:</strong> Understanding individual soldier capabilities and limitations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Make Sound Decisions:</strong> Making rapid, sound tactical decisions under pressure</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Take Care of Soldiers:</strong> Ensuring soldier welfare and combat effectiveness</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Leadership Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combat Stress:</strong> Leading soldiers under extreme combat stress and fatigue</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Rapid Decisions:</strong> Making critical decisions with limited information and time</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Casualty Management:</strong> Managing casualties while maintaining mission focus</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Resource Limitations:</strong> Leading with limited resources and support</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Leader Development</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Tactical Proficiency:</strong> Developing tactical proficiency through training and experience</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Leadership Skills:</strong> Developing leadership skills through mentorship and practice</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Decision-Making:</strong> Improving decision-making through scenario-based training</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Communication:</strong> Enhancing communication skills for effective command and control</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platoon Training Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-target" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Training Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Platoon Ready - Small Unit Training Program</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Conduct comprehensive Platoon-level training maintaining tactical readiness</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 365-day training cycle with daily training and weekly field exercises</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Training areas in Germany, Poland, and Lithuania</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Focus:</strong> Small unit tactics and squad collective training</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Small Unit Training Programs</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Individual Training:</strong> Soldier-level tactical skills and weapons proficiency</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Team Training:</strong> Fire team tactics and small unit coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Squad Training:</strong> Squad-level collective training and battle drills</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Platoon Training:</strong> Platoon-level field training exercises and live-fire training</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Training Standards and Assessment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combat Readiness:</strong> Maintaining high combat readiness standards across all squads</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Performance Evaluation:</strong> Regular evaluation of Platoon and squad performance</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Realistic Training:</strong> Training scenarios replicating actual small unit combat</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Safety Management:</strong> Comprehensive safety programs for live-fire training</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Training Innovation and Adaptation</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Integration:</strong> Incorporating new training technologies and simulators</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Adaptive Training:</strong> Adapting training to emerging small unit threats and tactics</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Coalition Training:</strong> Training with NATO allies and partner forces</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Lessons Integration:</strong> Incorporating lessons learned into training programs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Row: Platoon Weapons and Communications -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Weapons Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-crosshairs" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Weapons Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Fire Small - Platoon Weapons Employment</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Employ platoon weapons systems in support of tactical operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24-hour weapons employment with continuous fire support</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Weapons employment across 800m platoon frontage</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Weapons Systems:</strong> M240B, M249 SAW, AT4, M320 grenade launcher</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Weapons Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Machine Guns:</strong> M240B and M249 SAW providing suppressive fires</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Anti-Tank:</strong> AT4 providing anti-armor capability</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Grenade Launchers:</strong> M320 providing indirect fire support</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Individual Weapons:</strong> M4 carbines providing direct fire capability</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Weapons Employment Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Target Identification:</strong> Rapid target identification and engagement</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Ammunition Management:</strong> Managing limited ammunition during sustained operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Weapons Maintenance:</strong> Maintaining weapons systems under combat conditions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Coordination:</strong> Coordinating fires to prevent fratricide</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Weapons Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Target Prioritization:</strong> Prioritizing targets based on threat and mission</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Weapons Assignment:</strong> Assigning weapons systems to specific targets</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fire Control:</strong> Controlling fires to support maneuver</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Ammunition Distribution:</strong> Distributing ammunition based on tactical situation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platoon Communications -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-walkie-talkie" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Communications
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Comm Small - Platoon Communications</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Establish and maintain communications for platoon operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 communications operations with redundant systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Communications across 800m platoon operational area</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Communication Systems:</strong> PRC-152, PRC-148, visual signals, hand signals</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Communication Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Radio Communications:</strong> Tactical radio communications with all elements</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Visual Signals:</strong> Visual signals for close-range coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Hand Signals:</strong> Hand and arm signals for silent operations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Digital Systems:</strong> Digital communication systems for data transmission</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Communication Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Range Limitations:</strong> Limited range of tactical radio systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Terrain Effects:</strong> Terrain effects on radio communications</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Electronic Warfare:</strong> Enemy electronic warfare affecting communications</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Battery Life:</strong> Limited battery life of communication equipment</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Communication Management</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communication Plans:</strong> Developing communication plans for all operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Redundancy:</strong> Establishing redundant communication systems</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Security:</strong> Maintaining communication security and COMSEC</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Maintenance:</strong> Maintaining communication equipment readiness</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Row: Platoon Historical Case Study and Future Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Historical Case Study -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-book-open" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Historical Case Study: 1st Platoon, Alpha Company
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Urgent Fury - Small Unit Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Historical Context:</strong> 1st Platoon operations demonstrating small unit tactics</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Scale:</strong> 30 personnel conducting small unit assault operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 6-hour operation with rapid assault and consolidation</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Operations in urban and rural terrain</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Small Unit Tactical Lessons</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Small Unit Leadership:</strong> Platoon-level leadership critical during independent operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Initiative:</strong> Individual soldier initiative essential for small unit success</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Adaptability:</strong> Adapting tactics to specific terrain and enemy situations</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Communication:</strong> Effective communication critical for squad coordination</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Modern Applications</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Contemporary Relevance:</strong> Historical lessons apply to current small unit operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Technology Enhancement:</strong> Modern technology enhances traditional small unit capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Applications:</strong> Historical lessons inform current small unit training</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Leadership Development:</strong> Historical leadership lessons improve platoon leader development</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platoon Future Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-microscope" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Future Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Exercise Future Platoon 2030 - Next-Generation Small Unit Tactics</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Concept:</strong> Platoon-level operations incorporating advanced technologies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 3-day experimental exercise with advanced technology integration</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Force Structure:</strong> 35 personnel with experimental squads and technologies</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technology Focus:</strong> AI-enabled systems, autonomous platforms, enhanced sensors</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Emerging Platoon Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">AI-Enhanced Tactics:</strong> Artificial intelligence supporting small unit decision-making</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Autonomous Support:</strong> Unmanned systems supporting Platoon operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Enhanced Sensors:</strong> Advanced sensor systems improving situational awareness</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Precision Engagement:</strong> Enhanced precision engagement capabilities</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Future Small Unit Concepts</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Distributed Operations:</strong> Highly distributed operations with enhanced connectivity</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Multi-Domain Integration:</strong> Integration of operations across multiple domains</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Adaptive Tactics:</strong> Real-time tactical adaptation based on AI analysis</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Human-Machine Teaming:</strong> Optimized integration of human and machine capabilities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Row: Platoon Excellence and Small Unit Innovation -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Excellence and Small Unit Innovation -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-medal" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Excellence and Small Unit Innovation
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Small Unit Innovation</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Tactical Development:</strong> Platoon-led development of innovative small unit procedures</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Innovation:</strong> Revolutionary small unit training methods and techniques</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Innovation:</strong> Field testing and modification of small unit equipment</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Process Innovation:</strong> Streamlining small unit processes for improved efficiency</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Excellence Standards</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combat Excellence:</strong> Maintaining superior small unit combat performance</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Excellence:</strong> Achieving excellence in all small unit training metrics</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Leadership Excellence:</strong> Developing leaders who exemplify small unit values</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Excellence:</strong> Achieving mission success through small unit excellence</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Legacy and Future</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Platoon Legacy:</strong> Building upon Platoon history and small unit traditions</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Future Readiness:</strong> Preparing for next-generation small unit challenges</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Knowledge Sharing:</strong> Sharing small unit expertise with broader military community</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Continuous Evolution:</strong> Adapting to emerging threats while maintaining small unit focus</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Lessons Learned</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Small Unit Lessons:</strong> Small unit tactics require aggressive leadership and soldier initiative</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Lessons:</strong> Realistic small unit training directly correlates to combat effectiveness</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Leadership Lessons:</strong> Platoon-level leadership critical for small unit success</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Innovation Lessons:</strong> Continuous innovation essential for small unit tactical advantage</p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+              <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Readiness Assessment</h4>
+              <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Personnel Readiness:</strong> Soldier training, certification, and small unit proficiency</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Readiness:</strong> Small unit equipment operational status and maintenance</p>
+                <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Training Readiness:</strong> Platoon training certification and tactical proficiency</p>
+                <p style="margin: 0;"><strong style="color: #6ee7b7;">Mission Readiness:</strong> Capability to execute small unit missions within timelines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth Row: Platoon Urban and Special Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Urban Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-building" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Urban Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Urban Small Unit Operations</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Building Clearing:</strong> Squad-level building clearing with fire team coordination</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Room Clearing:</strong> Fire team room clearing techniques and procedures</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Urban Movement:</strong> Movement techniques in urban terrain</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Civilian Considerations:</strong> Operating with civilian populations present</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Urban Tactical Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Limited Visibility:</strong> Reduced visibility and observation in urban terrain</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Close Combat:</strong> Close-range combat in confined spaces</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Collateral Damage:</strong> Minimizing collateral damage in populated areas</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Communication:</strong> Maintaining communications in urban environments</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Urban Tactical Solutions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Systematic Clearing:</strong> Systematic approach to urban clearing operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Fire Team Coordination:</strong> Close coordination between fire teams</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Breach Techniques:</strong> Various breach techniques for urban obstacles</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Support Integration:</strong> Integration of supporting fires and assets</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platoon Special Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-mask" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Special Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Special Small Unit Missions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Reconnaissance:</strong> Small unit reconnaissance and surveillance missions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Direct Action:</strong> Small unit direct action operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Security:</strong> Security operations and force protection</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Special Tasks:</strong> Special tasks requiring small unit capabilities</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Special Operations Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Stealth Operations:</strong> Conducting operations with minimal detection</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Precision Operations:</strong> Precise execution of specialized missions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Independent Operations:</strong> Operating independently with minimal support</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Rapid Response:</strong> Rapid response to emerging situations</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Special Operations Training</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Advanced Training:</strong> Advanced small unit training for special operations</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Specialized Skills:</strong> Development of specialized small unit skills</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission Rehearsal:</strong> Detailed mission rehearsal and preparation</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Continuous Training:</strong> Continuous training to maintain special capabilities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh Row: Platoon Medical and Maintenance Operations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+
+        <!-- Platoon Medical Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-first-aid" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Medical Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Life Small - Platoon Medical Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide basic medical support for 30 Platoon personnel</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> 24/7 medical operations with basic life support capability</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Geographic Scope:</strong> Medical support across 800m Platoon operational area</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Medical Structure:</strong> Platoon medic, squad combat lifesavers</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Small Unit Medical Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Immediate Care:</strong> Combat lifesavers providing immediate first aid</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Platoon Medic:</strong> Platoon medic providing advanced first aid</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Casualty Collection:</strong> Squad-level casualty collection and evacuation</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Self-Aid:</strong> Individual soldier self-aid and buddy aid</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Medical Operations Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Limited Resources:</strong> Operating with very limited medical personnel and supplies</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Combat Conditions:</strong> Providing medical care under direct fire</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Evacuation Challenges:</strong> Evacuating casualties from forward positions</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Requirements:</strong> Maintaining medical training for all soldiers</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Medical Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Triage Decisions:</strong> Making rapid triage decisions with limited resources</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Treatment Priorities:</strong> Prioritizing treatment based on tactical situation</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Evacuation Coordination:</strong> Coordinating casualty evacuation with Company</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Risk Assessment:</strong> Assessing medical risks for small unit operations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platoon Maintenance Operations -->
+        <div style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border: 1px solid #374151; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(16, 185, 129, 0.1); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 75% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 40%); pointer-events: none;"></div>
+
+          <h3 style="color: #f8fafc; font-size: 18px; font-weight: 700; margin: 0 0 20px 0; display: flex; align-items: center; position: relative; z-index: 1;">
+            <i class="fas fa-screwdriver" style="margin-right: 12px; color: #10b981; font-size: 16px;"></i>
+            Platoon Maintenance Operations
+          </h3>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Operation Maintain Small - Platoon Equipment Support</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Mission:</strong> Provide basic maintenance support for Platoon equipment and weapons</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Timeline:</strong> Daily maintenance operations with preventive maintenance programs</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Scope:</strong> Individual and crew-served weapons, communication equipment</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Maintenance Structure:</strong> Squad leaders, individual soldiers</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Small Unit Maintenance Capabilities</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Weapons Maintenance:</strong> Individual and crew-served weapons maintenance</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Equipment Care:</strong> Basic care and maintenance of individual equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Communications Maintenance:</strong> Basic maintenance of communication equipment</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Preventive Maintenance:</strong> Daily preventive maintenance checks and services</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 16px; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Maintenance Challenges</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Limited Capabilities:</strong> Very limited organic maintenance capabilities</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Field Conditions:</strong> Performing maintenance under field conditions</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Parts Availability:</strong> No organic repair parts availability</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Technical Knowledge:</strong> Limited technical knowledge for complex repairs</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #374151 0%, #2d3748 100%); padding: 16px; border-radius: 10px; border-left: 4px solid #10b981; position: relative; z-index: 1;">
+            <h4 style="color: #6ee7b7; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;">Platoon Maintenance Decisions</h4>
+            <div style="color: #e5e7eb; font-size: 12px; line-height: 1.6;">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Priority Management:</strong> Prioritizing maintenance for mission-critical equipment</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Soldier Responsibility:</strong> Assigning maintenance responsibilities to soldiers</p>
+              <p style="margin: 0 0 8px 0;"><strong style="color: #6ee7b7;">Evacuation Decisions:</strong> Determining when to evacuate equipment for repair</p>
+              <p style="margin: 0;"><strong style="color: #6ee7b7;">Training Requirements:</strong> Ensuring soldiers maintain equipment properly</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+export default getPlatoonTacticsExample;

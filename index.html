@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Planning App V2</title>
+    <!-- Favicons: SVG data icon + shortcut fallback to prevent 404 -->
+    <link rel="icon" type="image/svg+xml" sizes="any" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%231f2937"/><path d="M32 8l7 14 16 2-12 11 3 16-14-8-14 8 3-16L9 24l16-2 7-14z" fill="%233b82f6"/></svg>'>
+    <link rel="shortcut icon" href="data:,">
+    <!-- Content Security Policy for enhanced security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; font-src 'self' data:; img-src 'self' data: https://*.openstreetmap.org https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://api.openweathermap.org https://api.geoapify.com https://unpkg.com https://cdnjs.cloudflare.com;">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use local FontAwesome instead of CDN for better security and compatibility -->
+    <link rel="stylesheet" href="./fonts/fontawesome-free-7.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./fonts/military-fonts.css">
+    <link rel="stylesheet" href="src/css/components/layout.css">
+    <!-- Cross-browser gradient/color normalization for JPP Step 7 and shared components -->
+    <link rel="stylesheet" href="src/css/components/gradient-compat.css">
+    <!-- Comprehensive Classification UI Styles -->
+    <link rel="stylesheet" href="src/css/components/classification-ui-comprehensive.css">
+    <!-- Header Refactoring Component Styles -->
+    <link rel="stylesheet" href="src/css/components/dropdown-menu.css">
+    <link rel="stylesheet" href="src/css/components/modal.css">
+    <link rel="stylesheet" href="src/css/components/classification-badge.css">
+    <link rel="stylesheet" href="src/css/components/classification-picker-inline.css">
+    <link rel="stylesheet" href="src/css/components/dtg-picker.css">
+    <!-- Portion Marking Popover Component Styles -->
+    <link rel="stylesheet" href="src/css/components/portion-marking-popover.css">
+    <!-- Mapping & Weather Tool Styles -->
+    <link rel="stylesheet" href="src/css/components/mapping.css">
+    <link rel="stylesheet" href="src/css/components/weather.css">
+    <link rel="stylesheet" href="src/css/components/mapping-weather.css">
+    <script type="module" src="./src/js/app.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-mono h-screen overflow-hidden flex flex-col">
+    <!-- Top Training Disclaimer Banner (reduced height by 25%) -->
+    <div class="bg-yellow-600 text-black px-4 py-2 text-center text-xs font-bold border-b-2 border-yellow-700 flex-shrink-0">
+        <i class="fas fa-exclamation-triangle mr-1"></i>
+        This product is a training aid and is not endorsed by the United States Army or the Department of War. Use at your own discretion. Do Not Input Classified Materials.
+    </div>
+
+    <div id="app" class="flex-1 flex flex-col overflow-hidden">
+        <main id="main-content" class="flex-1 flex overflow-hidden">
+            <nav id="sidebar" class="bg-gray-800 border-r border-gray-700 overflow-y-auto flex-shrink-0" style="width: 350px;">
+                <!-- Sidebar loaded by NavigationComponent -->
+            </nav>
+
+            <section id="workspace" class="flex-1 p-6 overflow-y-auto">
+                <!-- Main workspace loaded by WorkspaceComponent -->
+            </section>
+
+            <aside id="right-sidebar" class="bg-gray-800 overflow-y-auto flex-shrink-0" style="width: 350px;">
+                <!-- Right sidebar loaded by RightSidebarComponent -->
+            </aside>
+        </main>
+
+        <!-- Footer removed - content relocated to sidebar -->
+    </div>
+
+    <!-- Plugin container for dynamic features -->
+    <div id="plugin-container" class="hidden"></div>
+
+    <!-- Floating Action Button for Right Sidebar (Tablet/Mobile) -->
+    <button id="sidebar-fab" class="sidebar-fab" title="Open System Info">
+        <i class="fas fa-info-circle"></i>
+    </button>
+
+    <!-- Bottom Training Disclaimer Banner (reduced height by 25%) -->
+    <div class="bg-yellow-600 text-black px-4 py-2 text-center text-xs font-bold border-t-2 border-yellow-700 flex-shrink-0">
+        <i class="fas fa-exclamation-triangle mr-1"></i>
+        This product is a training aid and is not endorsed by the United States Army or the Department of War. Use at your own discretion. Do Not Input Classified Materials.
+    </div>
+</body>
+</html>

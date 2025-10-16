@@ -1,0 +1,390 @@
+/**
+ * DTG Picker Component Styles
+ * 
+ * Styles for the DTG (Date-Time Group) picker with calendar widget
+ * and time selector.
+ */
+
+/* ============================================================================
+   DTG Picker Container
+   ========================================================================== */
+
+.dtg-picker {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 1500;
+    width: 320px;
+    background: #1f2937;
+    border: 1px solid #4a5568;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    animation: slideDown 0.2s ease;
+}
+
+/* ============================================================================
+   DTG Picker Header (Month/Year Navigation)
+   ========================================================================== */
+
+.dtg-picker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+.dtg-picker-nav {
+    width: 32px;
+    height: 32px;
+    background: #374151;
+    border: none;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dtg-picker-nav:hover {
+    background: #4a5568;
+    color: #f8fafc;
+}
+
+.dtg-picker-nav:active {
+    background: #5a6578;
+}
+
+.dtg-picker-current {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dtg-picker-month {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.dtg-picker-year {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ============================================================================
+   Calendar Grid
+   ========================================================================== */
+
+.dtg-picker-calendar {
+    margin-bottom: 16px;
+}
+
+.dtg-picker-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.dtg-picker-weekday {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #6b7280;
+    padding: 4px 0;
+}
+
+.dtg-picker-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.dtg-picker-day {
+    aspect-ratio: 1;
+    background: #374151;
+    border: none;
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dtg-picker-day:hover {
+    background: #4a5568;
+    color: #f8fafc;
+}
+
+.dtg-picker-day.other-month {
+    color: #6b7280;
+    background: #2d3748;
+}
+
+.dtg-picker-day.today {
+    border: 2px solid #3b82f6;
+}
+
+.dtg-picker-day.selected {
+    background: #3b82f6;
+    color: white;
+}
+
+.dtg-picker-day.selected:hover {
+    background: #2563eb;
+}
+
+/* ============================================================================
+   Time Selector
+   ========================================================================== */
+
+.dtg-picker-time {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #0f172a;
+    border: 1px solid #374151;
+    border-radius: 8px;
+}
+
+.dtg-picker-time-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dtg-picker-time-label > span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9ca3af;
+}
+
+.dtg-picker-time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dtg-picker-hours,
+.dtg-picker-minutes {
+    width: 60px;
+    padding: 8px;
+    background: #1f2937;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    color: #f8fafc;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dtg-picker-hours:focus,
+.dtg-picker-minutes:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.dtg-picker-time-separator {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.dtg-picker-time-zone {
+    font-size: 14px;
+    font-weight: 700;
+    color: #9ca3af;
+    padding: 0 8px;
+}
+
+/* ============================================================================
+   DTG Preview
+   ========================================================================== */
+
+.dtg-picker-preview {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #0f172a;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dtg-picker-preview-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.dtg-picker-preview-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3b82f6;
+    font-family: 'Courier New', monospace;
+}
+
+/* ============================================================================
+   Footer Buttons
+   ========================================================================== */
+
+.dtg-picker-footer {
+    display: flex;
+    gap: 8px;
+}
+
+.dtg-picker-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dtg-picker-btn i {
+    font-size: 11px;
+}
+
+.dtg-picker-btn.btn-today {
+    background: #374151;
+    color: #e2e8f0;
+}
+
+.dtg-picker-btn.btn-today:hover {
+    background: #4a5568;
+}
+
+.dtg-picker-btn.btn-apply {
+    background: #3b82f6;
+    color: white;
+}
+
+.dtg-picker-btn.btn-apply:hover {
+    background: #2563eb;
+}
+
+.dtg-picker-btn.btn-cancel {
+    background: #374151;
+    color: #e2e8f0;
+}
+
+.dtg-picker-btn.btn-cancel:hover {
+    background: #4a5568;
+}
+
+.dtg-picker-btn:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ============================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================================
+   Responsive Behavior
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .dtg-picker {
+        width: 280px;
+        padding: 12px;
+    }
+    
+    .dtg-picker-day {
+        font-size: 12px;
+    }
+    
+    .dtg-picker-hours,
+    .dtg-picker-minutes {
+        width: 50px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dtg-picker {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 32px);
+        max-width: 320px;
+    }
+}
+
+/* ============================================================================
+   Accessibility Enhancements
+   ========================================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .dtg-picker {
+        border: 2px solid #ffffff;
+    }
+    
+    .dtg-picker-day.selected {
+        border: 2px solid #ffffff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .dtg-picker {
+        animation: none;
+    }
+    
+    .dtg-picker-nav,
+    .dtg-picker-day,
+    .dtg-picker-btn {
+        transition: none;
+    }
+}
+
+/* Focus visible (keyboard navigation) */
+.dtg-picker-nav:focus-visible,
+.dtg-picker-day:focus-visible,
+.dtg-picker-btn:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ============================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .dtg-picker {
+        display: none !important;
+    }
+}
+

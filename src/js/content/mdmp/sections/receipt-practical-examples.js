@@ -1,0 +1,275 @@
+/**
+ * MDMP Receipt of Mission - Practical Examples Integration Module
+ * Imports and manages all 11 receipt practical example modules
+ * Provides unified integration system for receipt practical content
+ * Mirrors OPORD execution-practical-examples.js architecture
+ */
+
+// Import modular receipt examples
+import { getDivisionReceiptExample } from './receipt-practical-division.js';
+import { getCorpsReceiptExample } from './receipt-practical-corps.js';
+import { getArmyReceiptExample } from './receipt-practical-army.js';
+import { getTheaterReceiptExample } from './receipt-practical-theater.js';
+import { getRegimentReceiptExample } from './receipt-practical-regiment.js';
+import { getGroupReceiptExample } from './receipt-practical-group.js';
+import { getBrigadeReceiptExample } from './receipt-practical-brigade.js';
+import { getPlatoonReceiptExample } from './receipt-practical-platoon.js';
+import { getCompanyReceiptExample } from './receipt-practical-company.js';
+import { getBattalionReceiptExample } from './receipt-practical-battalion.js';
+import { getSquadronReceiptExample } from './receipt-practical-squadron.js';
+
+export const practicalExamplesModule = {
+    id: 'receipt-practical-examples',
+    title: 'Practical Examples',
+    defaultExpanded: false,
+
+    // Echelon example mapping
+    echelonExamples: {
+        // Strategic Level
+        'theater': getTheaterReceiptExample,
+        'army': getArmyReceiptExample,
+        'corps': getCorpsReceiptExample,
+        'division': getDivisionReceiptExample,
+        // Operational Level
+        'regiment': getRegimentReceiptExample,
+        'group': getGroupReceiptExample,
+        'brigade': getBrigadeReceiptExample,
+        // Tactical Level
+        'battalion': getBattalionReceiptExample,
+        'company': getCompanyReceiptExample,
+        'squadron': getSquadronReceiptExample,
+        'platoon': getPlatoonReceiptExample
+    },
+
+    getContent() {
+        return `
+            <div id="receipt-practical-examples-section" class="dashboard-widgets mb-12">
+                <!-- Header Row with Echelon Dropdowns -->
+                <div style="display:flex; align-items:center; margin-bottom:16px; gap:16px; position:relative;">
+                    <h3 style="font-size:18px; font-weight:600; color:white; margin:0; display:flex; align-items:center;">
+                        <i class="fas fa-file-alt" style="margin-right:8px; color:#10b981; font-size:16px;"></i>
+                        Practical Examples
+                    </h3>
+                    <span style="color:#6b7280; font-size:18px; font-weight:300;">|</span>
+                    ${['tactical','operational','strategic'].map((group, index) => {
+                        const colors = ['#10b981', '#3b82f6', '#a855f7'];
+                        const isActive = group === 'tactical'; // Default tactical as active
+                        const color = isActive ? colors[index] : '#9ca3af';
+                        return `
+                        <div class="echelon-dropdown" style="position:relative; display:inline-block;">
+                            <button id="${group}-dropdown-btn" class="echelon-dropdown-btn" data-group="${group}" style="background:none; border:none; color:${color}; font-size:14px; font-weight:600; cursor:pointer; padding:7px 14px; display:flex; align-items:center; transition:color .3s ease;">
+                                ${group.charAt(0).toUpperCase()+group.slice(1)} Level
+                                <i class="fas fa-chevron-down" style="margin-left:6px; font-size:12px;"></i>
+                            </button>
+                            <div id="${group}-dropdown-content" class="dropdown-content" style="display:none; position:absolute; top:100%; left:0; background-color:#1f2937; border:1px solid #374151; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,.3); z-index:1000; min-width:200px; padding:8px;">
+                                ${this.getGroupButtons(group)}
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+
+                <!-- Content Area for Dynamic Loading -->
+                <div class="example-tab-content" style="background-color:#1f2937; border-radius:8px; border:1px solid #374151; padding:24px; margin-top:16px;">
+                    <div style="text-align:center; padding:40px; color:#6b7280;">
+                        <i class="fas fa-inbox" style="font-size:48px; margin-bottom:16px; color:#10b981;"></i>
+                        <h3 style="font-size:18px; font-weight:600; margin-bottom:8px; color:#d1d5db;">Receipt of Mission Practical Examples</h3>
+                        <p style="font-size:14px; line-height:1.5; margin-bottom:16px;">Select an echelon level from the dropdowns above to view receipt examples.</p>
+
+                        <!-- Framework Status -->
+                        <div style="background-color:#374151; padding:16px; border-radius:8px; border-left:4px solid #10b981; margin-top:20px; text-align:left;">
+                            <h4 style="color:#6ee7b7; font-size:14px; font-weight:600; margin:0 0 8px 0;">
+                                <i class="fas fa-trophy" style="margin-right:8px;"></i>
+                                Complete 11-Echelon Hierarchical Scaffolding
+                            </h4>
+                            <p style="color:#d1d5db; font-size:12px; line-height:1.5; margin:0 0 12px 0;">
+                                All Strategic, Operational, and Tactical receipt examples implemented with complete hierarchical scaffolding
+                                from Platoon through Theater levels. Full doctrinal integration achieved.
+                            </p>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:8px; margin-top:12px;">
+                                <div style="background-color:#1f2937; padding:8px; border-radius:4px; text-align:center;">
+                                    <div style="color:#10b981; font-size:11px; font-weight:600;">TACTICAL</div>
+                                    <div style="color:#16a34a; font-size:10px;">✅ COMPLETE</div>
+                                </div>
+                                <div style="background-color:#1f2937; padding:8px; border-radius:4px; text-align:center;">
+                                    <div style="color:#3b82f6; font-size:11px; font-weight:600;">OPERATIONAL</div>
+                                    <div style="color:#16a34a; font-size:10px;">✅ COMPLETE</div>
+                                </div>
+                                <div style="background-color:#1f2937; padding:8px; border-radius:4px; text-align:center;">
+                                    <div style="color:#a855f7; font-size:11px; font-weight:600;">STRATEGIC</div>
+                                    <div style="color:#16a34a; font-size:10px;">✅ COMPLETE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    getGroupButtons(group) {
+        const map = {
+            tactical: [
+                { tab: 'platoon', icon: 'fas fa-users', label: 'Platoon' },
+                { tab: 'company', icon: 'fas fa-user-friends', label: 'Company' },
+                { tab: 'squadron', icon: 'fas fa-horse-head', label: 'Squadron' },
+                { tab: 'battalion', icon: 'fas fa-shield-alt', label: 'Battalion' }
+            ],
+            operational: [
+                { tab: 'regiment', icon: 'fas fa-flag', label: 'Regiment' },
+                { tab: 'group', icon: 'fas fa-layer-group', label: 'Group' },
+                { tab: 'brigade', icon: 'fas fa-star', label: 'Brigade' }
+            ],
+            strategic: [
+                { tab: 'division', icon: 'fas fa-chess-rook', label: 'Division' },
+                { tab: 'corps', icon: 'fas fa-crown', label: 'Corps' },
+                { tab: 'army', icon: 'fas fa-flag-usa', label: 'Army' },
+                { tab: 'theater', icon: 'fas fa-globe-americas', label: 'Theater' }
+            ]
+        };
+
+        return map[group].map(item => `
+            <button class="echelon-tab-btn" data-tab="${item.tab}" style="display:flex; align-items:center; width:100%; padding:8px 12px; background:none; border:none; color:#d1d5db; font-size:13px; cursor:pointer; border-radius:4px; transition:all .2s ease; text-align:left;">
+                <i class="${item.icon}" style="margin-right:8px; color:#9ca3af; font-size:12px;"></i>
+                ${item.label}
+            </button>
+        `).join('');
+    },
+
+    initialize() {
+        // Inject hover CSS styles
+        this.injectDropdownCSS();
+
+        // Setup dropdown functionality
+        const dropdowns = document.querySelectorAll('.echelon-dropdown');
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.echelon-dropdown-btn');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            if (btn && content) {
+                btn.addEventListener('mouseenter', () => {
+                    content.style.display = 'block';
+                });
+
+                dropdown.addEventListener('mouseleave', () => {
+                    setTimeout(() => {
+                        content.style.display = 'none';
+                    }, 150);
+                });
+            }
+        });
+
+        // Setup echelon button clicks
+        const echelonBtns = document.querySelectorAll('.echelon-tab-btn');
+        echelonBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const echelon = btn.getAttribute('data-tab');
+                if (echelon) {
+                    this.loadEchelonExample(echelon);
+                }
+            });
+        });
+    },
+
+    injectDropdownCSS() {
+        const style = document.getElementById('receipt-practical-dropdown-hover-styles') || document.createElement('style');
+        style.id = 'receipt-practical-dropdown-hover-styles';
+        style.textContent = `
+            /* Receipt practical examples dropdown hover effects */
+            .echelon-dropdown-btn:hover { color:#10b981 !important; }
+            .echelon-tab-btn:hover { background-color:#374151 !important; }
+            .echelon-dropdown-btn { transition: color .3s ease !important; }
+            .dropdown-content { transition: opacity .2s ease !important; }
+        `;
+        const existing = document.getElementById('receipt-practical-dropdown-hover-styles');
+        if (existing) existing.remove();
+        document.head.appendChild(style);
+    },
+
+    async loadEchelonExample(echelon) {
+        const content = document.querySelector('.example-tab-content');
+        if (!content) return;
+
+        // Load modular receipt examples for Strategic, Operational, and Tactical echelons
+        switch (echelon) {
+            case 'division':
+                const { getDivisionReceiptExample } = await import('./receipt-practical-division.js');
+                content.innerHTML = getDivisionReceiptExample();
+                return;
+            case 'corps':
+                const { getCorpsReceiptExample } = await import('./receipt-practical-corps.js');
+                content.innerHTML = getCorpsReceiptExample();
+                return;
+            case 'army':
+                const { getArmyReceiptExample } = await import('./receipt-practical-army.js');
+                content.innerHTML = getArmyReceiptExample();
+                return;
+            case 'theater':
+                const { getTheaterReceiptExample } = await import('./receipt-practical-theater.js');
+                content.innerHTML = getTheaterReceiptExample();
+                return;
+            case 'regiment':
+                const { getRegimentReceiptExample } = await import('./receipt-practical-regiment.js');
+                content.innerHTML = getRegimentReceiptExample();
+                return;
+            case 'group':
+                const { getGroupReceiptExample } = await import('./receipt-practical-group.js');
+                content.innerHTML = getGroupReceiptExample();
+                return;
+            case 'brigade':
+                const { getBrigadeReceiptExample } = await import('./receipt-practical-brigade.js');
+                content.innerHTML = getBrigadeReceiptExample();
+                return;
+            case 'platoon':
+                const { getPlatoonReceiptExample } = await import('./receipt-practical-platoon.js');
+                content.innerHTML = getPlatoonReceiptExample();
+                return;
+            case 'company':
+                const { getCompanyReceiptExample } = await import('./receipt-practical-company.js');
+                content.innerHTML = getCompanyReceiptExample();
+                return;
+            case 'squadron':
+                const { getSquadronReceiptExample } = await import('./receipt-practical-squadron.js');
+                content.innerHTML = getSquadronReceiptExample();
+                return;
+            case 'battalion':
+                const { getBattalionReceiptExample } = await import('./receipt-practical-battalion.js');
+                content.innerHTML = getBattalionReceiptExample();
+                return;
+            default:
+                // This should not occur - all 11 echelons are now implemented
+                content.innerHTML = `
+                    <div style="padding:24px;">
+                        <div style="display:flex; align-items:center; margin-bottom:16px;">
+                            <i class="fas fa-exclamation-triangle" style="margin-right:12px; color:#f59e0b; font-size:20px;"></i>
+                            <h3 style="font-size:18px; font-weight:600; color:white; margin:0;">
+                                Unknown Echelon: ${echelon.charAt(0).toUpperCase() + echelon.slice(1)}
+                            </h3>
+                        </div>
+                        <div style="background-color:#374151; padding:16px; border-radius:8px; border-left:4px solid #f59e0b;">
+                            <p style="color:#d1d5db; font-size:12px; line-height:1.5; margin:0 0 12px 0;">
+                                The requested echelon "${echelon}" is not recognized. All 11 standard military echelons have been implemented:
+                            </p>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px; margin-top:12px;">
+                                <div style="background-color:#1f2937; padding:8px; border-radius:4px;">
+                                    <div style="color:#10b981; font-size:11px; font-weight:600;">TACTICAL</div>
+                                    <div style="color:#d1d5db; font-size:10px;">Platoon, Company, Squadron, Battalion</div>
+                                </div>
+                                <div style="background-color:#1f2937; padding:8px; border-radius:4px;">
+                                    <div style="color:#3b82f6; font-size:11px; font-weight:600;">OPERATIONAL</div>
+                                    <div style="color:#d1d5db; font-size:10px;">Regiment, Group, Brigade</div>
+                                </div>
+                                <div style="background-color:#1f2937; padding:8px; border-radius:4px;">
+                                    <div style="color:#a855f7; font-size:11px; font-weight:600;">STRATEGIC</div>
+                                    <div style="color:#d1d5db; font-size:10px;">Division, Corps, Army, Theater</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }
+    }
+};
+
+export default practicalExamplesModule;

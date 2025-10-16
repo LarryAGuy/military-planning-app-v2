@@ -1,0 +1,289 @@
+/**
+ * Dropdown Menu Component Styles
+ * 
+ * Styles for the reusable DropdownMenu component with animations,
+ * hover effects, and responsive behavior.
+ */
+
+/* ============================================================================
+   Dropdown Menu Container
+   ========================================================================== */
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    min-width: 200px;
+    background: #1f2937;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 4px 0;
+    margin-top: 8px;
+    animation: slideDown 0.2s ease;
+}
+
+/* Position variants */
+.dropdown-menu-bottom-right {
+    right: 0;
+    top: 100%;
+}
+
+.dropdown-menu-bottom-left {
+    left: 0;
+    top: 100%;
+}
+
+.dropdown-menu-top-right {
+    right: 0;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 8px;
+    animation: slideUp 0.2s ease;
+}
+
+.dropdown-menu-top-left {
+    left: 0;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 8px;
+    animation: slideUp 0.2s ease;
+}
+
+/* ============================================================================
+   Dropdown Menu Items
+   ========================================================================== */
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background: #2d3748;
+    color: #f8fafc;
+}
+
+.dropdown-item:focus {
+    outline: none;
+    background: #374151;
+    color: #f8fafc;
+}
+
+.dropdown-item:active {
+    background: #4a5568;
+}
+
+/* Disabled state */
+.dropdown-item-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Icon styling */
+.dropdown-item i {
+    font-size: 12px;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Specific icon colors */
+.dropdown-item i.fa-plus {
+    color: #3b82f6; /* Blue */
+}
+
+.dropdown-item i.fa-folder-open {
+    color: #10b981; /* Green */
+}
+
+.dropdown-item i.fa-file-import {
+    color: #6366f1; /* Indigo */
+}
+
+.dropdown-item i.fa-check-circle {
+    color: #ec4899; /* Pink */
+}
+
+.dropdown-item i.fa-download {
+    color: #f59e0b; /* Orange */
+}
+
+.dropdown-item i.fa-trash {
+    color: #ef4444; /* Red */
+}
+
+.dropdown-item i.fa-edit {
+    color: #8b5cf6; /* Purple */
+}
+
+/* ============================================================================
+   Dropdown Divider
+   ========================================================================== */
+
+.dropdown-divider {
+    height: 1px;
+    background: #374151;
+    margin: 4px 0;
+}
+
+/* ============================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================================
+   Dropdown Trigger Button Styles
+   ========================================================================== */
+
+/* Chevron icon rotation */
+.dropdown-chevron {
+    font-size: 10px;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+}
+
+/* Button states */
+button[aria-expanded="true"] {
+    background: #374151 !important;
+}
+
+/* ============================================================================
+   Responsive Behavior
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        min-width: 180px;
+        font-size: 12px;
+    }
+    
+    .dropdown-item {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .dropdown-item i {
+        font-size: 11px;
+        width: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-menu {
+        min-width: 160px;
+        max-width: calc(100vw - 32px);
+    }
+    
+    .dropdown-item {
+        padding: 8px 12px;
+    }
+}
+
+/* ============================================================================
+   Accessibility Enhancements
+   ========================================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .dropdown-menu {
+        border: 2px solid #ffffff;
+    }
+    
+    .dropdown-item:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: -2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .dropdown-menu {
+        animation: none;
+    }
+    
+    .dropdown-chevron {
+        transition: none;
+    }
+    
+    .dropdown-item {
+        transition: none;
+    }
+}
+
+/* Focus visible (keyboard navigation) */
+.dropdown-item:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: -2px;
+}
+
+/* ============================================================================
+   Dark Theme Enhancements
+   ========================================================================== */
+
+/* Scrollbar styling for long menus */
+.dropdown-menu {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #5a6578;
+}
+
+/* ============================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .dropdown-menu {
+        display: none !important;
+    }
+}
+
