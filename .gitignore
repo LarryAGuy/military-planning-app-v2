@@ -65,3 +65,30 @@ temp/
 !scripts/validation/README.md
 !src/js/workspace/initializers/README.md
 !tests/README.md
+
+# Test and debug scripts - do not commit to public repository
+# These files contain internal testing logic and implementation details
+*.test.js
+*.spec.js
+*test*.sh
+*debug*.js
+*validate*.js
+*purge*.sh
+*remove*.sh
+test-*.js
+test-*.html
+debug-*.html
+*-test.html
+*-debug.html
+tests/unit/
+tests/integration/
+tests/components/
+tests/e2e/
+tests/performance/
+tests/validation/
+tests/utils/
+tests/coverage/
+tests/*.js
+!tests/README.md
+scripts/validation/
+scripts/validate-refactor.js
