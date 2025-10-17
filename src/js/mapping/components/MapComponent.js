@@ -27,11 +27,13 @@ export class MapComponent {
         this.coordinateConverter = new CoordinateConverter();
         this.markers = [];
         this.controls = {};
+        this.loadingOverlay = null;
+        this.isLoading = false;
     }
 
     /**
      * Initialize the map
-     * 
+     *
      * @param {object} options - Map initialization options
      * @param {array} options.center - [lat, lon] center coordinates
      * @param {number} options.zoom - Initial zoom level
@@ -41,6 +43,9 @@ export class MapComponent {
     initialize(options = {}) {
         const center = options.center || [MappingConfig.defaults.centerLat, MappingConfig.defaults.centerLon];
         const zoom = options.zoom || MappingConfig.defaults.zoom;
+
+        // Show loading overlay
+        this.showLoading('Initializing map...');
 
         // Initialize coordinate converter with libraries
         if (options.libraries) {
@@ -56,6 +61,9 @@ export class MapComponent {
             zoomControl: true
         });
 
+        // Update loading message
+        this.updateLoadingMessage('Loading map tiles...');
+
         // Initialize layer manager
         this.layerManager = new MapLayerManager(this.map);
         this.layerManager.initializeBaseLayers();
@@ -69,6 +77,19 @@ export class MapComponent {
             this.tacticalGraphics = new TacticalGraphics(this.map);
             this.tacticalGraphics.initialize();
         }
+
+        // Hide loading overlay after tiles load
+        // Listen for tile load events
+        this.map.on('load', () => {
+            this.hideLoading();
+        });
+
+        // Fallback: Hide loading after 2 seconds if 'load' event doesn't fire
+        setTimeout(() => {
+            if (this.isLoading) {
+                this.hideLoading();
+            }
+        }, 2000);
 
         return this.map;
     }
@@ -357,11 +378,101 @@ export class MapComponent {
     }
 
     /**
+     * Create loading overlay element
+     * Displays during map initialization and tile loading
+     */
+    createLoadingOverlay() {
+        const container = document.getElementById(this.containerId);
+        if (!container) {
+            console.warn('Map container not found, cannot create loading overlay');
+            return;
+        }
+
+        // Create overlay element
+        this.loadingOverlay = document.createElement('div');
+        this.loadingOverlay.className = 'map-loading-overlay';
+        this.loadingOverlay.setAttribute('role', 'status');
+        this.loadingOverlay.setAttribute('aria-live', 'polite');
+        this.loadingOverlay.setAttribute('aria-label', 'Loading map tiles');
+
+        // Create spinner
+        const spinner = document.createElement('div');
+        spinner.className = 'map-loading-spinner';
+
+        // Create loading text
+        const loadingText = document.createElement('div');
+        loadingText.className = 'map-loading-text';
+        loadingText.textContent = 'Loading map tiles...';
+
+        // Create subtext
+        const subtext = document.createElement('div');
+        subtext.className = 'map-loading-subtext';
+        subtext.textContent = 'Please wait';
+
+        // Assemble overlay
+        this.loadingOverlay.appendChild(spinner);
+        this.loadingOverlay.appendChild(loadingText);
+        this.loadingOverlay.appendChild(subtext);
+
+        // Add to container
+        container.appendChild(this.loadingOverlay);
+    }
+
+    /**
+     * Show loading overlay
+     * @param {string} message - Optional custom loading message
+     */
+    showLoading(message = 'Loading map tiles...') {
+        if (!this.loadingOverlay) {
+            this.createLoadingOverlay();
+        }
+
+        if (this.loadingOverlay) {
+            const textElement = this.loadingOverlay.querySelector('.map-loading-text');
+            if (textElement && message) {
+                textElement.textContent = message;
+            }
+
+            this.loadingOverlay.classList.remove('hidden');
+            this.isLoading = true;
+        }
+    }
+
+    /**
+     * Hide loading overlay
+     */
+    hideLoading() {
+        if (this.loadingOverlay) {
+            this.loadingOverlay.classList.add('hidden');
+            this.isLoading = false;
+        }
+    }
+
+    /**
+     * Update loading message
+     * @param {string} message - New loading message
+     */
+    updateLoadingMessage(message) {
+        if (this.loadingOverlay) {
+            const textElement = this.loadingOverlay.querySelector('.map-loading-text');
+            if (textElement) {
+                textElement.textContent = message;
+            }
+        }
+    }
+
+    /**
      * Cleanup and destroy map
      */
     cleanup() {
         // Clear markers
         this.clearMarkers();
+
+        // Remove loading overlay
+        if (this.loadingOverlay && this.loadingOverlay.parentNode) {
+            this.loadingOverlay.parentNode.removeChild(this.loadingOverlay);
+            this.loadingOverlay = null;
+        }
 
         // Cleanup tactical graphics
         if (this.tacticalGraphics) {
