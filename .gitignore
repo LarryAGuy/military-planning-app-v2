@@ -80,6 +80,16 @@ test-*.html
 debug-*.html
 *-test.html
 *-debug.html
+TEST_*.js
+TEST_*.html
+chrome-*.html
+final-*.html
+legacy-*.html
+mission-*.html
+performance-*.html
+tactical-*.html
+verify-*.html
+comprehensive-*.html
 tests/unit/
 tests/integration/
 tests/components/
@@ -92,3 +102,16 @@ tests/*.js
 !tests/README.md
 scripts/validation/
 scripts/validate-refactor.js
+
+# Configuration files - development only, not required for production
+# Production app runs on file:// protocol with ES6 modules (no npm runtime)
+package.json
+package-lock.json
+validation-config.json
+jest.config.js
+dev-server-no-cache.py
+*.stackdump
+
+# Purge analysis and completion documents
+*PURGE*.md
+THIRD_PURGE_ANALYSIS.md
