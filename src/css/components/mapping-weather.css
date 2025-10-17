@@ -14,7 +14,7 @@
 }
 
 .mapping-weather-display.side-by-side {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 7fr 3fr;  /* Map gets 70%, Weather gets 30% */
 }
 
 .mapping-weather-display.stacked {
@@ -166,7 +166,7 @@
 /* Combined Content Grid */
 .mapping-weather-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 7fr 3fr;  /* Map gets 70%, Weather gets 30% */
     gap: 1.5rem;
 }
 
