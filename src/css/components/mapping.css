@@ -7,11 +7,11 @@
  * @date October 16, 2025
  */
 
-/* Map Container - Expanded to 80% width for better visibility */
+/* Map Container - Uses full width of parent grid column (70% of modal) */
 .map-container {
-    width: 80%;
+    width: 100%;  /* Use full width of parent grid column */
     min-width: 600px;
-    max-width: 1400px;
+    max-width: none;  /* Remove max-width to allow full expansion */
     height: 600px; /* Increased from 24rem (384px) to 600px */
     border-radius: 0.5rem;
     overflow: hidden;

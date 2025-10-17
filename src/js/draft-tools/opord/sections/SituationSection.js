@@ -529,6 +529,63 @@ export class SituationSection extends BaseSectionComponent {
                 echelon: this.echelon
             });
 
+            // Populate weather container with initial content
+            const weatherContainer = document.getElementById('opord-weather-container');
+            weatherContainer.innerHTML = `
+                <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                    <i class="fas fa-cloud-sun" style="color: #3b82f6; font-size: 48px; margin-bottom: 16px;"></i>
+                    <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Data Ready</p>
+                    <p style="color: #9ca3af; font-size: 14px; margin-bottom: 16px;">Click the button below to fetch weather data for the map center</p>
+                    <button id="fetch-weather-now" style="background: #3b82f6; border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                        <i class="fas fa-sync-alt" style="margin-right: 8px;"></i>Fetch Weather for Map Center
+                    </button>
+                    <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
+                        <i class="fas fa-info-circle" style="margin-right: 4px;"></i>
+                        Weather API requires Vercel deployment. On localhost, this will show an error.
+                    </p>
+                </div>
+            `;
+
+            // Add event listener for fetch weather button
+            const fetchWeatherBtn = document.getElementById('fetch-weather-now');
+            if (fetchWeatherBtn) {
+                fetchWeatherBtn.addEventListener('click', async () => {
+                    fetchWeatherBtn.disabled = true;
+                    fetchWeatherBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Fetching...';
+
+                    try {
+                        const weatherResult = await mappingWeatherTool.fetchWeatherForMapCenter();
+                        if (weatherResult.success) {
+                            const weatherHTML = mappingWeatherTool.getWeatherTool().createWeatherDisplayHTML();
+                            weatherContainer.innerHTML = weatherHTML;
+                        } else {
+                            weatherContainer.innerHTML = `
+                                <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                                    <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 48px; margin-bottom: 16px;"></i>
+                                    <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Data Unavailable</p>
+                                    <p style="color: #9ca3af; font-size: 14px;">${weatherResult.error}</p>
+                                    <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
+                                        This is expected on localhost. Weather API requires Vercel deployment.
+                                    </p>
+                                </div>
+                            `;
+                        }
+                    } catch (error) {
+                        console.error('Weather fetch error:', error);
+                        weatherContainer.innerHTML = `
+                            <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                                <i class="fas fa-cloud-slash" style="color: #ef4444; font-size: 48px; margin-bottom: 16px;"></i>
+                                <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Service Error</p>
+                                <p style="color: #9ca3af; font-size: 14px;">${error.message}</p>
+                                <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
+                                    This is expected on localhost. Test on Vercel preview deployment.
+                                </p>
+                            </div>
+                        `;
+                    }
+                });
+            }
+
             // Attach button handlers
             this.attachToolModalHandlers(modal, mappingWeatherTool);
 
