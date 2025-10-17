@@ -115,3 +115,14 @@ dev-server-no-cache.py
 # Purge analysis and completion documents
 *PURGE*.md
 THIRD_PURGE_ANALYSIS.md
+
+# ESLint configuration - development only, not required for production
+# Removed in fourth purge to avoid exposing internal code quality standards
+.eslintrc.json
+.eslintignore
+.eslintrc.*
+
+# Documentation directory - reference materials not used by production
+# Removed in fourth purge (2,022 files, ~414 MB)
+# Contains military doctrine manuals (FM, ADP, ATP, JP, DoDM) and SVG graphics
+docs/
