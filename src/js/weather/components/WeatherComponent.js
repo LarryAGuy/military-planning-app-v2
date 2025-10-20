@@ -180,21 +180,21 @@ export class WeatherComponent {
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: 0.75rem;
+                padding: 0.625rem;
             ">
-                <div class="weather-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <div class="weather-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
                     <div>
-                        <h3 style="margin: 0; font-size: 1rem;">${formatted.location}, ${formatted.country}</h3>
-                        <p style="margin: 0.125rem 0 0 0; font-size: 0.75rem; opacity: 0.8;">${formatted.description}</p>
+                        <h3 style="margin: 0; font-size: 0.9375rem; line-height: 1.2;">${formatted.location}, ${formatted.country}</h3>
+                        <p style="margin: 0.0625rem 0 0 0; font-size: 0.6875rem; opacity: 0.8; line-height: 1.2;">${formatted.description}</p>
                     </div>
                     <div style="text-align: center;">
-                        <i class="fas ${formatted.iconClass}" style="color: ${formatted.iconColor}; font-size: 2rem;"></i>
+                        <i class="fas ${formatted.iconClass}" style="color: ${formatted.iconColor}; font-size: 1.75rem;"></i>
                     </div>
                 </div>
 
-                <div class="weather-main" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.75rem;">
+                <div class="weather-main" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem; margin-bottom: 0.375rem; font-size: 0.6875rem; line-height: 1.3;">
                     <div>
-                        <div style="font-size: 1.5rem; font-weight: bold;">${formatted.temperature}</div>
+                        <div style="font-size: 1.375rem; font-weight: bold; line-height: 1.2;">${formatted.temperature}</div>
                         <div style="opacity: 0.8;">Feels ${formatted.feelsLike}</div>
                     </div>
                     <div>
@@ -207,15 +207,15 @@ export class WeatherComponent {
                     </div>
                 </div>
 
-                <div class="weather-details" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem; font-size: 0.75rem; margin-bottom: 0.5rem;">
+                <div class="weather-details" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem; font-size: 0.6875rem; margin-bottom: 0.375rem; line-height: 1.3;">
                     <div><strong>Vis:</strong> ${formatted.visibility}</div>
                     <div><strong>Press:</strong> ${formatted.pressure}</div>
                     <div><strong>Clouds:</strong> ${formatted.clouds}</div>
                 </div>
 
-                <div class="tactical-impact" style="padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                    <div style="font-weight: bold; margin-bottom: 0.375rem; font-size: 0.75rem;">Tactical Impact:</div>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.375rem; font-size: 0.75rem;">
+                <div class="tactical-impact" style="padding-top: 0.375rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-weight: bold; margin-bottom: 0.25rem; font-size: 0.6875rem; line-height: 1.2;">Tactical Impact:</div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
                         <div>
                             <span style="color: ${WeatherIconMapper.getImpactColor(impact.mobility)};">●</span>
                             ${impact.mobility}

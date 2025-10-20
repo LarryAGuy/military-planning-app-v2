@@ -610,6 +610,14 @@ export class SituationSection extends BaseSectionComponent {
                 // TASK 2: Auto-update weather on map click
                 // CRITICAL FIX: Store event listener reference for cleanup and add validation
                 const weatherAutoUpdateHandler = async (data) => {
+                    // CRITICAL: Get fresh reference to weather container each time
+                    const currentWeatherContainer = document.getElementById('opord-weather-container');
+
+                    if (!currentWeatherContainer) {
+                        console.warn('⚠️ Weather container not found in DOM');
+                        return;
+                    }
+
                     // CRITICAL: Validate coordinates before proceeding to prevent NaN errors
                     if (!data || typeof data !== 'object') {
                         console.warn('⚠️ Invalid data object received, skipping weather fetch:', data);
@@ -627,14 +635,14 @@ export class SituationSection extends BaseSectionComponent {
                         return;
                     }
 
-                    console.log('🗺️ Map clicked - Auto-fetching weather for new location:', data);
+                    console.log('🗺️ Coordinate converted - Auto-fetching weather for new location:', data);
 
                     // Show loading state in weather container
-                    weatherContainer.innerHTML = `
+                    currentWeatherContainer.innerHTML = `
                         <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
                             <i class="fas fa-spinner fa-spin" style="color: #3b82f6; font-size: 48px; margin-bottom: 16px;"></i>
                             <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Fetching Weather Data...</p>
-                            <p style="color: #9ca3af; font-size: 14px;">Loading weather for clicked location</p>
+                            <p style="color: #9ca3af; font-size: 14px;">Loading weather for ${data.lat.toFixed(4)}, ${data.lon.toFixed(4)}</p>
                         </div>
                     `;
 
@@ -645,10 +653,10 @@ export class SituationSection extends BaseSectionComponent {
                         if (weatherResult.success) {
                             // Update weather container with weather data
                             const weatherHTML = mappingWeatherTool.getWeatherTool().createWeatherDisplayHTML();
-                            weatherContainer.innerHTML = weatherHTML;
+                            currentWeatherContainer.innerHTML = weatherHTML;
                             console.log('✅ Weather auto-updated for clicked location');
                         } else {
-                            weatherContainer.innerHTML = `
+                            currentWeatherContainer.innerHTML = `
                                 <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
                                     <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 48px; margin-bottom: 16px;"></i>
                                     <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Data Unavailable</p>
@@ -661,7 +669,7 @@ export class SituationSection extends BaseSectionComponent {
                         }
                     } catch (error) {
                         console.error('Weather auto-fetch error:', error);
-                        weatherContainer.innerHTML = `
+                        currentWeatherContainer.innerHTML = `
                             <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
                                 <i class="fas fa-cloud-slash" style="color: #ef4444; font-size: 48px; margin-bottom: 16px;"></i>
                                 <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Service Error</p>

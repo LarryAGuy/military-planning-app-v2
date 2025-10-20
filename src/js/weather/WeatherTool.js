@@ -186,18 +186,20 @@ export class WeatherTool {
         return `
             <div class="weather-display" style="display: grid; gap: 0.5rem;">
                 <button id="clear-weather-btn" style="
-                    padding: 0.5rem 1rem;
+                    padding: 0.75rem 1.25rem;
                     background: #dc2626;
                     color: white;
                     border: none;
                     border-radius: 0.375rem;
                     font-size: 0.875rem;
                     cursor: pointer;
-                    font-weight: 500;
+                    font-weight: 600;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: 0.5rem;
+                    transition: background 0.2s;
+                    height: 42px;
                 ">
                     <i class="fas fa-times-circle"></i>
                     Clear Weather Data

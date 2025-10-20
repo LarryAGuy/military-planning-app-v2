@@ -176,13 +176,13 @@ export class TacticalDataComponent {
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: 0.75rem;
+                padding: 0.625rem;
             ">
-                <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem;">Tactical Data</h3>
+                <h3 style="margin: 0 0 0.375rem 0; font-size: 0.9375rem; line-height: 1.2;">Tactical Data</h3>
 
-                <div class="tactical-section" style="margin-bottom: 0.5rem;">
-                    <h4 style="margin: 0 0 0.25rem 0; font-size: 0.875rem; color: #f59e0b;">Critical Times</h4>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.375rem; font-size: 0.75rem;">
+                <div class="tactical-section" style="margin-bottom: 0.375rem;">
+                    <h4 style="margin: 0 0 0.1875rem 0; font-size: 0.8125rem; color: #f59e0b; line-height: 1.2;">Critical Times</h4>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
                         <div><strong>BMNT:</strong> ${formatted.bmnt}</div>
                         <div><strong>EENT:</strong> ${formatted.eent}</div>
                         <div><strong>Sunrise:</strong> ${formatted.sunrise}</div>
@@ -190,9 +190,9 @@ export class TacticalDataComponent {
                     </div>
                 </div>
 
-                <div class="tactical-section" style="margin-bottom: 0.5rem;">
-                    <h4 style="margin: 0 0 0.25rem 0; font-size: 0.875rem; color: #3b82f6;">Twilight</h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem; font-size: 0.75rem;">
+                <div class="tactical-section" style="margin-bottom: 0.375rem;">
+                    <h4 style="margin: 0 0 0.1875rem 0; font-size: 0.8125rem; color: #3b82f6; line-height: 1.2;">Twilight</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
                         <div><strong>Civil:</strong> ${formatted.civilDawn} / ${formatted.civilDusk}</div>
                         <div><strong>Naut:</strong> ${formatted.nauticalDawn} / ${formatted.nauticalDusk}</div>
                         <div><strong>Astro:</strong> ${formatted.astronomicalDawn} / ${formatted.astronomicalDusk}</div>
@@ -200,8 +200,8 @@ export class TacticalDataComponent {
                 </div>
 
                 <div class="tactical-section">
-                    <h4 style="margin: 0 0 0.25rem 0; font-size: 0.875rem; color: #8b5cf6;">Moon</h4>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.375rem; font-size: 0.75rem;">
+                    <h4 style="margin: 0 0 0.1875rem 0; font-size: 0.8125rem; color: #8b5cf6; line-height: 1.2;">Moon</h4>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
                         <div><strong>Phase:</strong> ${formatted.moonPhase}</div>
                         <div><strong>Illum:</strong> ${formatted.moonIllumination}</div>
                         <div><strong>Rise:</strong> ${formatted.moonrise}</div>
