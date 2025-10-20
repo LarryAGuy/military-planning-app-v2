@@ -1,31 +1,66 @@
 /**
  * Serverless Function: Forecast API Proxy
- * 
+ *
  * Purpose: Securely proxy forecast API requests to OpenWeatherMap API
  * without exposing API keys in client-side code.
- * 
+ *
  * Platform: Vercel Serverless Functions
  * Endpoint: /api/forecast
- * 
+ *
  * Query Parameters:
  * - lat: Latitude (required)
  * - lon: Longitude (required)
  * - units: Temperature units - 'imperial' or 'metric' (optional, default: 'imperial')
  * - cnt: Number of forecast entries (optional, default: 24 for 3-day forecast)
- * 
+ *
  * Environment Variables (set in Vercel dashboard):
  * - OPENWEATHERMAP_API_KEY: Your OpenWeatherMap API key
- * 
+ *
  * Security Features:
  * - API key stored server-side only
  * - Rate limiting per IP (100 requests per 15 minutes)
  * - Input validation
  * - CORS enabled for your domain only
  * - Response caching (1 hour)
- * 
+ *
  * @author Augment Agent
  * @date October 16, 2025
+ * @updated October 20, 2025 - Added fetch polyfill for Node.js < 18
  */
+
+// Polyfill for fetch in Node.js < 18
+// Node.js 18+ has native fetch, but older versions need node-fetch
+let fetch;
+if (typeof globalThis.fetch === 'undefined') {
+    // Running on Node.js < 18, use node-fetch polyfill
+    try {
+        fetch = (await import('node-fetch')).default;
+    } catch (error) {
+        // If node-fetch is not available, try using https module as fallback
+        console.warn('node-fetch not available, using https module fallback');
+        const https = await import('https');
+
+        fetch = (url) => {
+            return new Promise((resolve, reject) => {
+                https.get(url, (res) => {
+                    let data = '';
+                    res.on('data', (chunk) => { data += chunk; });
+                    res.on('end', () => {
+                        resolve({
+                            ok: res.statusCode >= 200 && res.statusCode < 300,
+                            status: res.statusCode,
+                            statusText: res.statusMessage,
+                            json: async () => JSON.parse(data)
+                        });
+                    });
+                }).on('error', reject);
+            });
+        };
+    }
+} else {
+    // Running on Node.js 18+, use native fetch
+    fetch = globalThis.fetch;
+}
 
 // Simple in-memory rate limiter
 const rateLimitMap = new Map();

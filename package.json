@@ -1,0 +1,32 @@
+{
+  "name": "military-planning-app-v2",
+  "version": "2.0.0",
+  "description": "Military Planning Application V2 - OPORD Draft Tool with Classification System",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "npx http-server -p 8080",
+    "test": "jest",
+    "validate-refactor": "node tools/validate-refactor.js"
+  },
+  "keywords": [
+    "military",
+    "planning",
+    "opord",
+    "classification",
+    "mapping",
+    "weather"
+  ],
+  "author": "LarryAGuy",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
+

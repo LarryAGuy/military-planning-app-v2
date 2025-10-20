@@ -105,7 +105,7 @@ scripts/validate-refactor.js
 
 # Configuration files - development only, not required for production
 # Production app runs on file:// protocol with ES6 modules (no npm runtime)
-package.json
+# NOTE: package.json is REQUIRED for Vercel serverless functions (Node.js version specification)
 package-lock.json
 validation-config.json
 jest.config.js
