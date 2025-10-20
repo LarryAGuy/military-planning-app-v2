@@ -183,9 +183,13 @@ export class CoordinateValidator {
 
     /**
      * Validate Latitude/Longitude coordinates
-     * 
-     * Format: 38.8977, -77.0365
-     * 
+     *
+     * Supported formats:
+     * - Simple decimal: 38.8977, -77.0365
+     * - With degree symbols: 35.360639°, 138.727363°
+     * - With cardinal directions: 35.360639°N, 138.727363°E
+     * - Mixed: 35.360639N, 138.727363E
+     *
      * @param {string} coordinates - Lat/Long coordinate string
      * @returns {object} Validation result
      */
@@ -200,9 +204,27 @@ export class CoordinateValidator {
             };
         }
 
-        const [, lat, lon] = match;
-        const latitude = parseFloat(lat);
-        const longitude = parseFloat(lon);
+        // Extract matched groups: [full, latValue, latDir, lonValue, lonDir]
+        const [, latValue, latDir, lonValue, lonDir] = match;
+
+        // Parse numeric values
+        let latitude = parseFloat(latValue);
+        let longitude = parseFloat(lonValue);
+
+        // Apply cardinal direction signs
+        // For latitude: S = negative, N = positive (or no direction)
+        if (latDir && latDir.toUpperCase() === 'S') {
+            latitude = -Math.abs(latitude);
+        } else if (latDir && latDir.toUpperCase() === 'N') {
+            latitude = Math.abs(latitude);
+        }
+
+        // For longitude: W = negative, E = positive (or no direction)
+        if (lonDir && lonDir.toUpperCase() === 'W') {
+            longitude = -Math.abs(longitude);
+        } else if (lonDir && lonDir.toUpperCase() === 'E') {
+            longitude = Math.abs(longitude);
+        }
 
         // Validate latitude range
         if (isNaN(latitude)) {
@@ -212,7 +234,7 @@ export class CoordinateValidator {
             };
         }
 
-        if (latitude < MappingConfig.validation.latitude.min || 
+        if (latitude < MappingConfig.validation.latitude.min ||
             latitude > MappingConfig.validation.latitude.max) {
             return {
                 valid: false,
@@ -228,7 +250,7 @@ export class CoordinateValidator {
             };
         }
 
-        if (longitude < MappingConfig.validation.longitude.min || 
+        if (longitude < MappingConfig.validation.longitude.min ||
             longitude > MappingConfig.validation.longitude.max) {
             return {
                 valid: false,

@@ -103,9 +103,9 @@ export const MappingConfig = {
         },
         latlon: {
             name: 'Latitude/Longitude',
-            regex: /^(-?\d+\.?\d*)[,\s]+(-?\d+\.?\d*)$/,
-            example: '38.8977, -77.0365',
-            description: 'Decimal degrees (WGS84)'
+            regex: /^(-?\d+\.?\d*)[°º˚]?\s*([NSEW])?\s*[,;\s]\s*(-?\d+\.?\d*)[°º˚]?\s*([NSEW])?$/i,
+            example: '38.8977, -77.0365 or 35.360639°N, 138.727363°E',
+            description: 'Decimal degrees (WGS84) with optional degree symbols and cardinal directions'
         }
     },
 
