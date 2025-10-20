@@ -28,39 +28,8 @@
  * @updated October 20, 2025 - Added fetch polyfill for Node.js < 18
  */
 
-// Polyfill for fetch in Node.js < 18
-// Node.js 18+ has native fetch, but older versions need node-fetch
-let fetch;
-if (typeof globalThis.fetch === 'undefined') {
-    // Running on Node.js < 18, use node-fetch polyfill
-    try {
-        fetch = (await import('node-fetch')).default;
-    } catch (error) {
-        // If node-fetch is not available, try using https module as fallback
-        console.warn('node-fetch not available, using https module fallback');
-        const https = await import('https');
-
-        fetch = (url) => {
-            return new Promise((resolve, reject) => {
-                https.get(url, (res) => {
-                    let data = '';
-                    res.on('data', (chunk) => { data += chunk; });
-                    res.on('end', () => {
-                        resolve({
-                            ok: res.statusCode >= 200 && res.statusCode < 300,
-                            status: res.statusCode,
-                            statusText: res.statusMessage,
-                            json: async () => JSON.parse(data)
-                        });
-                    });
-                }).on('error', reject);
-            });
-        };
-    }
-} else {
-    // Running on Node.js 18+, use native fetch
-    fetch = globalThis.fetch;
-}
+// Node.js 18+ has native fetch support (no polyfill needed)
+// Vercel uses Node.js 18+ as specified in package.json engines field
 
 // Simple in-memory rate limiter
 const rateLimitMap = new Map();
