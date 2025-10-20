@@ -21,14 +21,14 @@ export class ForecastComponent {
 
     /**
      * Fetch forecast data
-     * 
+     *
      * @param {number} lat - Latitude
      * @param {number} lon - Longitude
      * @param {string} units - Unit system ('imperial', 'metric', 'standard')
-     * @param {number} count - Number of forecast entries (default: 24 for 3 days)
+     * @param {number} count - Number of forecast entries (default: 40 for 5 days)
      * @returns {Promise<object>} Forecast data
      */
-    async fetchForecast(lat, lon, units = 'imperial', count = 24) {
+    async fetchForecast(lat, lon, units = 'imperial', count = 40) {
         this.units = units;
 
         // Check cache first
@@ -46,7 +46,7 @@ export class ForecastComponent {
         try {
             // Fetch from API proxy
             const response = await fetch(`${WeatherConfig.api.forecast}?lat=${lat}&lon=${lon}&units=${units}&cnt=${count}`);
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
@@ -165,8 +165,8 @@ export class ForecastComponent {
     }
 
     /**
-     * Create forecast card HTML
-     * 
+     * Create forecast card HTML (Ultra-Compact 5-Day Horizontal Layout)
+     *
      * @returns {string} HTML string
      */
     createForecastCardHTML() {
@@ -175,30 +175,55 @@ export class ForecastComponent {
             return '<div>No forecast data available</div>';
         }
 
+        // Get first 5 days
+        const forecastDays = dailySummary.slice(0, 5);
+
         let html = `
             <div class="forecast-card" style="
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: 0.625rem;
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
             ">
-                <h3 style="margin: 0 0 0.375rem 0; font-size: 0.9375rem; line-height: 1.2;">3-Day Forecast</h3>
-                <div class="forecast-days" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem;">
+                <h3 style="
+                    color: #10b981;
+                    font-size: 0.8125rem;
+                    font-weight: 600;
+                    margin: 0 0 0.375rem 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.375rem;
+                    line-height: 1.2;
+                ">
+                    <i class="fas fa-calendar-alt"></i>
+                    5-Day Forecast
+                </h3>
+                <div class="forecast-data-row" style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: #d1d5db;
+                    font-size: 0.75rem;
+                    line-height: 1.3;
+                ">
         `;
 
-        dailySummary.slice(0, 3).forEach(day => {
+        forecastDays.forEach((day, index) => {
+            const dayLabel = index === 0 ? 'Tomorrow' : `Day ${index + 1}`;
+
             html += `
-                <div class="forecast-day" style="text-align: center; padding: 0.375rem; background: rgba(255,255,255,0.05); border-radius: 0.375rem;">
-                    <div style="font-weight: bold; margin-bottom: 0.1875rem; font-size: 0.6875rem; line-height: 1.2;">${day.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</div>
-                    <div style="margin-bottom: 0.1875rem;">
-                        <i class="fas ${day.icon}" style="color: ${day.iconColor}; font-size: 1.25rem;"></i>
-                    </div>
-                    <div style="font-size: 0.6875rem; margin-bottom: 0.0625rem; line-height: 1.2;">${day.condition}</div>
-                    <div style="font-size: 0.8125rem; line-height: 1.2;">
-                        <span style="font-weight: bold;">${day.high}</span> / ${day.low}
-                    </div>
-                </div>
+                    <span>
+                        <i class="fas ${day.icon}" style="color: #fbbf24; font-size: 0.875rem; margin-right: 0.25rem;"></i>
+                        ${dayLabel}: ${day.high} / ${day.low}
+                    </span>
             `;
+
+            // Add separator except after last item
+            if (index < forecastDays.length - 1) {
+                html += `<span style="color: #6b7280; margin: 0 0.25rem;">|</span>`;
+            }
         });
 
         html += `

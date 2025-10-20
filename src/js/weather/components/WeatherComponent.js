@@ -161,8 +161,8 @@ export class WeatherComponent {
     }
 
     /**
-     * Create weather card HTML
-     * 
+     * Create weather card HTML (Ultra-Compact Horizontal Layout)
+     *
      * @returns {string} HTML string
      */
     createWeatherCardHTML() {
@@ -171,68 +171,48 @@ export class WeatherComponent {
             return '<div>No weather data available</div>';
         }
 
-        const impact = this.getTacticalImpact();
-        const visCategory = this.getVisibilityCategory();
-        const windCategory = this.getWindCategory();
-
         return `
             <div class="weather-card" style="
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: 0.625rem;
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
             ">
-                <div class="weather-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
-                    <div>
-                        <h3 style="margin: 0; font-size: 0.9375rem; line-height: 1.2;">${formatted.location}, ${formatted.country}</h3>
-                        <p style="margin: 0.0625rem 0 0 0; font-size: 0.6875rem; opacity: 0.8; line-height: 1.2;">${formatted.description}</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <i class="fas ${formatted.iconClass}" style="color: ${formatted.iconColor}; font-size: 1.75rem;"></i>
-                    </div>
-                </div>
-
-                <div class="weather-main" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem; margin-bottom: 0.375rem; font-size: 0.6875rem; line-height: 1.3;">
-                    <div>
-                        <div style="font-size: 1.375rem; font-weight: bold; line-height: 1.2;">${formatted.temperature}</div>
-                        <div style="opacity: 0.8;">Feels ${formatted.feelsLike}</div>
-                    </div>
-                    <div>
-                        <div>High: ${formatted.tempMax}</div>
-                        <div>Low: ${formatted.tempMin}</div>
-                    </div>
-                    <div>
-                        <div><strong>Wind:</strong> ${formatted.windSpeed}</div>
-                        <div><strong>Humid:</strong> ${formatted.humidity}</div>
-                    </div>
-                </div>
-
-                <div class="weather-details" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem; font-size: 0.6875rem; margin-bottom: 0.375rem; line-height: 1.3;">
-                    <div><strong>Vis:</strong> ${formatted.visibility}</div>
-                    <div><strong>Press:</strong> ${formatted.pressure}</div>
-                    <div><strong>Clouds:</strong> ${formatted.clouds}</div>
-                </div>
-
-                <div class="tactical-impact" style="padding-top: 0.375rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                    <div style="font-weight: bold; margin-bottom: 0.25rem; font-size: 0.6875rem; line-height: 1.2;">Tactical Impact:</div>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
-                        <div>
-                            <span style="color: ${WeatherIconMapper.getImpactColor(impact.mobility)};">●</span>
-                            ${impact.mobility}
-                        </div>
-                        <div>
-                            <span style="color: ${WeatherIconMapper.getImpactColor(impact.visibility)};">●</span>
-                            ${impact.visibility}
-                        </div>
-                        <div>
-                            <span style="color: ${WeatherIconMapper.getImpactColor(impact.communications)};">●</span>
-                            ${impact.communications}
-                        </div>
-                        <div>
-                            <span style="color: ${WeatherIconMapper.getImpactColor(impact.aviation)};">●</span>
-                            ${impact.aviation}
-                        </div>
-                    </div>
+                <h3 style="
+                    color: #3b82f6;
+                    font-size: 0.8125rem;
+                    font-weight: 600;
+                    margin: 0 0 0.375rem 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.375rem;
+                    line-height: 1.2;
+                ">
+                    <i class="fas fa-cloud-sun"></i>
+                    Current Weather
+                </h3>
+                <div class="weather-data-row" style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: #d1d5db;
+                    font-size: 0.75rem;
+                    line-height: 1.3;
+                ">
+                    <i class="fas ${formatted.iconClass}" style="color: #fbbf24; font-size: 1rem; margin-right: 0.375rem;"></i>
+                    <span>${formatted.temperature}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Wind: ${formatted.windSpeed} ${formatted.windDirection}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Humidity: ${formatted.humidity}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Pressure: ${formatted.pressure}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Visibility: ${formatted.visibility}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>${formatted.description}</span>
                 </div>
             </div>
         `;

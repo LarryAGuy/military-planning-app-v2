@@ -135,15 +135,99 @@ export class MappingWeatherTool {
     }
 
     /**
-     * Attach event listeners for weather display
+     * Attach event listeners for weather display (Ultra-Compact Layout)
      * Call this after weather HTML is inserted into DOM
+     * Handles unit toggle buttons and clear weather button integrated in Tactical Data header
      */
     attachWeatherEventListeners() {
+        // Clear Weather button (integrated in Tactical Data header)
         const clearWeatherBtn = document.getElementById('clear-weather-btn');
         if (clearWeatherBtn) {
             clearWeatherBtn.addEventListener('click', () => {
                 this.clearWeatherDisplay();
             });
+        }
+
+        // Unit toggle buttons (integrated in Tactical Data header)
+        const metricBtn = document.getElementById('metric-btn');
+        const imperialBtn = document.getElementById('imperial-btn');
+
+        if (metricBtn) {
+            metricBtn.addEventListener('click', () => {
+                this.switchToMetric();
+            });
+        }
+
+        if (imperialBtn) {
+            imperialBtn.addEventListener('click', () => {
+                this.switchToImperial();
+            });
+        }
+    }
+
+    /**
+     * Switch to metric units
+     * Updates weather tool units and refreshes display
+     */
+    async switchToMetric() {
+        if (this.weatherTool.getUnits() === 'metric') return;
+
+        // Update button states
+        const metricBtn = document.getElementById('metric-btn');
+        const imperialBtn = document.getElementById('imperial-btn');
+
+        if (metricBtn) {
+            metricBtn.classList.add('active');
+            metricBtn.style.background = '#3b82f6';
+            metricBtn.style.color = '#ffffff';
+        }
+        if (imperialBtn) {
+            imperialBtn.classList.remove('active');
+            imperialBtn.style.background = 'transparent';
+            imperialBtn.style.color = '#9ca3af';
+        }
+
+        // Update weather tool units
+        this.weatherTool.setUnits('metric');
+
+        // Re-fetch and display weather data with new units
+        const location = this.weatherTool.getCurrentLocation();
+        if (location) {
+            await this.weatherTool.fetchAllWeatherData(location.lat, location.lon);
+            this.updateWeatherDisplay();
+        }
+    }
+
+    /**
+     * Switch to imperial units
+     * Updates weather tool units and refreshes display
+     */
+    async switchToImperial() {
+        if (this.weatherTool.getUnits() === 'imperial') return;
+
+        // Update button states
+        const metricBtn = document.getElementById('metric-btn');
+        const imperialBtn = document.getElementById('imperial-btn');
+
+        if (metricBtn) {
+            metricBtn.classList.remove('active');
+            metricBtn.style.background = 'transparent';
+            metricBtn.style.color = '#9ca3af';
+        }
+        if (imperialBtn) {
+            imperialBtn.classList.add('active');
+            imperialBtn.style.background = '#3b82f6';
+            imperialBtn.style.color = '#ffffff';
+        }
+
+        // Update weather tool units
+        this.weatherTool.setUnits('imperial');
+
+        // Re-fetch and display weather data with new units
+        const location = this.weatherTool.getCurrentLocation();
+        if (location) {
+            await this.weatherTool.fetchAllWeatherData(location.lat, location.lon);
+            this.updateWeatherDisplay();
         }
     }
 

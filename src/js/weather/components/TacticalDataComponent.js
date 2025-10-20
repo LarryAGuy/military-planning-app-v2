@@ -161,52 +161,171 @@ export class TacticalDataComponent {
     }
 
     /**
-     * Create tactical data card HTML
-     * 
+     * Create tactical data card HTML (Ultra-Compact with Integrated Controls)
+     *
+     * @param {object} options - Options for rendering
+     * @param {boolean} options.includeControls - Include unit toggle and clear button (default: true)
      * @returns {string} HTML string
      */
-    createTacticalDataCardHTML() {
+    createTacticalDataCardHTML(options = {}) {
+        const { includeControls = true } = options;
         const formatted = this.getFormattedData();
         if (!formatted) {
             return '<div>No tactical data available</div>';
         }
 
         return `
-            <div class="tactical-data-card" style="
+            <div class="tactical-card" style="
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: 0.625rem;
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
             ">
-                <h3 style="margin: 0 0 0.375rem 0; font-size: 0.9375rem; line-height: 1.2;">Tactical Data</h3>
-
-                <div class="tactical-section" style="margin-bottom: 0.375rem;">
-                    <h4 style="margin: 0 0 0.1875rem 0; font-size: 0.8125rem; color: #f59e0b; line-height: 1.2;">Critical Times</h4>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
-                        <div><strong>BMNT:</strong> ${formatted.bmnt}</div>
-                        <div><strong>EENT:</strong> ${formatted.eent}</div>
-                        <div><strong>Sunrise:</strong> ${formatted.sunrise}</div>
-                        <div><strong>Sunset:</strong> ${formatted.sunset}</div>
+                <div class="tactical-header" style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 0.375rem;
+                    gap: 0.5rem;
+                    flex-wrap: wrap;
+                ">
+                    <h3 style="
+                        color: #a855f7;
+                        font-size: 0.8125rem;
+                        font-weight: 600;
+                        margin: 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.375rem;
+                        line-height: 1.2;
+                    ">
+                        <i class="fas fa-crosshairs"></i>
+                        Tactical Data
+                    </h3>
+                    ${includeControls ? `
+                    <div class="tactical-controls" style="
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    ">
+                        <div class="unit-toggle" id="unit-toggle" style="
+                            display: flex;
+                            background: #374151;
+                            border-radius: 0.375rem;
+                            padding: 0.25rem;
+                            gap: 0.25rem;
+                            height: 32px;
+                            align-items: center;
+                        ">
+                            <button class="unit-toggle-btn" id="metric-btn" style="
+                                padding: 0.375rem 0.75rem;
+                                background: #3b82f6;
+                                color: #ffffff;
+                                border: none;
+                                border-radius: 0.25rem;
+                                font-size: 0.75rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                white-space: nowrap;
+                            " onmouseover="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='#4b5563'" onmouseout="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='transparent'">
+                                Metric
+                            </button>
+                            <button class="unit-toggle-btn" id="imperial-btn" style="
+                                padding: 0.375rem 0.75rem;
+                                background: transparent;
+                                color: #9ca3af;
+                                border: none;
+                                border-radius: 0.25rem;
+                                font-size: 0.75rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.2s;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                white-space: nowrap;
+                            " onmouseover="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='#4b5563'" onmouseout="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='transparent'">
+                                Imperial
+                            </button>
+                        </div>
+                        <button class="clear-weather-btn" id="clear-weather-btn" style="
+                            padding: 0.375rem 0.75rem;
+                            background: #dc2626;
+                            color: white;
+                            border: none;
+                            border-radius: 0.375rem;
+                            font-size: 0.75rem;
+                            cursor: pointer;
+                            font-weight: 600;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 0.375rem;
+                            transition: background 0.2s;
+                            height: 32px;
+                            white-space: nowrap;
+                        ">
+                            <i class="fas fa-times-circle" style="font-size: 0.75rem;"></i>
+                            Clear Weather
+                        </button>
                     </div>
+                    ` : ''}
                 </div>
 
-                <div class="tactical-section" style="margin-bottom: 0.375rem;">
-                    <h4 style="margin: 0 0 0.1875rem 0; font-size: 0.8125rem; color: #3b82f6; line-height: 1.2;">Twilight</h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
-                        <div><strong>Civil:</strong> ${formatted.civilDawn} / ${formatted.civilDusk}</div>
-                        <div><strong>Naut:</strong> ${formatted.nauticalDawn} / ${formatted.nauticalDusk}</div>
-                        <div><strong>Astro:</strong> ${formatted.astronomicalDawn} / ${formatted.astronomicalDusk}</div>
-                    </div>
+                <div class="tactical-line" style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: #d1d5db;
+                    font-size: 0.75rem;
+                    line-height: 1.3;
+                    margin-bottom: 0.25rem;
+                ">
+                    <span style="color: #c084fc; font-weight: 600;">Illumination -</span>
+                    <span>Sunrise: ${formatted.sunrise}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Sunset: ${formatted.sunset}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>BMNT: ${formatted.bmnt}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>EENT: ${formatted.eent}</span>
                 </div>
 
-                <div class="tactical-section">
-                    <h4 style="margin: 0 0 0.1875rem 0; font-size: 0.8125rem; color: #8b5cf6; line-height: 1.2;">Moon</h4>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem; font-size: 0.6875rem; line-height: 1.3;">
-                        <div><strong>Phase:</strong> ${formatted.moonPhase}</div>
-                        <div><strong>Illum:</strong> ${formatted.moonIllumination}</div>
-                        <div><strong>Rise:</strong> ${formatted.moonrise}</div>
-                        <div><strong>Set:</strong> ${formatted.moonset}</div>
-                    </div>
+                <div class="tactical-line" style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: #d1d5db;
+                    font-size: 0.75rem;
+                    line-height: 1.3;
+                    margin-bottom: 0.25rem;
+                ">
+                    <span style="color: #c084fc; font-weight: 600;">Moon Phase -</span>
+                    <span>${formatted.moonPhase}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Illumination: ${formatted.moonIllumination}</span>
+                </div>
+
+                <div class="tactical-line" style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: #d1d5db;
+                    font-size: 0.75rem;
+                    line-height: 1.3;
+                ">
+                    <span style="color: #c084fc; font-weight: 600;">Operational Conditions -</span>
+                    <span>Daylight: ${formatted.daylightHours}</span>
+                    <span style="color: #6b7280; margin: 0 0.25rem;">|</span>
+                    <span>Civil Twilight: ${formatted.civilDawn} / ${formatted.civilDusk}</span>
                 </div>
             </div>
         `;
