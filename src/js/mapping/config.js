@@ -24,9 +24,10 @@ export const MappingConfig = {
      * Map tile layers configuration
      *
      * Includes both free tile layers and Geoapify premium styles:
-     * - Geoapify Dark Purple: Dark mode with purple roads (DEFAULT - matches app theme)
-     * - Geoapify Dark Matter: Clean minimal dark map
-     * - Geoapify Street: Bright colorful street map
+     * - OSM Bright Grey: Bright map with grey water (DEFAULT - clean, professional look)
+     * - OSM Bright: Bright colorful street map
+     * - OSM Carto: OpenStreetMap Carto style
+     * - OSM Liberty: Liberty map style
      * - OpenStreetMap: Free, no API key required
      * - ESRI Satellite: Free satellite imagery
      * - ESRI Topographic: Free topographic map
@@ -34,20 +35,26 @@ export const MappingConfig = {
      * Geoapify tiles are proxied through /api/map-tiles to hide API key
      */
     tileLayers: {
-        'Geoapify Dark Purple': {
-            url: '/api/map-tiles?style=dark-matter-purple-roads&z={z}&x={x}&y={y}',
+        'OSM Bright Grey': {
+            url: '/api/map-tiles?style=osm-bright-grey&z={z}&x={x}&y={y}',
             attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
             maxZoom: 20,
             requiresProxy: true
         },
-        'Geoapify Dark Matter': {
-            url: '/api/map-tiles?style=dark-matter&z={z}&x={x}&y={y}',
-            attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
-            maxZoom: 20,
-            requiresProxy: true
-        },
-        'Geoapify Street': {
+        'OSM Bright': {
             url: '/api/map-tiles?style=osm-bright&z={z}&x={x}&y={y}',
+            attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+            maxZoom: 20,
+            requiresProxy: true
+        },
+        'OSM Carto': {
+            url: '/api/map-tiles?style=osm-carto&z={z}&x={x}&y={y}',
+            attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+            maxZoom: 20,
+            requiresProxy: true
+        },
+        'OSM Liberty': {
+            url: '/api/map-tiles?style=osm-liberty&z={z}&x={x}&y={y}',
             attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © <a href="http://openmaptiles.org/" target="_blank">OpenMapTiles</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
             maxZoom: 20,
             requiresProxy: true
@@ -74,9 +81,9 @@ export const MappingConfig = {
 
     /**
      * Default tile layer to use
-     * Set to 'Geoapify Dark Purple' to match app's dark theme (gray-900 background)
+     * Set to 'OSM Bright Grey' for clean, professional appearance
      */
-    defaultTileLayer: 'Geoapify Dark Purple',
+    defaultTileLayer: 'OSM Bright Grey',
 
     /**
      * Coordinate system formats and validation
@@ -188,7 +195,7 @@ export const MappingConfig = {
             collapsed: true
         },
         coordinateOverlay: {
-            enabled: true,
+            enabled: false,  // Disabled to reduce map clutter - coordinates available in Coordinate Converter UI
             position: 'topright'
         }
     },

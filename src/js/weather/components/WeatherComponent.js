@@ -180,61 +180,58 @@ export class WeatherComponent {
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: ${WeatherConfig.ui.cardPadding};
+                padding: 0.75rem;
             ">
-                <div class="weather-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div class="weather-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                     <div>
-                        <h3 style="margin: 0; font-size: 1.25rem;">${formatted.location}, ${formatted.country}</h3>
-                        <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; opacity: 0.8;">${formatted.description}</p>
+                        <h3 style="margin: 0; font-size: 1rem;">${formatted.location}, ${formatted.country}</h3>
+                        <p style="margin: 0.125rem 0 0 0; font-size: 0.75rem; opacity: 0.8;">${formatted.description}</p>
                     </div>
                     <div style="text-align: center;">
-                        <i class="fas ${formatted.iconClass}" style="color: ${formatted.iconColor}; font-size: ${WeatherConfig.ui.iconSize};"></i>
+                        <i class="fas ${formatted.iconClass}" style="color: ${formatted.iconColor}; font-size: 2rem;"></i>
                     </div>
                 </div>
 
-                <div class="weather-main" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                <div class="weather-main" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.75rem;">
                     <div>
-                        <div style="font-size: ${WeatherConfig.ui.temperatureSize}; font-weight: bold;">${formatted.temperature}</div>
-                        <div style="font-size: ${WeatherConfig.ui.labelSize}; opacity: 0.8;">Feels like ${formatted.feelsLike}</div>
+                        <div style="font-size: 1.5rem; font-weight: bold;">${formatted.temperature}</div>
+                        <div style="opacity: 0.8;">Feels ${formatted.feelsLike}</div>
                     </div>
-                    <div style="text-align: right;">
-                        <div style="font-size: 0.875rem;">High: ${formatted.tempMax}</div>
-                        <div style="font-size: 0.875rem;">Low: ${formatted.tempMin}</div>
+                    <div>
+                        <div>High: ${formatted.tempMax}</div>
+                        <div>Low: ${formatted.tempMin}</div>
+                    </div>
+                    <div>
+                        <div><strong>Wind:</strong> ${formatted.windSpeed}</div>
+                        <div><strong>Humid:</strong> ${formatted.humidity}</div>
                     </div>
                 </div>
 
-                <div class="weather-details" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.875rem;">
-                    <div><strong>Wind:</strong> ${formatted.windSpeed} ${formatted.windDirection}</div>
-                    <div><strong>Humidity:</strong> ${formatted.humidity}</div>
-                    <div><strong>Visibility:</strong> ${formatted.visibility}</div>
-                    <div><strong>Pressure:</strong> ${formatted.pressure}</div>
+                <div class="weather-details" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem; font-size: 0.75rem; margin-bottom: 0.5rem;">
+                    <div><strong>Vis:</strong> ${formatted.visibility}</div>
+                    <div><strong>Press:</strong> ${formatted.pressure}</div>
                     <div><strong>Clouds:</strong> ${formatted.clouds}</div>
-                    <div><strong>Updated:</strong> ${formatted.timestamp.toLocaleTimeString()}</div>
                 </div>
 
-                <div class="tactical-impact" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                    <div style="font-weight: bold; margin-bottom: 0.5rem;">Tactical Impact:</div>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.875rem;">
+                <div class="tactical-impact" style="padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-weight: bold; margin-bottom: 0.375rem; font-size: 0.75rem;">Tactical Impact:</div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.375rem; font-size: 0.75rem;">
                         <div>
                             <span style="color: ${WeatherIconMapper.getImpactColor(impact.mobility)};">●</span>
-                            Mobility: ${impact.mobility}
+                            ${impact.mobility}
                         </div>
                         <div>
                             <span style="color: ${WeatherIconMapper.getImpactColor(impact.visibility)};">●</span>
-                            Visibility: ${impact.visibility}
+                            ${impact.visibility}
                         </div>
                         <div>
                             <span style="color: ${WeatherIconMapper.getImpactColor(impact.communications)};">●</span>
-                            Comms: ${impact.communications}
+                            ${impact.communications}
                         </div>
                         <div>
                             <span style="color: ${WeatherIconMapper.getImpactColor(impact.aviation)};">●</span>
-                            Aviation: ${impact.aviation}
+                            ${impact.aviation}
                         </div>
-                    </div>
-                    <div style="margin-top: 0.5rem; font-weight: bold;">
-                        Overall Impact: 
-                        <span style="color: ${WeatherIconMapper.getImpactColor(impact.overall)};">${impact.overall}</span>
                     </div>
                 </div>
             </div>

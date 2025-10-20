@@ -180,21 +180,21 @@ export class ForecastComponent {
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: ${WeatherConfig.ui.cardPadding};
+                padding: 0.75rem;
             ">
-                <h3 style="margin: 0 0 1rem 0; font-size: 1.25rem;">3-Day Forecast</h3>
-                <div class="forecast-days" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem;">3-Day Forecast</h3>
+                <div class="forecast-days" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
         `;
 
         dailySummary.slice(0, 3).forEach(day => {
             html += `
-                <div class="forecast-day" style="text-align: center; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 0.5rem;">
-                    <div style="font-weight: bold; margin-bottom: 0.5rem;">${day.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</div>
-                    <div style="margin-bottom: 0.5rem;">
-                        <i class="fas ${day.icon}" style="color: ${day.iconColor}; font-size: 2rem;"></i>
+                <div class="forecast-day" style="text-align: center; padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 0.375rem;">
+                    <div style="font-weight: bold; margin-bottom: 0.25rem; font-size: 0.75rem;">${day.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</div>
+                    <div style="margin-bottom: 0.25rem;">
+                        <i class="fas ${day.icon}" style="color: ${day.iconColor}; font-size: 1.5rem;"></i>
                     </div>
-                    <div style="font-size: 0.875rem; margin-bottom: 0.25rem;">${day.condition}</div>
-                    <div style="font-size: 1rem;">
+                    <div style="font-size: 0.75rem; margin-bottom: 0.125rem;">${day.condition}</div>
+                    <div style="font-size: 0.875rem;">
                         <span style="font-weight: bold;">${day.high}</span> / ${day.low}
                     </div>
                 </div>

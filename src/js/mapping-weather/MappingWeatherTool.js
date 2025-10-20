@@ -1,10 +1,10 @@
 /**
  * Mapping & Weather Tool - Integration Module
- * 
+ *
  * Purpose: Combined mapping and weather tool orchestrator
  * Integrates MapTool and WeatherTool into unified interface
  * Designed for extension by OPORD/MDMP/JPP integrations
- * 
+ *
  * @author Augment Agent
  * @date October 16, 2025
  */
@@ -12,11 +12,14 @@
 import { MapTool } from '../mapping/MapTool.js';
 import { WeatherTool } from '../weather/WeatherTool.js';
 import { CoordinateValidator } from '../mapping/utils/CoordinateValidator.js';
+import { CoordinateConverterUI } from '../mapping/components/CoordinateConverterUI.js';
+import EventBus from '../utils/EventBus.js';
 
 export class MappingWeatherTool {
     constructor() {
         this.mapTool = new MapTool();
         this.weatherTool = new WeatherTool();
+        this.coordinateConverterUI = new CoordinateConverterUI();
         this.initialized = false;
         this.integrationMode = 'standalone';
         this.currentLocation = null;
@@ -54,6 +57,13 @@ export class MappingWeatherTool {
                 throw new Error(`Weather initialization failed: ${weatherResult.error}`);
             }
 
+            // Initialize coordinate converter UI
+            const libraries = this.mapTool.getLibraries();
+            this.coordinateConverterUI.initialize(libraries.mgrs, libraries.proj4);
+
+            // Setup event handlers for coordinate converter integration
+            this.setupCoordinateConverterIntegration();
+
             // Set integration mode
             if (options.mode) {
                 this.setIntegrationMode(options.mode, options.modeConfig || {});
@@ -75,8 +85,88 @@ export class MappingWeatherTool {
     }
 
     /**
+     * Setup event handlers for coordinate converter integration
+     * Wires up map clicks, coordinate conversions, and map centering
+     */
+    setupCoordinateConverterIntegration() {
+        // When coordinates are converted, center map on location
+        EventBus.on('coord-converter:converted', (data) => {
+            if (this.mapTool && data.lat && data.lon) {
+                this.mapTool.centerMap(data.lat, data.lon);
+            }
+        });
+
+        // When map is clicked, emit event for coordinate converter
+        const mapComponent = this.mapTool.getMapComponent();
+        if (mapComponent) {
+            const map = mapComponent.getMap();
+            map.on('click', (e) => {
+                EventBus.emit('map:clicked', {
+                    lat: e.latlng.lat,
+                    lon: e.latlng.lng
+                });
+            });
+        }
+
+        // When preset location is selected, center map
+        EventBus.on('coord-converter:center-map', (data) => {
+            if (this.mapTool && data.lat && data.lon) {
+                this.mapTool.centerMap(data.lat, data.lon);
+            }
+        });
+    }
+
+    /**
+     * Get coordinate converter UI HTML
+     *
+     * @returns {string} HTML string for coordinate converter
+     */
+    getCoordinateConverterHTML() {
+        return this.coordinateConverterUI.createHTML();
+    }
+
+    /**
+     * Get coordinate converter UI instance
+     *
+     * @returns {CoordinateConverterUI} Coordinate converter UI instance
+     */
+    getCoordinateConverterUI() {
+        return this.coordinateConverterUI;
+    }
+
+    /**
+     * Attach event listeners for weather display
+     * Call this after weather HTML is inserted into DOM
+     */
+    attachWeatherEventListeners() {
+        const clearWeatherBtn = document.getElementById('clear-weather-btn');
+        if (clearWeatherBtn) {
+            clearWeatherBtn.addEventListener('click', () => {
+                this.clearWeatherDisplay();
+            });
+        }
+    }
+
+    /**
+     * Clear weather display
+     * Removes all weather data and updates UI
+     */
+    clearWeatherDisplay() {
+        this.weatherTool.clearAllWeatherData();
+
+        // Clear weather container
+        const weatherContainer = document.getElementById('mapping-weather-weather-container');
+        if (weatherContainer) {
+            // Keep coordinate converter, remove weather data
+            const coordConverterHTML = this.coordinateConverterUI.createHTML();
+            weatherContainer.innerHTML = coordConverterHTML;
+            this.coordinateConverterUI.attachDOMEventListeners();
+        }
+    }
+
+    /**
      * Search location and fetch weather data
-     * 
+     *
      * @param {string} coordinates - Coordinate string
      * @param {string} system - Coordinate system ('mgrs', 'utm', 'latlon')
      * @returns {Promise<object>} Combined result
@@ -127,7 +217,7 @@ export class MappingWeatherTool {
 
     /**
      * Fetch weather for current map center
-     * 
+     *
      * @returns {Promise<object>} Weather result
      */
     async fetchWeatherForMapCenter() {
@@ -140,6 +230,42 @@ export class MappingWeatherTool {
 
         const center = this.mapTool.getMapComponent().getCenter();
         return this.weatherTool.fetchAllWeatherData(center.lat, center.lon);
+    }
+
+    /**
+     * Fetch and display weather for current map center
+     * Updates the weather container with weather data
+     *
+     * @returns {Promise<object>} Weather result
+     */
+    async fetchAndDisplayWeather() {
+        const weatherResult = await this.fetchWeatherForMapCenter();
+
+        if (weatherResult.success) {
+            this.updateWeatherDisplay();
+        }
+
+        return weatherResult;
+    }
+
+    /**
+     * Update weather display in the UI
+     * Inserts weather HTML and attaches event listeners
+     */
+    updateWeatherDisplay() {
+        const weatherContainer = document.getElementById('mapping-weather-weather-container');
+        if (!weatherContainer) return;
+
+        // Get coordinate converter and weather HTML
+        const coordConverterHTML = this.coordinateConverterUI.createHTML();
+        const weatherHTML = this.weatherTool.createWeatherDisplayHTML();
+
+        // Combine both
+        weatherContainer.innerHTML = coordConverterHTML + weatherHTML;
+
+        // Attach event listeners
+        this.coordinateConverterUI.attachDOMEventListeners();
+        this.attachWeatherEventListeners();
     }
 
     /**

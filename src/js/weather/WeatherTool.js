@@ -175,7 +175,7 @@ export class WeatherTool {
 
     /**
      * Create complete weather display HTML
-     * 
+     *
      * @returns {string} HTML string
      */
     createWeatherDisplayHTML() {
@@ -184,12 +184,40 @@ export class WeatherTool {
         const tacticalHTML = this.tacticalDataComponent.createTacticalDataCardHTML();
 
         return `
-            <div class="weather-display" style="display: grid; gap: 1rem;">
+            <div class="weather-display" style="display: grid; gap: 0.5rem;">
+                <button id="clear-weather-btn" style="
+                    padding: 0.5rem 1rem;
+                    background: #dc2626;
+                    color: white;
+                    border: none;
+                    border-radius: 0.375rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                ">
+                    <i class="fas fa-times-circle"></i>
+                    Clear Weather Data
+                </button>
                 ${weatherHTML}
                 ${forecastHTML}
                 ${tacticalHTML}
             </div>
         `;
+    }
+
+    /**
+     * Clear all weather data
+     * Removes all displayed weather information
+     */
+    clearAllWeatherData() {
+        this.weatherComponent.clearData();
+        this.forecastComponent.clearData();
+        this.tacticalDataComponent.clearData();
+        this.currentLocation = null;
     }
 
     /**

@@ -176,13 +176,13 @@ export class TacticalDataComponent {
                 background: ${WeatherConfig.ui.cardBackgroundColor};
                 color: ${WeatherConfig.ui.cardTextColor};
                 border-radius: ${WeatherConfig.ui.cardBorderRadius};
-                padding: ${WeatherConfig.ui.cardPadding};
+                padding: 0.75rem;
             ">
-                <h3 style="margin: 0 0 1rem 0; font-size: 1.25rem;">Tactical Data</h3>
-                
-                <div class="tactical-section" style="margin-bottom: 1rem;">
-                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #f59e0b;">Critical Times</h4>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.875rem;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem;">Tactical Data</h3>
+
+                <div class="tactical-section" style="margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0 0 0.25rem 0; font-size: 0.875rem; color: #f59e0b;">Critical Times</h4>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.375rem; font-size: 0.75rem;">
                         <div><strong>BMNT:</strong> ${formatted.bmnt}</div>
                         <div><strong>EENT:</strong> ${formatted.eent}</div>
                         <div><strong>Sunrise:</strong> ${formatted.sunrise}</div>
@@ -190,31 +190,22 @@ export class TacticalDataComponent {
                     </div>
                 </div>
 
-                <div class="tactical-section" style="margin-bottom: 1rem;">
-                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #3b82f6;">Twilight Times</h4>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.875rem;">
-                        <div><strong>Civil Dawn:</strong> ${formatted.civilDawn}</div>
-                        <div><strong>Civil Dusk:</strong> ${formatted.civilDusk}</div>
-                        <div><strong>Nautical Dawn:</strong> ${formatted.nauticalDawn}</div>
-                        <div><strong>Nautical Dusk:</strong> ${formatted.nauticalDusk}</div>
-                        <div><strong>Astro Dawn:</strong> ${formatted.astronomicalDawn}</div>
-                        <div><strong>Astro Dusk:</strong> ${formatted.astronomicalDusk}</div>
-                    </div>
-                </div>
-
-                <div class="tactical-section" style="margin-bottom: 1rem;">
-                    <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #8b5cf6;">Moon Data</h4>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.875rem;">
-                        <div><strong>Phase:</strong> ${formatted.moonPhase}</div>
-                        <div><strong>Illumination:</strong> ${formatted.moonIllumination}</div>
-                        <div><strong>Moonrise:</strong> ${formatted.moonrise}</div>
-                        <div><strong>Moonset:</strong> ${formatted.moonset}</div>
+                <div class="tactical-section" style="margin-bottom: 0.5rem;">
+                    <h4 style="margin: 0 0 0.25rem 0; font-size: 0.875rem; color: #3b82f6;">Twilight</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.375rem; font-size: 0.75rem;">
+                        <div><strong>Civil:</strong> ${formatted.civilDawn} / ${formatted.civilDusk}</div>
+                        <div><strong>Naut:</strong> ${formatted.nauticalDawn} / ${formatted.nauticalDusk}</div>
+                        <div><strong>Astro:</strong> ${formatted.astronomicalDawn} / ${formatted.astronomicalDusk}</div>
                     </div>
                 </div>
 
                 <div class="tactical-section">
-                    <div style="font-size: 0.875rem;">
-                        <strong>Daylight Hours:</strong> ${formatted.daylightHours}
+                    <h4 style="margin: 0 0 0.25rem 0; font-size: 0.875rem; color: #8b5cf6;">Moon</h4>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.375rem; font-size: 0.75rem;">
+                        <div><strong>Phase:</strong> ${formatted.moonPhase}</div>
+                        <div><strong>Illum:</strong> ${formatted.moonIllumination}</div>
+                        <div><strong>Rise:</strong> ${formatted.moonrise}</div>
+                        <div><strong>Set:</strong> ${formatted.moonset}</div>
                     </div>
                 </div>
             </div>

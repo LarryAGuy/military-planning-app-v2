@@ -491,30 +491,79 @@ export class SituationSection extends BaseSectionComponent {
             // Dynamically import MappingWeatherTool
             const { MappingWeatherTool } = await import('../../../mapping-weather/MappingWeatherTool.js');
 
-            // Create modal overlay
-            const modal = this.createToolModal('Mapping & Weather Tool - OPORD Integration', 'opord-mapping-weather-modal');
+            // Define action buttons HTML for modal header
+            const actionButtonsHTML = `
+                <button id="insert-terrain-data" class="btn-primary" style="
+                    background: #10b981;
+                    border: none;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    color: white;
+                    font-size: 0.8125rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    white-space: nowrap;
+                    line-height: 1.4;
+                ">
+                    <i class="fas fa-map-marked-alt" style="margin-right: 4px;"></i>Insert Terrain Data
+                </button>
+                <button id="insert-weather-data" class="btn-primary" style="
+                    background: #3b82f6;
+                    border: none;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    color: white;
+                    font-size: 0.8125rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    white-space: nowrap;
+                    line-height: 1.4;
+                ">
+                    <i class="fas fa-cloud-sun" style="margin-right: 4px;"></i>Insert Weather Data
+                </button>
+                <button id="insert-all-data" class="btn-primary" style="
+                    background: #8b5cf6;
+                    border: none;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    color: white;
+                    font-size: 0.8125rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    white-space: nowrap;
+                    line-height: 1.4;
+                ">
+                    <i class="fas fa-check-double" style="margin-right: 4px;"></i>Insert All Data
+                </button>
+            `;
+
+            // Create modal overlay with action buttons in header
+            const modal = this.createToolModal('Mapping & Weather Tool - OPORD Integration', 'opord-mapping-weather-modal', actionButtonsHTML);
 
             // Create combined container
             const container = document.createElement('div');
             container.id = 'opord-mapping-weather-container';
-            container.className = 'mapping-weather-display side-by-side';
             container.innerHTML = `
-                <div class="map-section">
-                    <div id="opord-map-container" style="height: 500px;"></div>
-                </div>
-                <div class="weather-section" id="opord-weather-container">
-                    <!-- Weather data will be inserted here -->
-                </div>
-                <div class="action-bar" style="margin-top: 16px; padding: 16px; background: #1f2937; border-radius: 8px; display: flex; gap: 12px; justify-content: flex-end;">
-                    <button id="insert-terrain-data" class="btn-primary" style="background: #10b981; border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer;">
-                        <i class="fas fa-map-marked-alt" style="margin-right: 8px;"></i>Insert Terrain Data
-                    </button>
-                    <button id="insert-weather-data" class="btn-primary" style="background: #3b82f6; border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer;">
-                        <i class="fas fa-cloud-sun" style="margin-right: 8px;"></i>Insert Weather Data
-                    </button>
-                    <button id="insert-all-data" class="btn-primary" style="background: #8b5cf6; border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer;">
-                        <i class="fas fa-check-double" style="margin-right: 8px;"></i>Insert All Data
-                    </button>
+
+                <!-- Grid Container for Map, Coordinate Converter, and Weather Sections -->
+                <div class="mapping-weather-display" style="display: grid; grid-template-columns: 7fr 3fr; grid-template-rows: auto auto; gap: 1rem;">
+                    <!-- Row 1, Column 1: Map Section -->
+                    <div class="map-section">
+                        <div id="opord-map-container" style="height: 500px;"></div>
+                    </div>
+
+                    <!-- Row 1, Column 2: Coordinate Converter -->
+                    <div class="coordinate-converter-section" id="opord-coord-converter-container">
+                        <!-- Coordinate converter HTML will be inserted here -->
+                    </div>
+
+                    <!-- Row 2, Spans both columns: Weather Section -->
+                    <div class="weather-section" id="opord-weather-container" style="grid-column: 1 / -1;">
+                        <!-- Weather data will be inserted here -->
+                    </div>
                 </div>
             `;
             modal.querySelector('.modal-body').appendChild(container);
@@ -529,35 +578,75 @@ export class SituationSection extends BaseSectionComponent {
                 echelon: this.echelon
             });
 
-            // Populate weather container with initial content
+            // Insert coordinate converter HTML into its own container
+            const coordConverterContainer = document.getElementById('opord-coord-converter-container');
             const weatherContainer = document.getElementById('opord-weather-container');
-            weatherContainer.innerHTML = `
-                <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
-                    <i class="fas fa-cloud-sun" style="color: #3b82f6; font-size: 48px; margin-bottom: 16px;"></i>
-                    <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Data Ready</p>
-                    <p style="color: #9ca3af; font-size: 14px; margin-bottom: 16px;">Click the button below to fetch weather data for the map center</p>
-                    <button id="fetch-weather-now" style="background: #3b82f6; border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; transition: all 0.2s;">
-                        <i class="fas fa-sync-alt" style="margin-right: 8px;"></i>Fetch Weather for Map Center
-                    </button>
-                    <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
-                        <i class="fas fa-info-circle" style="margin-right: 4px;"></i>
-                        Weather API requires Vercel deployment. On localhost, this will show an error.
-                    </p>
-                </div>
-            `;
 
-            // Add event listener for fetch weather button
-            const fetchWeatherBtn = document.getElementById('fetch-weather-now');
-            if (fetchWeatherBtn) {
-                fetchWeatherBtn.addEventListener('click', async () => {
-                    fetchWeatherBtn.disabled = true;
-                    fetchWeatherBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Fetching...';
+            if (coordConverterContainer && weatherContainer) {
+                const coordConverterHTML = mappingWeatherTool.getCoordinateConverterHTML();
+
+                // Insert coordinate converter into its dedicated container
+                coordConverterContainer.innerHTML = coordConverterHTML;
+
+                // Insert weather fetch button into weather container
+                weatherContainer.innerHTML = `
+                    <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                        <i class="fas fa-cloud-sun" style="color: #3b82f6; font-size: 48px; margin-bottom: 16px;"></i>
+                        <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Data Ready</p>
+                        <p style="color: #9ca3af; font-size: 14px; margin-bottom: 16px;">Click the button below to fetch weather data for the map center</p>
+                        <button id="fetch-weather-now" style="background: #3b82f6; border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                            <i class="fas fa-sync-alt" style="margin-right: 8px;"></i>Fetch Weather for Map Center
+                        </button>
+                        <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
+                            <i class="fas fa-info-circle" style="margin-right: 4px;"></i>
+                            Weather API requires Vercel deployment. On localhost, this will show an error.
+                        </p>
+                    </div>
+                `;
+
+                // Attach DOM event listeners for coordinate converter
+                mappingWeatherTool.getCoordinateConverterUI().attachDOMEventListeners();
+
+                // TASK 2: Auto-update weather on map click
+                // CRITICAL FIX: Store event listener reference for cleanup and add validation
+                const weatherAutoUpdateHandler = async (data) => {
+                    // CRITICAL: Validate coordinates before proceeding to prevent NaN errors
+                    if (!data || typeof data !== 'object') {
+                        console.warn('⚠️ Invalid data object received, skipping weather fetch:', data);
+                        return;
+                    }
+
+                    if (!data.lat || !data.lon || isNaN(data.lat) || isNaN(data.lon)) {
+                        console.warn('⚠️ Invalid coordinates received (NaN or missing), skipping weather fetch:', data);
+                        return;
+                    }
+
+                    // Additional validation: Check if coordinates are within valid ranges
+                    if (data.lat < -90 || data.lat > 90 || data.lon < -180 || data.lon > 180) {
+                        console.warn('⚠️ Coordinates out of valid range, skipping weather fetch:', data);
+                        return;
+                    }
+
+                    console.log('🗺️ Map clicked - Auto-fetching weather for new location:', data);
+
+                    // Show loading state in weather container
+                    weatherContainer.innerHTML = `
+                        <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                            <i class="fas fa-spinner fa-spin" style="color: #3b82f6; font-size: 48px; margin-bottom: 16px;"></i>
+                            <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Fetching Weather Data...</p>
+                            <p style="color: #9ca3af; font-size: 14px;">Loading weather for clicked location</p>
+                        </div>
+                    `;
 
                     try {
+                        // Fetch weather for the clicked location
                         const weatherResult = await mappingWeatherTool.fetchWeatherForMapCenter();
+
                         if (weatherResult.success) {
+                            // Update weather container with weather data
                             const weatherHTML = mappingWeatherTool.getWeatherTool().createWeatherDisplayHTML();
                             weatherContainer.innerHTML = weatherHTML;
+                            console.log('✅ Weather auto-updated for clicked location');
                         } else {
                             weatherContainer.innerHTML = `
                                 <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
@@ -571,7 +660,7 @@ export class SituationSection extends BaseSectionComponent {
                             `;
                         }
                     } catch (error) {
-                        console.error('Weather fetch error:', error);
+                        console.error('Weather auto-fetch error:', error);
                         weatherContainer.innerHTML = `
                             <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
                                 <i class="fas fa-cloud-slash" style="color: #ef4444; font-size: 48px; margin-bottom: 16px;"></i>
@@ -583,7 +672,60 @@ export class SituationSection extends BaseSectionComponent {
                             </div>
                         `;
                     }
-                });
+                };
+
+                // Attach the event listener
+                this.eventBus.on('coord-converter:converted', weatherAutoUpdateHandler);
+
+                // CRITICAL FIX: Clean up event listener when modal closes to prevent memory leaks
+                const cleanupEventListener = () => {
+                    this.eventBus.off('coord-converter:converted', weatherAutoUpdateHandler);
+                    console.log('🧹 Cleaned up weather auto-update event listener');
+                };
+
+                // Store cleanup function on modal for later use
+                modal._weatherAutoUpdateCleanup = cleanupEventListener;
+
+                // Add event listener for fetch weather button (manual trigger)
+                const fetchWeatherBtn = document.getElementById('fetch-weather-now');
+                if (fetchWeatherBtn) {
+                    fetchWeatherBtn.addEventListener('click', async () => {
+                        fetchWeatherBtn.disabled = true;
+                        fetchWeatherBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Fetching...';
+
+                        try {
+                            const weatherResult = await mappingWeatherTool.fetchWeatherForMapCenter();
+                            if (weatherResult.success) {
+                                // Update weather container with weather data only
+                                const weatherHTML = mappingWeatherTool.getWeatherTool().createWeatherDisplayHTML();
+                                weatherContainer.innerHTML = weatherHTML;
+                            } else {
+                                weatherContainer.innerHTML = `
+                                    <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                                        <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 48px; margin-bottom: 16px;"></i>
+                                        <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Data Unavailable</p>
+                                        <p style="color: #9ca3af; font-size: 14px;">${weatherResult.error}</p>
+                                        <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
+                                            This is expected on localhost. Weather API requires Vercel deployment.
+                                        </p>
+                                    </div>
+                                `;
+                            }
+                        } catch (error) {
+                            console.error('Weather fetch error:', error);
+                            weatherContainer.innerHTML = `
+                                <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
+                                    <i class="fas fa-cloud-slash" style="color: #ef4444; font-size: 48px; margin-bottom: 16px;"></i>
+                                    <p style="color: #f9fafb; font-size: 16px; font-weight: 600; margin-bottom: 8px;">Weather Service Error</p>
+                                    <p style="color: #9ca3af; font-size: 14px;">${error.message}</p>
+                                    <p style="color: #6b7280; font-size: 12px; margin-top: 12px;">
+                                        This is expected on localhost. Test on Vercel preview deployment.
+                                    </p>
+                                </div>
+                            `;
+                        }
+                    });
+                }
             }
 
             // Attach button handlers
@@ -622,6 +764,12 @@ export class SituationSection extends BaseSectionComponent {
             insertAllBtn.addEventListener('click', () => {
                 this.insertTerrainData(mappingWeatherTool);
                 this.insertWeatherData(mappingWeatherTool);
+
+                // CRITICAL FIX: Clean up event listeners before removing modal
+                if (modal._weatherAutoUpdateCleanup) {
+                    modal._weatherAutoUpdateCleanup();
+                }
+
                 modal.remove();
             });
         }
@@ -629,6 +777,7 @@ export class SituationSection extends BaseSectionComponent {
 
     /**
      * Insert terrain data from mapping tool into OPORD terrain field
+     * CRITICAL: Enforces MGRS format for grid coordinates per military standards
      */
     insertTerrainData(mappingWeatherTool) {
         const integrationData = mappingWeatherTool.getIntegrationData();
@@ -636,9 +785,32 @@ export class SituationSection extends BaseSectionComponent {
 
         // Build terrain description from map data
         let terrainText = '';
+        let coordinateWarning = '';
 
         if (mapData.center) {
-            terrainText += `AO Center: ${mapData.center.lat.toFixed(6)}, ${mapData.center.lon.toFixed(6)}\n`;
+            // CRITICAL: Convert to MGRS format for military grid coordinates
+            const converter = mappingWeatherTool.getCoordinateConverterUI().converter;
+            const mgrsResult = converter.latLonToMGRS(mapData.center.lat, mapData.center.lon, 5);
+
+            if (mgrsResult.success) {
+                // Use MGRS format (military standard)
+                terrainText += `AO Center (MGRS): ${mgrsResult.mgrs}\n`;
+                console.log('✅ Terrain coordinates inserted in MGRS format:', mgrsResult.mgrs);
+            } else {
+                // Fallback to UTM if MGRS fails
+                const utmResult = converter.latLonToUTM(mapData.center.lat, mapData.center.lon);
+
+                if (utmResult.success) {
+                    terrainText += `AO Center (UTM): ${utmResult.utm}\n`;
+                    coordinateWarning = `⚠️ MGRS conversion failed (${mgrsResult.error}). Using UTM format instead.`;
+                    console.warn(coordinateWarning);
+                } else {
+                    // Final fallback to Lat/Lon
+                    terrainText += `AO Center (Lat/Lon): ${mapData.center.lat.toFixed(6)}, ${mapData.center.lon.toFixed(6)}\n`;
+                    coordinateWarning = `⚠️ MGRS and UTM conversion failed. Using Lat/Lon format instead.\nMGRS Error: ${mgrsResult.error}\nUTM Error: ${utmResult.error}`;
+                    console.warn(coordinateWarning);
+                }
+            }
         }
 
         if (mapData.graphics && mapData.graphics.features && mapData.graphics.features.length > 0) {
@@ -666,6 +838,11 @@ export class SituationSection extends BaseSectionComponent {
                 field: 'terrain',
                 value: terrainText
             });
+        }
+
+        // Show warning if MGRS conversion failed
+        if (coordinateWarning) {
+            alert(coordinateWarning);
         }
 
         console.log('✅ Terrain data inserted into OPORD');
@@ -735,8 +912,11 @@ export class SituationSection extends BaseSectionComponent {
 
     /**
      * Create modal for tool display
+     * @param {string} title - Modal title
+     * @param {string} id - Modal ID
+     * @param {string} actionButtonsHTML - Optional HTML for action buttons to display in header
      */
-    createToolModal(title, id) {
+    createToolModal(title, id, actionButtonsHTML = '') {
         // Create modal overlay
         const overlay = document.createElement('div');
         overlay.id = id;
@@ -755,11 +935,14 @@ export class SituationSection extends BaseSectionComponent {
         // Create modal content
         overlay.innerHTML = `
             <div class="bg-gray-800 rounded-lg max-w-7xl w-full mx-4 max-h-[90vh] overflow-hidden flex flex-col" style="background: #1f2937; border-radius: 8px; max-width: 1280px; width: 100%; margin: 0 16px; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column;">
-                <div class="modal-header flex items-center justify-between p-4 border-b border-gray-700" style="display: flex; align-items: center; justify-content: space-between; padding: 16px; border-bottom: 1px solid #374151;">
-                    <h2 class="text-xl font-bold text-white" style="font-size: 20px; font-weight: 700; color: white;">${title}</h2>
-                    <button class="modal-close text-gray-400 hover:text-white text-2xl" style="color: #9ca3af; font-size: 24px; background: none; border: none; cursor: pointer;">
-                        <i class="fas fa-times"></i>
-                    </button>
+                <div class="modal-header" style="display: flex; align-items: center; justify-content: space-between; padding: 16px; border-bottom: 1px solid #374151; gap: 16px;">
+                    <h2 class="text-xl font-bold text-white" style="font-size: 20px; font-weight: 700; color: white; flex-shrink: 0;">${title}</h2>
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        ${actionButtonsHTML}
+                        <button class="modal-close text-gray-400 hover:text-white text-2xl" style="color: #9ca3af; font-size: 24px; background: none; border: none; cursor: pointer; padding: 0; margin-left: 8px;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="modal-body p-6 overflow-y-auto flex-1" style="padding: 24px; overflow-y: auto; flex: 1;">
                     <!-- Tool content will be inserted here -->
@@ -771,6 +954,10 @@ export class SituationSection extends BaseSectionComponent {
         const closeBtn = overlay.querySelector('.modal-close');
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
+                // CRITICAL FIX: Clean up event listeners before removing modal
+                if (overlay._weatherAutoUpdateCleanup) {
+                    overlay._weatherAutoUpdateCleanup();
+                }
                 overlay.remove();
             });
         }

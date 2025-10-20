@@ -402,7 +402,7 @@ export class DashboardPlugin {
                     <div id="mapping-weather-map-container" style="height: 500px;"></div>
                 </div>
                 <div class="weather-section" id="mapping-weather-weather-container">
-                    <!-- Weather data will be inserted here -->
+                    <!-- Coordinate converter and weather data will be inserted here -->
                 </div>
             `;
             modal.querySelector('.modal-body').appendChild(container);
@@ -410,6 +410,16 @@ export class DashboardPlugin {
             // Initialize combined tool
             const mappingWeatherTool = new MappingWeatherTool();
             await mappingWeatherTool.initialize('mapping-weather-map-container');
+
+            // Insert coordinate converter HTML
+            const weatherContainer = document.getElementById('mapping-weather-weather-container');
+            if (weatherContainer) {
+                const coordConverterHTML = mappingWeatherTool.getCoordinateConverterHTML();
+                weatherContainer.innerHTML = coordConverterHTML;
+
+                // Attach DOM event listeners after HTML is inserted
+                mappingWeatherTool.getCoordinateConverterUI().attachDOMEventListeners();
+            }
 
             console.log('✅ Mapping & Weather Tool opened successfully');
         } catch (error) {

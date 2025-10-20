@@ -450,6 +450,55 @@ export class MapTool {
     }
 
     /**
+     * Get loaded libraries
+     *
+     * @returns {object} Library references (L, html2canvas, mgrs, proj4)
+     */
+    getLibraries() {
+        return this.libraries;
+    }
+
+    /**
+     * Center map on coordinates with animation
+     *
+     * @param {number} lat - Latitude
+     * @param {number} lon - Longitude
+     * @param {number} zoom - Zoom level (optional - preserves current zoom if not provided)
+     * @returns {object} Result object
+     */
+    centerMap(lat, lon, zoom = null) {
+        if (!this.initialized) {
+            return {
+                success: false,
+                error: 'Map tool not initialized'
+            };
+        }
+
+        try {
+            // CRITICAL FIX: Preserve user's current zoom level if zoom parameter not provided
+            // This prevents the map from resetting to default zoom when clicking locations
+            const targetZoom = zoom !== null ? zoom : this.mapComponent.getZoom();
+
+            this.mapComponent.flyTo([lat, lon], targetZoom);
+
+            console.log(`✅ Map centered to [${lat.toFixed(6)}, ${lon.toFixed(6)}] at zoom level ${targetZoom}${zoom === null ? ' (preserved)' : ''}`);
+
+            return {
+                success: true,
+                lat,
+                lon,
+                zoom: targetZoom
+            };
+        } catch (error) {
+            console.error('Error centering map:', error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
+    }
+
+    /**
      * Cleanup and destroy tool
      */
     cleanup() {

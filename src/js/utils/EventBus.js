@@ -1,4 +1,4 @@
-export class EventBus {
+class EventBus {
     constructor() {
         this.events = new Map();
         this.maxListeners = 100;
@@ -67,3 +67,7 @@ export class EventBus {
         return this.events.has(event) ? this.events.get(event).length : 0;
     }
 }
+
+// Export both the class (for backward compatibility) and singleton instance
+export { EventBus };
+export default new EventBus();
