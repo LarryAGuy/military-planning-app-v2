@@ -33,9 +33,9 @@ export class WeatherComponent {
         this.units = units;
 
         // Check cache first
-        const cached = this.cache.get(lat, lon, 'weather');
+        const cached = this.cache.get(lat, lon, 'weather', units);
         if (cached) {
-            console.log('✅ Using cached weather data');
+            console.log(`🌤️ ✅ Using cached weather data (units: ${units})`);
             this.currentData = cached;
             return {
                 success: true,
@@ -43,6 +43,8 @@ export class WeatherComponent {
                 cached: true
             };
         }
+
+        console.log(`🌤️ Cache MISS - Making fresh API call (units: ${units})`);
 
         try {
             // Determine if running on localhost (development mode)
@@ -80,8 +82,8 @@ export class WeatherComponent {
             console.log('🌤️ Sample temperature from API:', data.main?.temp, '(units:', units, ')');
 
             // Cache the data
-            this.cache.set(lat, lon, 'weather', data);
-            console.log('🌤️ Weather data cached');
+            this.cache.set(lat, lon, 'weather', data, units);
+            console.log(`🌤️ Weather data cached (units: ${units})`);
 
             this.currentData = data;
 

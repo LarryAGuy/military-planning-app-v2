@@ -33,9 +33,9 @@ export class ForecastComponent {
         this.units = units;
 
         // Check cache first
-        const cached = this.cache.get(lat, lon, 'forecast');
+        const cached = this.cache.get(lat, lon, 'forecast', units);
         if (cached) {
-            console.log('✅ Using cached forecast data');
+            console.log(`🌦️ ✅ Using cached forecast data (units: ${units})`);
             this.forecastData = cached;
             return {
                 success: true,
@@ -43,6 +43,8 @@ export class ForecastComponent {
                 cached: true
             };
         }
+
+        console.log(`🌦️ Cache MISS - Making fresh API call (units: ${units})`);
 
         try {
             // Fetch from API proxy
@@ -62,8 +64,8 @@ export class ForecastComponent {
             console.log('🌦️ Sample forecast temperature:', data.list?.[0]?.main?.temp, '(units:', units, ')');
 
             // Cache the data
-            this.cache.set(lat, lon, 'forecast', data);
-            console.log('🌦️ Forecast data cached');
+            this.cache.set(lat, lon, 'forecast', data, units);
+            console.log(`🌦️ Forecast data cached (units: ${units})`);
 
             this.forecastData = data;
 

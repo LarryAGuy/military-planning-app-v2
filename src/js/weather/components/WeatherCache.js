@@ -18,32 +18,34 @@ export class WeatherCache {
 
     /**
      * Generate cache key for location
-     * 
+     *
      * @param {number} lat - Latitude
      * @param {number} lon - Longitude
      * @param {string} type - Data type ('weather' or 'forecast')
+     * @param {string} units - Unit system ('imperial', 'metric', 'standard')
      * @returns {string} Cache key
      */
-    generateKey(lat, lon, type = 'weather') {
-        return `${type}_${lat.toFixed(4)}_${lon.toFixed(4)}`;
+    generateKey(lat, lon, type = 'weather', units = 'imperial') {
+        return `${type}_${lat.toFixed(4)}_${lon.toFixed(4)}_${units}`;
     }
 
     /**
      * Get cached data
-     * 
+     *
      * @param {number} lat - Latitude
      * @param {number} lon - Longitude
      * @param {string} type - Data type ('weather' or 'forecast')
+     * @param {string} units - Unit system ('imperial', 'metric', 'standard')
      * @returns {object|null} Cached data or null if not found/expired
      */
-    get(lat, lon, type = 'weather') {
+    get(lat, lon, type = 'weather', units = 'imperial') {
         if (!this.enabled) {
             return null;
         }
 
         try {
             const cache = this.getAllCache();
-            const key = this.generateKey(lat, lon, type);
+            const key = this.generateKey(lat, lon, type, units);
             const entry = cache[key];
 
             if (!entry) {
@@ -68,28 +70,30 @@ export class WeatherCache {
 
     /**
      * Set cached data
-     * 
+     *
      * @param {number} lat - Latitude
      * @param {number} lon - Longitude
      * @param {string} type - Data type ('weather' or 'forecast')
      * @param {object} data - Data to cache
+     * @param {string} units - Unit system ('imperial', 'metric', 'standard')
      * @returns {boolean} Success status
      */
-    set(lat, lon, type, data) {
+    set(lat, lon, type, data, units = 'imperial') {
         if (!this.enabled) {
             return false;
         }
 
         try {
             const cache = this.getAllCache();
-            const key = this.generateKey(lat, lon, type);
+            const key = this.generateKey(lat, lon, type, units);
 
             cache[key] = {
                 data: data,
                 timestamp: Date.now(),
                 lat: lat,
                 lon: lon,
-                type: type
+                type: type,
+                units: units
             };
 
             this.saveCache(cache);
