@@ -218,10 +218,10 @@ export class TacticalDataComponent {
                             height: 32px;
                             align-items: center;
                         ">
-                            <button class="unit-toggle-btn" id="metric-btn" data-active="true" style="
+                            <button class="unit-toggle-btn" id="metric-btn" data-active="false" style="
                                 padding: 0.375rem 0.75rem;
-                                background: #3b82f6;
-                                color: #ffffff;
+                                background: transparent;
+                                color: #9ca3af;
                                 border: none;
                                 border-radius: 0.25rem;
                                 font-size: 0.75rem;
@@ -235,10 +235,10 @@ export class TacticalDataComponent {
                             ">
                                 Metric
                             </button>
-                            <button class="unit-toggle-btn" id="imperial-btn" data-active="false" style="
+                            <button class="unit-toggle-btn" id="imperial-btn" data-active="true" style="
                                 padding: 0.375rem 0.75rem;
-                                background: transparent;
-                                color: #9ca3af;
+                                background: #3b82f6;
+                                color: #ffffff;
                                 border: none;
                                 border-radius: 0.25rem;
                                 font-size: 0.75rem;

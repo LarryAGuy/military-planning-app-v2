@@ -199,6 +199,9 @@ export class MappingWeatherTool {
         const metricBtn = document.getElementById('metric-btn');
         const imperialBtn = document.getElementById('imperial-btn');
 
+        // Set initial button states based on current units
+        this.updateButtonStates(metricBtn, imperialBtn);
+
         if (metricBtn) {
             metricBtn.addEventListener('click', () => {
                 console.log('🔄 Metric button clicked');
@@ -241,6 +244,52 @@ export class MappingWeatherTool {
     }
 
     /**
+     * Update button states based on current units
+     * Ensures button highlighting matches the active unit system
+     *
+     * @param {HTMLElement} metricBtn - Metric button element
+     * @param {HTMLElement} imperialBtn - Imperial button element
+     */
+    updateButtonStates(metricBtn, imperialBtn) {
+        const currentUnits = this.weatherTool.getUnits();
+        console.log(`🔧 Updating button states for current units: ${currentUnits}`);
+
+        if (currentUnits === 'metric') {
+            // Metric is active
+            if (metricBtn) {
+                metricBtn.dataset.active = 'true';
+                metricBtn.classList.add('active');
+                metricBtn.style.background = '#3b82f6';
+                metricBtn.style.color = '#ffffff';
+                console.log('🔧 ✅ Metric button set to ACTIVE state');
+            }
+            if (imperialBtn) {
+                imperialBtn.dataset.active = 'false';
+                imperialBtn.classList.remove('active');
+                imperialBtn.style.background = 'transparent';
+                imperialBtn.style.color = '#9ca3af';
+                console.log('🔧 ✅ Imperial button set to INACTIVE state');
+            }
+        } else {
+            // Imperial is active (default)
+            if (metricBtn) {
+                metricBtn.dataset.active = 'false';
+                metricBtn.classList.remove('active');
+                metricBtn.style.background = 'transparent';
+                metricBtn.style.color = '#9ca3af';
+                console.log('🔧 ✅ Metric button set to INACTIVE state');
+            }
+            if (imperialBtn) {
+                imperialBtn.dataset.active = 'true';
+                imperialBtn.classList.add('active');
+                imperialBtn.style.background = '#3b82f6';
+                imperialBtn.style.color = '#ffffff';
+                console.log('🔧 ✅ Imperial button set to ACTIVE state');
+            }
+        }
+    }
+
+    /**
      * Switch to metric units
      * Updates weather tool units and refreshes display
      */
@@ -257,19 +306,7 @@ export class MappingWeatherTool {
         // Update button states
         const metricBtn = document.getElementById('metric-btn');
         const imperialBtn = document.getElementById('imperial-btn');
-
-        if (metricBtn) {
-            metricBtn.dataset.active = 'true';
-            metricBtn.classList.add('active');
-            metricBtn.style.background = '#3b82f6';
-            metricBtn.style.color = '#ffffff';
-        }
-        if (imperialBtn) {
-            imperialBtn.dataset.active = 'false';
-            imperialBtn.classList.remove('active');
-            imperialBtn.style.background = 'transparent';
-            imperialBtn.style.color = '#9ca3af';
-        }
+        this.updateButtonStates(metricBtn, imperialBtn);
 
         // Update weather tool units
         console.log('🔧 Setting units to metric...');
@@ -305,19 +342,7 @@ export class MappingWeatherTool {
         // Update button states
         const metricBtn = document.getElementById('metric-btn');
         const imperialBtn = document.getElementById('imperial-btn');
-
-        if (metricBtn) {
-            metricBtn.dataset.active = 'false';
-            metricBtn.classList.remove('active');
-            metricBtn.style.background = 'transparent';
-            metricBtn.style.color = '#9ca3af';
-        }
-        if (imperialBtn) {
-            imperialBtn.dataset.active = 'true';
-            imperialBtn.classList.add('active');
-            imperialBtn.style.background = '#3b82f6';
-            imperialBtn.style.color = '#ffffff';
-        }
+        this.updateButtonStates(metricBtn, imperialBtn);
 
         // Update weather tool units
         console.log('🔧 Setting units to imperial...');
