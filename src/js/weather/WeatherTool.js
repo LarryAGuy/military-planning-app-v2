@@ -95,7 +95,13 @@ export class WeatherTool {
      * @returns {Promise<object>} Combined weather data
      */
     async fetchAllWeatherData(lat, lon, options = {}) {
+        console.log('🌍 FETCH ALL WEATHER DATA - Entry point');
+        console.log('🌍 Location:', { lat, lon });
+        console.log('🌍 Current WeatherTool units:', this.units);
+        console.log('🌍 Options:', options);
+
         if (!this.initialized) {
+            console.error('🌍 ERROR: Weather tool not initialized');
             return {
                 success: false,
                 error: 'Weather tool not initialized'
@@ -105,6 +111,8 @@ export class WeatherTool {
         const includeWeather = options.includeWeather !== false;
         const includeForecast = options.includeForecast !== false;
         const includeTactical = options.includeTactical !== false;
+
+        console.log('🌍 Fetch options:', { includeWeather, includeForecast, includeTactical });
 
         const results = {
             success: true,
@@ -116,23 +124,29 @@ export class WeatherTool {
         try {
             // Fetch current weather
             if (includeWeather) {
+                console.log('🌍 Calling WeatherComponent.fetchWeather with units:', this.units);
                 const weatherResult = await this.weatherComponent.fetchWeather(lat, lon, this.units);
                 if (weatherResult.success) {
                     results.weather = weatherResult.data;
+                    console.log('🌍 ✅ Weather data fetched successfully');
                 } else {
                     results.success = false;
                     results.weatherError = weatherResult.error;
+                    console.error('🌍 ❌ Weather fetch failed:', weatherResult.error);
                 }
             }
 
             // Fetch forecast
             if (includeForecast) {
+                console.log('🌍 Calling ForecastComponent.fetchForecast with units:', this.units);
                 const forecastResult = await this.forecastComponent.fetchForecast(lat, lon, this.units);
                 if (forecastResult.success) {
                     results.forecast = forecastResult.data;
+                    console.log('🌍 ✅ Forecast data fetched successfully');
                 } else {
                     results.success = false;
                     results.forecastError = forecastResult.error;
+                    console.error('🌍 ❌ Forecast fetch failed:', forecastResult.error);
                 }
             }
 
@@ -259,9 +273,21 @@ export class WeatherTool {
      * @param {string} units - Unit system ('imperial', 'metric', 'standard')
      */
     setUnits(units) {
+        console.log('🔧 SETUNITS ENTRY - Setting units to:', units);
+        console.log('🔧 Current units before change:', this.units);
+
         this.units = units;
+
+        console.log('🔧 WeatherTool units after assignment:', this.units);
+        console.log('🔧 Propagating units to child components...');
+
         this.weatherComponent.setUnits(units);
+        console.log('🔧 WeatherComponent units set to:', units);
+
         this.forecastComponent.setUnits(units);
+        console.log('🔧 ForecastComponent units set to:', units);
+
+        console.log('🔧 SETUNITS EXIT - All components updated with units:', units);
     }
 
     /**

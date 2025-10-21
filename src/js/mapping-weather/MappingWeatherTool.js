@@ -245,8 +245,14 @@ export class MappingWeatherTool {
      * Updates weather tool units and refreshes display
      */
     async switchToMetric() {
-        console.log('Unit toggle: switchToMetric() clicked. Current units =', this.weatherTool.getUnits());
-        if (this.weatherTool.getUnits() === 'metric') return;
+        console.log('🔄 METRIC BUTTON CLICKED - Starting unit conversion flow');
+        console.log('🔧 Current units BEFORE conversion:', this.weatherTool.getUnits());
+        console.log('🔧 Expected target units: metric');
+
+        if (this.weatherTool.getUnits() === 'metric') {
+            console.log('⚠️ Already in metric mode, skipping conversion');
+            return;
+        }
 
         // Update button states
         const metricBtn = document.getElementById('metric-btn');
@@ -287,8 +293,14 @@ export class MappingWeatherTool {
      * Updates weather tool units and refreshes display
      */
     async switchToImperial() {
-        console.log('Unit toggle: switchToImperial() clicked. Current units =', this.weatherTool.getUnits());
-        if (this.weatherTool.getUnits() === 'imperial') return;
+        console.log('🔄 IMPERIAL BUTTON CLICKED - Starting unit conversion flow');
+        console.log('🔧 Current units BEFORE conversion:', this.weatherTool.getUnits());
+        console.log('🔧 Expected target units: imperial');
+
+        if (this.weatherTool.getUnits() === 'imperial') {
+            console.log('⚠️ Already in imperial mode, skipping conversion');
+            return;
+        }
 
         // Update button states
         const metricBtn = document.getElementById('metric-btn');
@@ -444,9 +456,21 @@ export class MappingWeatherTool {
      * Inserts weather HTML and attaches event listeners
      */
     updateWeatherDisplay() {
+        console.log('📊 DISPLAY UPDATE - Starting weather display refresh');
         const units = this.weatherTool.getUnits();
+        console.log('📊 Display update units state:', units);
+
         const opordContainer = document.getElementById('opord-weather-container');
         const mappingContainer = document.getElementById('mapping-weather-weather-container');
+
+        if (opordContainer) {
+            console.log('📊 Updating OPORD container (opord-weather-container)');
+        } else if (mappingContainer) {
+            console.log('📊 Updating Mapping container (mapping-weather-weather-container)');
+        } else {
+            console.error('📊 ERROR: No valid container found for display update');
+            return;
+        }
 
         // Build weather HTML once
         const weatherHTML = this.weatherTool.createWeatherDisplayHTML();
@@ -455,6 +479,7 @@ export class MappingWeatherTool {
             // OPORD integration: only weather UI lives here
             opordContainer.innerHTML = weatherHTML;
             this.attachWeatherEventListeners();
+            console.log(`📊 ✅ OPORD weather display updated successfully (final units: ${units})`);
             console.log(`[36mUpdated OPORD weather display (units: ${units})[0m`);
             return;
         }
@@ -465,6 +490,7 @@ export class MappingWeatherTool {
             mappingContainer.innerHTML = coordConverterHTML + weatherHTML;
             this.coordinateConverterUI.attachDOMEventListeners();
             this.attachWeatherEventListeners();
+            console.log(`📊 ✅ Mapping weather display updated successfully (final units: ${units})`);
             console.log(`[36mUpdated Mapping weather display (units: ${units})[0m`);
         }
     }

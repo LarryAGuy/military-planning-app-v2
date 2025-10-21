@@ -46,16 +46,24 @@ export class ForecastComponent {
 
         try {
             // Fetch from API proxy
-            const response = await fetch(`${WeatherConfig.api.forecast}?lat=${lat}&lon=${lon}&units=${units}&cnt=${count}`);
+            const apiUrl = `${WeatherConfig.api.forecast}?lat=${lat}&lon=${lon}&units=${units}&cnt=${count}`;
+            console.log('🌦️ Forecast API URL constructed:', apiUrl);
+            console.log('🌦️ Units parameter in forecast API call:', units);
+
+            const response = await fetch(apiUrl);
 
             if (!response.ok) {
+                console.error('🌦️ ❌ Forecast API request failed:', response.status, response.statusText);
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
 
             const data = await response.json();
+            console.log('🌦️ ✅ Forecast API response received');
+            console.log('🌦️ Sample forecast temperature:', data.list?.[0]?.main?.temp, '(units:', units, ')');
 
             // Cache the data
             this.cache.set(lat, lon, 'forecast', data);
+            console.log('🌦️ Forecast data cached');
 
             this.forecastData = data;
 

@@ -57,23 +57,31 @@ export class WeatherComponent {
                 // ⚠️ WARNING: API key exposed in client-side code - localhost only!
                 const DEV_API_KEY = '0a9e5642cb35da74f9ab86d19f6d78c4';
                 apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${DEV_API_KEY}&units=${units}`;
-                console.log('[DEV MODE] Calling OpenWeather API directly:', apiUrl.replace(DEV_API_KEY, 'API_KEY_HIDDEN'));
+                console.log('🌤️ [DEV MODE] API URL constructed:', apiUrl.replace(DEV_API_KEY, 'API_KEY_HIDDEN'));
+                console.log('🌤️ [DEV MODE] Units parameter in API call:', units);
             } else {
                 // Production mode: Use Vercel serverless function proxy
                 apiUrl = `${WeatherConfig.api.weather}?lat=${lat}&lon=${lon}&units=${units}`;
+                console.log('🌤️ [PROD MODE] API URL constructed:', apiUrl);
+                console.log('🌤️ [PROD MODE] Units parameter in API call:', units);
             }
 
             // Fetch from API
+            console.log('🌤️ Making API request to:', apiUrl);
             const response = await fetch(apiUrl);
 
             if (!response.ok) {
+                console.error('🌤️ ❌ API request failed:', response.status, response.statusText);
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
 
             const data = await response.json();
+            console.log('🌤️ ✅ API response received');
+            console.log('🌤️ Sample temperature from API:', data.main?.temp, '(units:', units, ')');
 
             // Cache the data
             this.cache.set(lat, lon, 'weather', data);
+            console.log('🌤️ Weather data cached');
 
             this.currentData = data;
 
