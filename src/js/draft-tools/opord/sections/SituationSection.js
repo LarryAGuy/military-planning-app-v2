@@ -875,7 +875,15 @@ export class SituationSection extends BaseSectionComponent {
 
         if (weatherData.weather && weatherData.weather.main) {
             const w = weatherData.weather;
-            weatherText += `Current Conditions (${integrationData.location || 'Unknown Location'}):\n`;
+
+            // Get formatted location name from weather component
+            const weatherComponent = mappingWeatherTool.getWeatherTool().getWeatherComponent();
+            const locationDisplay = weatherComponent.getLocationDisplay();
+            const locationName = locationDisplay ?
+                locationDisplay.replace(' - ', '').split(' | ')[0] : // Extract just the city, country part
+                (w.name ? `${w.name}${w.sys?.country ? ', ' + w.sys.country : ''}` : 'Unknown Location');
+
+            weatherText += `Current Conditions (${locationName}):\n`;
             weatherText += `- Temperature: ${Math.round(w.main.temp)}°F (Feels like ${Math.round(w.main.feels_like)}°F)\n`;
             weatherText += `- Conditions: ${w.weather[0].description}\n`;
             weatherText += `- Visibility: ${(w.visibility / 1609.34).toFixed(1)} miles\n`;
@@ -891,14 +899,19 @@ export class SituationSection extends BaseSectionComponent {
         }
 
         if (weatherData.tactical) {
-            const t = weatherData.tactical;
-            weatherText += `\nTactical Data:\n`;
-            if (t.bmnt) weatherText += `- BMNT: ${t.bmnt}\n`;
-            if (t.sunrise) weatherText += `- Sunrise: ${t.sunrise}\n`;
-            if (t.sunset) weatherText += `- Sunset: ${t.sunset}\n`;
-            if (t.eent) weatherText += `- EENT: ${t.eent}\n`;
-            if (t.moonPhase) weatherText += `- Moon Phase: ${t.moonPhase}\n`;
-            if (t.moonIllumination) weatherText += `- Moon Illumination: ${Math.round(t.moonIllumination * 100)}%\n`;
+            // Get formatted tactical data instead of raw data
+            const tacticalComponent = mappingWeatherTool.getWeatherTool().getTacticalDataComponent();
+            const t = tacticalComponent.getFormattedData();
+
+            if (t) {
+                weatherText += `\nTactical Data:\n`;
+                if (t.bmnt) weatherText += `- BMNT: ${t.bmnt}\n`;
+                if (t.sunrise) weatherText += `- Sunrise: ${t.sunrise}\n`;
+                if (t.sunset) weatherText += `- Sunset: ${t.sunset}\n`;
+                if (t.eent) weatherText += `- EENT: ${t.eent}\n`;
+                if (t.moonPhase) weatherText += `- Moon Phase: ${t.moonPhase}\n`;
+                if (t.moonIllumination) weatherText += `- Moon Illumination: ${t.moonIllumination}\n`;
+            }
         }
 
         // Insert into weather field
