@@ -96,15 +96,22 @@ export class MappingWeatherTool {
             }
         });
 
-        // When map is clicked, emit event for coordinate converter
+        // When map is clicked, emit event for coordinate converter AND fetch weather
         const mapComponent = this.mapTool.getMapComponent();
         if (mapComponent) {
             const map = mapComponent.getMap();
-            map.on('click', (e) => {
+            map.on('click', async (e) => {
+                const lat = e.latlng.lat;
+                const lon = e.latlng.lng;
+
+                // Emit event for coordinate converter
                 EventBus.emit('map:clicked', {
-                    lat: e.latlng.lat,
-                    lon: e.latlng.lng
+                    lat: lat,
+                    lon: lon
                 });
+
+                // Fetch and display weather for clicked location
+                await this.fetchWeatherForLocation(lat, lon);
             });
         }
 
@@ -114,6 +121,46 @@ export class MappingWeatherTool {
                 this.mapTool.centerMap(data.lat, data.lon);
             }
         });
+    }
+
+    /**
+     * Fetch and display weather for a specific location
+     *
+     * @param {number} lat - Latitude
+     * @param {number} lon - Longitude
+     * @returns {Promise<object>} Weather result
+     */
+    async fetchWeatherForLocation(lat, lon) {
+        if (!this.initialized) {
+            return {
+                success: false,
+                error: 'Tool not initialized'
+            };
+        }
+
+        try {
+            // Fetch weather data
+            const weatherResult = await this.weatherTool.fetchAllWeatherData(lat, lon);
+
+            // Store current location
+            this.currentLocation = {
+                lat: lat,
+                lon: lon
+            };
+
+            // Update weather display
+            if (weatherResult.success) {
+                this.updateWeatherDisplay();
+            }
+
+            return weatherResult;
+        } catch (error) {
+            console.error('Fetch weather for location error:', error);
+            return {
+                success: false,
+                error: error.message
+            };
+        }
     }
 
     /**
@@ -156,11 +203,37 @@ export class MappingWeatherTool {
             metricBtn.addEventListener('click', () => {
                 this.switchToMetric();
             });
+
+            // Add hover effects (CSP-compliant)
+            metricBtn.addEventListener('mouseenter', () => {
+                if (metricBtn.dataset.active !== 'true') {
+                    metricBtn.style.background = '#4b5563';
+                }
+            });
+
+            metricBtn.addEventListener('mouseleave', () => {
+                if (metricBtn.dataset.active !== 'true') {
+                    metricBtn.style.background = 'transparent';
+                }
+            });
         }
 
         if (imperialBtn) {
             imperialBtn.addEventListener('click', () => {
                 this.switchToImperial();
+            });
+
+            // Add hover effects (CSP-compliant)
+            imperialBtn.addEventListener('mouseenter', () => {
+                if (imperialBtn.dataset.active !== 'true') {
+                    imperialBtn.style.background = '#4b5563';
+                }
+            });
+
+            imperialBtn.addEventListener('mouseleave', () => {
+                if (imperialBtn.dataset.active !== 'true') {
+                    imperialBtn.style.background = 'transparent';
+                }
             });
         }
     }
@@ -177,11 +250,13 @@ export class MappingWeatherTool {
         const imperialBtn = document.getElementById('imperial-btn');
 
         if (metricBtn) {
+            metricBtn.dataset.active = 'true';
             metricBtn.classList.add('active');
             metricBtn.style.background = '#3b82f6';
             metricBtn.style.color = '#ffffff';
         }
         if (imperialBtn) {
+            imperialBtn.dataset.active = 'false';
             imperialBtn.classList.remove('active');
             imperialBtn.style.background = 'transparent';
             imperialBtn.style.color = '#9ca3af';
@@ -210,11 +285,13 @@ export class MappingWeatherTool {
         const imperialBtn = document.getElementById('imperial-btn');
 
         if (metricBtn) {
+            metricBtn.dataset.active = 'false';
             metricBtn.classList.remove('active');
             metricBtn.style.background = 'transparent';
             metricBtn.style.color = '#9ca3af';
         }
         if (imperialBtn) {
+            imperialBtn.dataset.active = 'true';
             imperialBtn.classList.add('active');
             imperialBtn.style.background = '#3b82f6';
             imperialBtn.style.color = '#ffffff';

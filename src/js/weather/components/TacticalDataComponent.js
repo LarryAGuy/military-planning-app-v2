@@ -218,7 +218,7 @@ export class TacticalDataComponent {
                             height: 32px;
                             align-items: center;
                         ">
-                            <button class="unit-toggle-btn" id="metric-btn" style="
+                            <button class="unit-toggle-btn" id="metric-btn" data-active="true" style="
                                 padding: 0.375rem 0.75rem;
                                 background: #3b82f6;
                                 color: #ffffff;
@@ -232,10 +232,10 @@ export class TacticalDataComponent {
                                 display: flex;
                                 align-items: center;
                                 white-space: nowrap;
-                            " onmouseover="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='#4b5563'" onmouseout="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='transparent'">
+                            ">
                                 Metric
                             </button>
-                            <button class="unit-toggle-btn" id="imperial-btn" style="
+                            <button class="unit-toggle-btn" id="imperial-btn" data-active="false" style="
                                 padding: 0.375rem 0.75rem;
                                 background: transparent;
                                 color: #9ca3af;
@@ -249,7 +249,7 @@ export class TacticalDataComponent {
                                 display: flex;
                                 align-items: center;
                                 white-space: nowrap;
-                            " onmouseover="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='#4b5563'" onmouseout="if(this.style.background !== 'rgb(59, 130, 246)') this.style.background='transparent'">
+                            ">
                                 Imperial
                             </button>
                         </div>

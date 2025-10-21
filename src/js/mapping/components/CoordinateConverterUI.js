@@ -114,62 +114,76 @@ export class CoordinateConverterUI {
                     Coordinate Converter
                 </h3>
 
-                <!-- Preset Locations - Collapsible Section -->
-                <div style="margin-bottom: 1rem;">
-                    <button
-                        id="coord-preset-toggle"
-                        type="button"
+                <!-- Preset Locations - Hover-Based Display -->
+                <div style="margin-bottom: 1rem; position: relative;">
+                    <div
+                        id="coord-preset-trigger"
                         style="
                             background: transparent;
-                            border: none;
+                            border: 1px solid #374151;
+                            border-radius: 0.375rem;
                             color: #9ca3af;
                             font-size: 0.875rem;
                             cursor: pointer;
-                            padding: 0.25rem 0;
+                            padding: 0.5rem 0.75rem;
                             display: flex;
                             align-items: center;
                             gap: 0.5rem;
-                            transition: color 0.2s;
+                            transition: all 0.2s;
                         "
+                        role="button"
+                        tabindex="0"
+                        aria-haspopup="true"
                         aria-expanded="false"
-                        aria-controls="coord-preset-list"
                     >
-                        <i class="fas fa-chevron-right" id="coord-preset-icon" style="font-size: 0.75rem; transition: transform 0.2s;"></i>
-                        <span id="coord-preset-toggle-text">Show Test Locations</span>
-                    </button>
-                    <div id="coord-preset-list" style="display: none; margin-top: 0.5rem;">
-                        <div style="
+                        <i class="fas fa-map-marker-alt" style="color: #3b82f6;"></i>
+                        <span>Test Locations</span>
+                        <i class="fas fa-chevron-down" style="margin-left: auto; font-size: 0.75rem;"></i>
+                    </div>
+                    <div
+                        id="coord-preset-overlay"
+                        style="
+                            display: none;
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            right: 0;
+                            margin-top: 0.25rem;
                             background: #111827;
                             border: 1px solid #374151;
                             border-radius: 0.375rem;
                             padding: 0.5rem;
-                            max-height: 200px;
+                            max-height: 300px;
                             overflow-y: auto;
-                        ">
-                            ${this.presetLocations.map((loc, idx) => `
-                                <button
-                                    type="button"
-                                    class="coord-preset-item"
-                                    data-index="${idx}"
-                                    style="
-                                        display: block;
-                                        width: 100%;
-                                        text-align: left;
-                                        background: transparent;
-                                        border: none;
-                                        color: #d1d5db;
-                                        padding: 0.5rem;
-                                        font-size: 0.875rem;
-                                        cursor: pointer;
-                                        border-radius: 0.25rem;
-                                        transition: background 0.2s;
-                                    "
-                                >
-                                    <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: #3b82f6;"></i>
-                                    ${loc.name}
-                                </button>
-                            `).join('')}
-                        </div>
+                            z-index: 1000;
+                            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+                        "
+                        role="menu"
+                    >
+                        ${this.presetLocations.map((loc, idx) => `
+                            <button
+                                type="button"
+                                class="coord-preset-item"
+                                data-index="${idx}"
+                                role="menuitem"
+                                style="
+                                    display: block;
+                                    width: 100%;
+                                    text-align: left;
+                                    background: transparent;
+                                    border: none;
+                                    color: #d1d5db;
+                                    padding: 0.5rem;
+                                    font-size: 0.875rem;
+                                    cursor: pointer;
+                                    border-radius: 0.25rem;
+                                    transition: background 0.2s;
+                                "
+                            >
+                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: #3b82f6;"></i>
+                                ${loc.name}
+                            </button>
+                        `).join('')}
                     </div>
                 </div>
 
@@ -303,21 +317,92 @@ export class CoordinateConverterUI {
      * Call this after inserting the HTML into the DOM
      */
     attachDOMEventListeners() {
-        // Preset locations toggle
-        const presetToggle = document.getElementById('coord-preset-toggle');
-        const presetList = document.getElementById('coord-preset-list');
-        const presetIcon = document.getElementById('coord-preset-icon');
+        // Preset locations hover-based display
+        const presetTrigger = document.getElementById('coord-preset-trigger');
+        const presetOverlay = document.getElementById('coord-preset-overlay');
 
-        if (presetToggle && presetList && presetIcon) {
-            // Load saved state from localStorage
-            const isExpanded = localStorage.getItem('coord-preset-expanded') === 'true';
-            if (isExpanded) {
-                this.togglePresetLocations(true, presetToggle, presetList, presetIcon);
-            }
+        if (presetTrigger && presetOverlay) {
+            // Track if mouse is over trigger or overlay
+            let isOverTrigger = false;
+            let isOverOverlay = false;
+            let hideTimeout = null;
 
-            presetToggle.addEventListener('click', () => {
-                const expanded = presetToggle.getAttribute('aria-expanded') === 'true';
-                this.togglePresetLocations(!expanded, presetToggle, presetList, presetIcon);
+            // Show overlay function
+            const showOverlay = () => {
+                if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                    hideTimeout = null;
+                }
+                presetOverlay.style.display = 'block';
+                presetTrigger.setAttribute('aria-expanded', 'true');
+                presetTrigger.style.borderColor = '#3b82f6';
+                presetTrigger.style.background = '#1f2937';
+            };
+
+            // Hide overlay function (with delay)
+            const hideOverlay = () => {
+                hideTimeout = setTimeout(() => {
+                    if (!isOverTrigger && !isOverOverlay) {
+                        presetOverlay.style.display = 'none';
+                        presetTrigger.setAttribute('aria-expanded', 'false');
+                        presetTrigger.style.borderColor = '#374151';
+                        presetTrigger.style.background = 'transparent';
+                    }
+                }, 200); // 200ms delay before hiding
+            };
+
+            // Trigger hover events
+            presetTrigger.addEventListener('mouseenter', () => {
+                isOverTrigger = true;
+                showOverlay();
+            });
+
+            presetTrigger.addEventListener('mouseleave', () => {
+                isOverTrigger = false;
+                hideOverlay();
+            });
+
+            // Overlay hover events
+            presetOverlay.addEventListener('mouseenter', () => {
+                isOverOverlay = true;
+                if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                    hideTimeout = null;
+                }
+            });
+
+            presetOverlay.addEventListener('mouseleave', () => {
+                isOverOverlay = false;
+                hideOverlay();
+            });
+
+            // Click on trigger (for accessibility - keyboard users)
+            presetTrigger.addEventListener('click', () => {
+                const isVisible = presetOverlay.style.display === 'block';
+                if (isVisible) {
+                    presetOverlay.style.display = 'none';
+                    presetTrigger.setAttribute('aria-expanded', 'false');
+                    presetTrigger.style.borderColor = '#374151';
+                    presetTrigger.style.background = 'transparent';
+                } else {
+                    showOverlay();
+                }
+            });
+
+            // Keyboard support (Enter/Space to toggle)
+            presetTrigger.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const isVisible = presetOverlay.style.display === 'block';
+                    if (isVisible) {
+                        presetOverlay.style.display = 'none';
+                        presetTrigger.setAttribute('aria-expanded', 'false');
+                        presetTrigger.style.borderColor = '#374151';
+                        presetTrigger.style.background = 'transparent';
+                    } else {
+                        showOverlay();
+                    }
+                }
             });
         }
 
@@ -329,6 +414,15 @@ export class CoordinateConverterUI {
                 const index = parseInt(e.currentTarget.getAttribute('data-index'));
                 if (!isNaN(index)) {
                     this.loadPresetLocation(index);
+                    // Hide overlay after selection
+                    const overlay = document.getElementById('coord-preset-overlay');
+                    const trigger = document.getElementById('coord-preset-trigger');
+                    if (overlay && trigger) {
+                        overlay.style.display = 'none';
+                        trigger.setAttribute('aria-expanded', 'false');
+                        trigger.style.borderColor = '#374151';
+                        trigger.style.background = 'transparent';
+                    }
                 }
             });
 
@@ -366,32 +460,6 @@ export class CoordinateConverterUI {
                     this.performConversion();
                 }
             });
-        }
-    }
-
-    /**
-     * Toggle preset locations visibility
-     *
-     * @param {boolean} expand - Whether to expand or collapse
-     * @param {HTMLElement} toggle - Toggle button element
-     * @param {HTMLElement} list - List container element
-     * @param {HTMLElement} icon - Icon element
-     */
-    togglePresetLocations(expand, toggle, list, icon) {
-        const toggleText = document.getElementById('coord-preset-toggle-text');
-
-        if (expand) {
-            list.style.display = 'block';
-            toggle.setAttribute('aria-expanded', 'true');
-            icon.style.transform = 'rotate(90deg)';
-            if (toggleText) toggleText.textContent = 'Hide Test Locations';
-            localStorage.setItem('coord-preset-expanded', 'true');
-        } else {
-            list.style.display = 'none';
-            toggle.setAttribute('aria-expanded', 'false');
-            icon.style.transform = 'rotate(0deg)';
-            if (toggleText) toggleText.textContent = 'Show Test Locations';
-            localStorage.setItem('coord-preset-expanded', 'false');
         }
     }
 

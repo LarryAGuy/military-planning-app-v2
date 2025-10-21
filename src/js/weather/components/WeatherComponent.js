@@ -17,6 +17,7 @@ export class WeatherComponent {
         this.cache = new WeatherCache();
         this.currentData = null;
         this.units = WeatherConfig.defaults.units;
+        this.currentLocation = null; // Store current location for display
     }
 
     /**
@@ -43,9 +44,27 @@ export class WeatherComponent {
         }
 
         try {
-            // Fetch from API proxy
-            const response = await fetch(`${WeatherConfig.api.weather}?lat=${lat}&lon=${lon}&units=${units}`);
-            
+            // Determine if running on localhost (development mode)
+            const isLocalhost = window.location.hostname === 'localhost' ||
+                               window.location.hostname === '127.0.0.1' ||
+                               window.location.hostname === '';
+
+            let apiUrl;
+
+            if (isLocalhost) {
+                // Development mode: Call OpenWeather API directly with API key
+                // ⚠️ WARNING: API key exposed in client-side code - localhost only!
+                const DEV_API_KEY = '0a9e5642cb35da74f9ab86d19f6d78c4';
+                apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${DEV_API_KEY}&units=${units}`;
+                console.log('[DEV MODE] Calling OpenWeather API directly:', apiUrl.replace(DEV_API_KEY, 'API_KEY_HIDDEN'));
+            } else {
+                // Production mode: Use Vercel serverless function proxy
+                apiUrl = `${WeatherConfig.api.weather}?lat=${lat}&lon=${lon}&units=${units}`;
+            }
+
+            // Fetch from API
+            const response = await fetch(apiUrl);
+
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
@@ -56,6 +75,14 @@ export class WeatherComponent {
             this.cache.set(lat, lon, 'weather', data);
 
             this.currentData = data;
+
+            // Store location data for display
+            this.currentLocation = {
+                lat: lat,
+                lon: lon,
+                name: data.name || null,
+                country: data.sys?.country || null
+            };
 
             return {
                 success: true,
@@ -161,6 +188,62 @@ export class WeatherComponent {
     }
 
     /**
+     * Get location display string
+     *
+     * @returns {string} Location display string (name and/or MGRS)
+     */
+    getLocationDisplay() {
+        if (!this.currentLocation) {
+            return '';
+        }
+
+        const parts = [];
+
+        // Add location name if available
+        if (this.currentLocation.name) {
+            let locationStr = this.currentLocation.name;
+            if (this.currentLocation.country) {
+                locationStr += `, ${this.currentLocation.country}`;
+            }
+            parts.push(locationStr);
+        }
+
+        // Add MGRS coordinates if mgrs library is available
+        if (window.mgrs && this.currentLocation.lat && this.currentLocation.lon) {
+            try {
+                const mgrsCoord = window.mgrs.forward([this.currentLocation.lon, this.currentLocation.lat], 5);
+                // Format MGRS: 18S UJ 23480 06470
+                const formatted = this.formatMGRS(mgrsCoord);
+                parts.push(formatted);
+            } catch (error) {
+                console.warn('MGRS conversion failed:', error);
+            }
+        }
+
+        return parts.length > 0 ? ` - ${parts.join(' | ')}` : '';
+    }
+
+    /**
+     * Format MGRS string with spaces for readability
+     *
+     * @param {string} mgrs - MGRS string without spaces
+     * @returns {string} Formatted MGRS string
+     */
+    formatMGRS(mgrs) {
+        const match = mgrs.match(/^(\d{1,2}[A-Z])([A-Z]{2})(\d+)$/);
+        if (!match) {
+            return mgrs;
+        }
+
+        const [, gridZone, gridSquare, digits] = match;
+        const halfLen = Math.floor(digits.length / 2);
+        const easting = digits.substring(0, halfLen);
+        const northing = digits.substring(halfLen);
+
+        return `${gridZone} ${gridSquare} ${easting} ${northing}`;
+    }
+
+    /**
      * Create weather card HTML (Ultra-Compact Horizontal Layout)
      *
      * @returns {string} HTML string
@@ -170,6 +253,8 @@ export class WeatherComponent {
         if (!formatted) {
             return '<div>No weather data available</div>';
         }
+
+        const locationDisplay = this.getLocationDisplay();
 
         return `
             <div class="weather-card" style="
@@ -190,7 +275,7 @@ export class WeatherComponent {
                     line-height: 1.2;
                 ">
                     <i class="fas fa-cloud-sun"></i>
-                    Current Weather
+                    <span>Current Weather${locationDisplay}</span>
                 </h3>
                 <div class="weather-data-row" style="
                     display: flex;
