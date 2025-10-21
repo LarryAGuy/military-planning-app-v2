@@ -654,6 +654,10 @@ export class SituationSection extends BaseSectionComponent {
                             // Update weather container with weather data
                             const weatherHTML = mappingWeatherTool.getWeatherTool().createWeatherDisplayHTML();
                             currentWeatherContainer.innerHTML = weatherHTML;
+
+                            // CRITICAL: Attach event listeners for unit toggle and clear weather buttons
+                            mappingWeatherTool.attachWeatherEventListeners();
+
                             console.log('✅ Weather auto-updated for clicked location');
                         } else {
                             currentWeatherContainer.innerHTML = `
@@ -707,6 +711,9 @@ export class SituationSection extends BaseSectionComponent {
                                 // Update weather container with weather data only
                                 const weatherHTML = mappingWeatherTool.getWeatherTool().createWeatherDisplayHTML();
                                 weatherContainer.innerHTML = weatherHTML;
+
+                                // CRITICAL: Attach event listeners for unit toggle and clear weather buttons
+                                mappingWeatherTool.attachWeatherEventListeners();
                             } else {
                                 weatherContainer.innerHTML = `
                                     <div style="padding: 20px; background: #1f2937; border-radius: 8px; text-align: center;">
