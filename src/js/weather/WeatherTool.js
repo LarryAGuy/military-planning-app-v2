@@ -183,11 +183,34 @@ export class WeatherTool {
         const forecastHTML = this.forecastComponent.createForecastCardHTML();
         const tacticalHTML = this.tacticalDataComponent.createTacticalDataCardHTML({ includeControls: true });
 
+        // Check if all components are in cleared state (showing "No data available" messages)
+        const isCleared = weatherHTML.includes('No weather data available') &&
+                         forecastHTML.includes('No forecast data available') &&
+                         tacticalHTML.includes('No tactical data available');
+
+        // Add instructional message when all data is cleared
+        const instructionalMessage = isCleared ? `
+            <div style="
+                text-align: center;
+                color: #9ca3af;
+                font-style: italic;
+                font-size: 0.875rem;
+                margin-top: 1rem;
+                padding: 0.75rem;
+                background: rgba(156, 163, 175, 0.1);
+                border-radius: 0.375rem;
+                border: 1px dashed #4b5563;
+            ">
+                💡 Click on the map to auto-populate weather data
+            </div>
+        ` : '';
+
         return `
             <div class="weather-display" style="display: grid; gap: 0;">
                 ${weatherHTML}
                 ${tacticalHTML}
                 ${forecastHTML}
+                ${instructionalMessage}
             </div>
         `;
     }
