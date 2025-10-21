@@ -29,6 +29,7 @@ export class ForecastComponent {
      * @returns {Promise<object>} Forecast data
      */
     async fetchForecast(lat, lon, units = 'imperial', count = 40) {
+        console.log(`🌦️ ForecastComponent.fetchForecast called with units: ${units}`);
         this.units = units;
 
         // Check cache first

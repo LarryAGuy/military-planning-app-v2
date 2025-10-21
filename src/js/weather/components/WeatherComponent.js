@@ -29,6 +29,7 @@ export class WeatherComponent {
      * @returns {Promise<object>} Weather data
      */
     async fetchWeather(lat, lon, units = 'imperial') {
+        console.log(`🌤️ WeatherComponent.fetchWeather called with units: ${units}`);
         this.units = units;
 
         // Check cache first

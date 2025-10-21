@@ -201,6 +201,7 @@ export class MappingWeatherTool {
 
         if (metricBtn) {
             metricBtn.addEventListener('click', () => {
+                console.log('🔄 Metric button clicked');
                 this.switchToMetric();
             });
 
@@ -220,6 +221,7 @@ export class MappingWeatherTool {
 
         if (imperialBtn) {
             imperialBtn.addEventListener('click', () => {
+                console.log('🔄 Imperial button clicked');
                 this.switchToImperial();
             });
 
@@ -264,13 +266,19 @@ export class MappingWeatherTool {
         }
 
         // Update weather tool units
+        console.log('🔧 Setting units to metric...');
         this.weatherTool.setUnits('metric');
+        console.log('🔧 Units after setUnits:', this.weatherTool.getUnits());
 
         // Re-fetch and display weather data with new units
         const location = this.weatherTool.getCurrentLocation();
         if (location) {
+            console.log('🌍 Re-fetching weather data for location:', location);
             await this.weatherTool.fetchAllWeatherData(location.lat, location.lon);
+            console.log('🔄 Calling updateWeatherDisplay after metric fetch...');
             this.updateWeatherDisplay();
+        } else {
+            console.warn('⚠️ No current location available for metric conversion');
         }
     }
 
@@ -300,13 +308,19 @@ export class MappingWeatherTool {
         }
 
         // Update weather tool units
+        console.log('🔧 Setting units to imperial...');
         this.weatherTool.setUnits('imperial');
+        console.log('🔧 Units after setUnits:', this.weatherTool.getUnits());
 
         // Re-fetch and display weather data with new units
         const location = this.weatherTool.getCurrentLocation();
         if (location) {
+            console.log('🌍 Re-fetching weather data for location:', location);
             await this.weatherTool.fetchAllWeatherData(location.lat, location.lon);
+            console.log('🔄 Calling updateWeatherDisplay after imperial fetch...');
             this.updateWeatherDisplay();
+        } else {
+            console.warn('⚠️ No current location available for imperial conversion');
         }
     }
 
@@ -315,13 +329,17 @@ export class MappingWeatherTool {
      * Removes all weather data and updates UI
      */
     clearWeatherDisplay() {
+        // Clear weather data in all components
         this.weatherTool.clearAllWeatherData();
 
         // Prefer OPORD container if present
         const opordContainer = document.getElementById('opord-weather-container');
         if (opordContainer) {
-            opordContainer.innerHTML = '';
-            console.log('🧹 Cleared weather in OPORD container');
+            // Generate cleared weather display (preserves structure, shows placeholders)
+            const clearedWeatherHTML = this.weatherTool.createWeatherDisplayHTML();
+            opordContainer.innerHTML = clearedWeatherHTML;
+            this.attachWeatherEventListeners();
+            console.log('🧹 Cleared weather in OPORD container (preserved structure with placeholders)');
             return;
         }
 
@@ -329,9 +347,11 @@ export class MappingWeatherTool {
         const weatherContainer = document.getElementById('mapping-weather-weather-container');
         if (weatherContainer) {
             const coordConverterHTML = this.coordinateConverterUI.createHTML();
-            weatherContainer.innerHTML = coordConverterHTML;
+            const clearedWeatherHTML = this.weatherTool.createWeatherDisplayHTML();
+            weatherContainer.innerHTML = coordConverterHTML + clearedWeatherHTML;
             this.coordinateConverterUI.attachDOMEventListeners();
-            console.log('🧹 Cleared weather in Mapping container (kept Coordinate Converter)');
+            this.attachWeatherEventListeners();
+            console.log('🧹 Cleared weather in Mapping container (preserved structure with placeholders)');
         }
     }
 
