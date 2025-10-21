@@ -243,6 +243,7 @@ export class MappingWeatherTool {
      * Updates weather tool units and refreshes display
      */
     async switchToMetric() {
+        console.log('Unit toggle: switchToMetric() clicked. Current units =', this.weatherTool.getUnits());
         if (this.weatherTool.getUnits() === 'metric') return;
 
         // Update button states
@@ -278,6 +279,7 @@ export class MappingWeatherTool {
      * Updates weather tool units and refreshes display
      */
     async switchToImperial() {
+        console.log('Unit toggle: switchToImperial() clicked. Current units =', this.weatherTool.getUnits());
         if (this.weatherTool.getUnits() === 'imperial') return;
 
         // Update button states
@@ -315,13 +317,21 @@ export class MappingWeatherTool {
     clearWeatherDisplay() {
         this.weatherTool.clearAllWeatherData();
 
-        // Clear weather container
+        // Prefer OPORD container if present
+        const opordContainer = document.getElementById('opord-weather-container');
+        if (opordContainer) {
+            opordContainer.innerHTML = '';
+            console.log('🧹 Cleared weather in OPORD container');
+            return;
+        }
+
+        // Fallback: Mapping Weather container (keep coordinate converter)
         const weatherContainer = document.getElementById('mapping-weather-weather-container');
         if (weatherContainer) {
-            // Keep coordinate converter, remove weather data
             const coordConverterHTML = this.coordinateConverterUI.createHTML();
             weatherContainer.innerHTML = coordConverterHTML;
             this.coordinateConverterUI.attachDOMEventListeners();
+            console.log('🧹 Cleared weather in Mapping container (kept Coordinate Converter)');
         }
     }
 
@@ -414,19 +424,29 @@ export class MappingWeatherTool {
      * Inserts weather HTML and attaches event listeners
      */
     updateWeatherDisplay() {
-        const weatherContainer = document.getElementById('mapping-weather-weather-container');
-        if (!weatherContainer) return;
+        const units = this.weatherTool.getUnits();
+        const opordContainer = document.getElementById('opord-weather-container');
+        const mappingContainer = document.getElementById('mapping-weather-weather-container');
 
-        // Get coordinate converter and weather HTML
-        const coordConverterHTML = this.coordinateConverterUI.createHTML();
+        // Build weather HTML once
         const weatherHTML = this.weatherTool.createWeatherDisplayHTML();
 
-        // Combine both
-        weatherContainer.innerHTML = coordConverterHTML + weatherHTML;
+        if (opordContainer) {
+            // OPORD integration: only weather UI lives here
+            opordContainer.innerHTML = weatherHTML;
+            this.attachWeatherEventListeners();
+            console.log(`[36mUpdated OPORD weather display (units: ${units})[0m`);
+            return;
+        }
 
-        // Attach event listeners
-        this.coordinateConverterUI.attachDOMEventListeners();
-        this.attachWeatherEventListeners();
+        if (mappingContainer) {
+            // Standalone mapping tool: include coordinate converter + weather
+            const coordConverterHTML = this.coordinateConverterUI.createHTML();
+            mappingContainer.innerHTML = coordConverterHTML + weatherHTML;
+            this.coordinateConverterUI.attachDOMEventListeners();
+            this.attachWeatherEventListeners();
+            console.log(`[36mUpdated Mapping weather display (units: ${units})[0m`);
+        }
     }
 
     /**
