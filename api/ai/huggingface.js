@@ -228,14 +228,20 @@ export default async function handler(req, res) {
         'http://localhost:3000',
         'https://military-planning-app-v2.vercel.app'
     ];
-    
+
     const origin = req.headers.origin;
-    if (allowedOrigins.includes(origin)) {
+
+    // Allow all Vercel preview deployments (*.vercel.app)
+    const isVercelDomain = origin && origin.match(/^https:\/\/.*\.vercel\.app$/);
+
+    if (allowedOrigins.includes(origin) || isVercelDomain) {
         res.setHeader('Access-Control-Allow-Origin', origin);
     }
-    
+
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    console.log('🌐 CORS request from origin:', origin);
     
     // Handle preflight
     if (req.method === 'OPTIONS') {
@@ -251,52 +257,64 @@ export default async function handler(req, res) {
     }
     
     try {
+        // Debug: Log environment variable status (without exposing the key)
+        const hasApiKey = !!process.env.HUGGINGFACE_API_KEY;
+        console.log('🔑 HUGGINGFACE_API_KEY configured:', hasApiKey);
+
         // Get client IP
-        const ip = req.headers['x-forwarded-for']?.split(',')[0] || 
-                   req.headers['x-real-ip'] || 
-                   req.socket.remoteAddress || 
+        const ip = req.headers['x-forwarded-for']?.split(',')[0] ||
+                   req.headers['x-real-ip'] ||
+                   req.socket.remoteAddress ||
                    'unknown';
-        
+
+        console.log('📍 Client IP:', ip);
+
         // Check rate limit
         const rateLimit = checkRateLimit(ip);
-        
+
         // Set rate limit headers
         res.setHeader('X-RateLimit-Limit', RATE_LIMIT_MAX_REQUESTS);
         res.setHeader('X-RateLimit-Remaining', rateLimit.remaining);
         res.setHeader('X-RateLimit-Reset', new Date(rateLimit.resetTime).toISOString());
-        
+
         if (!rateLimit.allowed) {
+            console.log('⚠️ Rate limit exceeded for IP:', ip);
             return res.status(429).json({
                 error: 'Rate limit exceeded',
                 message: `Maximum ${RATE_LIMIT_MAX_REQUESTS} requests per hour exceeded`,
                 resetTime: new Date(rateLimit.resetTime).toISOString()
             });
         }
-        
+
         // Validate request
         const validation = validateRequest(req.body);
         if (!validation.valid) {
+            console.log('❌ Invalid request:', validation.error);
             return res.status(400).json({
                 error: 'Invalid request',
                 message: validation.error
             });
         }
-        
+
         const { message, context } = req.body;
-        
+        console.log('📨 Processing message:', message.substring(0, 50) + '...');
+
         // Call Hugging Face API
         const response = await callHuggingFaceAPI(message, context);
-        
+
+        console.log('✅ Response generated successfully');
+
         // Return response
         return res.status(200).json(response);
-        
+
     } catch (error) {
-        console.error('Hugging Face API error:', error);
-        
+        console.error('❌ Hugging Face API error:', error);
+        console.error('Error stack:', error.stack);
+
         // Determine error status code
         let statusCode = 500;
         let errorMessage = 'Internal server error';
-        
+
         if (error.message.includes('timeout')) {
             statusCode = 504;
             errorMessage = 'Request timeout';
@@ -307,11 +325,16 @@ export default async function handler(req, res) {
             statusCode = 502;
             errorMessage = 'Upstream API error';
         }
-        
+
         return res.status(statusCode).json({
             error: errorMessage,
             message: error.message,
-            provider: 'HuggingFace'
+            provider: 'HuggingFace',
+            debug: {
+                hasApiKey: !!process.env.HUGGINGFACE_API_KEY,
+                errorType: error.name,
+                errorStack: error.stack?.split('\n')[0]
+            }
         });
     }
 }
