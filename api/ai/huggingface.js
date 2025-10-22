@@ -24,7 +24,11 @@ const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 const RATE_LIMIT_MAX_REQUESTS = 300;
 
 // Hugging Face API configuration
-const HF_API_URL = 'https://api-inference.huggingface.co/models/ibm-granite/granite-3.3-8b-instruct';
+// NOTE: IBM Granite 3.3 8B is not available via free Inference API
+// Using Microsoft Phi-3-mini-4k-instruct (3.8B) as alternative
+// This model is smaller but available via free tier and optimized for instruction-following
+const HF_API_URL = 'https://api-inference.huggingface.co/models/microsoft/Phi-3-mini-4k-instruct';
+const HF_MODEL_NAME = 'microsoft/Phi-3-mini-4k-instruct';
 const HF_TIMEOUT = 30000; // 30 seconds
 
 /**
@@ -135,7 +139,7 @@ async function callHuggingFaceAPI(message, context) {
         return {
             content: generatedText.trim(),
             provider: 'HuggingFace',
-            model: 'ibm-granite/granite-3.3-8b-instruct',
+            model: HF_MODEL_NAME,
             timestamp: new Date().toISOString()
         };
         

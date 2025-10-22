@@ -18,10 +18,12 @@ export class HuggingFaceProvider {
     constructor() {
         this.name = 'HuggingFace';
         this.type = 'cloud';
-        this.model = 'ibm-granite/granite-3.3-8b-instruct';
+        // NOTE: IBM Granite 3.3 8B not available via free Inference API
+        // Using Microsoft Phi-3-mini-4k-instruct (3.8B) as alternative
+        this.model = 'microsoft/Phi-3-mini-4k-instruct';
         this.available = true;
         this.timeout = 30000; // 30 seconds
-        
+
         // Determine API endpoint based on environment
         this.apiEndpoint = this.getApiEndpoint();
     }
@@ -169,15 +171,14 @@ export class HuggingFaceProvider {
             model: this.model,
             available: this.available,
             timeout: this.timeout,
-            description: 'Cloud AI provider using IBM Granite 3.3 8B Instruct via Hugging Face Inference API',
+            description: 'Cloud AI provider using Microsoft Phi-3-mini-4k-instruct (3.8B) via Hugging Face Inference API',
             features: [
-                'IBM Granite 3.3 8B Instruct model',
+                'Microsoft Phi-3-mini-4k-instruct (3.8B parameters)',
+                'Optimized for instruction-following',
                 'Serverless function integration',
                 'Rate limiting (300 requests/hour)',
                 'Timeout handling (30s max)',
-                'Context-aware responses',
-                'Doctrinal knowledge (FM 5-0, FM 6-0, JP 5-0)',
-                'OPORD/MDMP/JPP expertise'
+                'Context-aware responses'
             ],
             limitations: [
                 'UNCLASSIFIED content only',
