@@ -28,6 +28,12 @@ const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/
 const GEMINI_MODEL_NAME = 'gemini-2.5-flash';
 const GEMINI_TIMEOUT = 30000; // 30 seconds
 
+// Retry configuration for handling 503 errors
+const RETRY_MAX_ATTEMPTS = 3; // Maximum retry attempts for 503 errors
+const RETRY_INITIAL_DELAY = 1000; // Initial retry delay (1 second)
+const RETRY_MAX_DELAY = 8000; // Maximum retry delay (8 seconds)
+const RETRY_BACKOFF_MULTIPLIER = 2; // Exponential backoff multiplier
+
 /**
  * Check rate limit for IP address
  * @param {string} ip - Client IP address
@@ -74,12 +80,32 @@ function checkRateLimit(ip) {
 }
 
 /**
- * Call Google Gemini API with timeout
+ * Sleep for specified milliseconds (for retry delays)
+ * @param {number} ms - Milliseconds to sleep
+ * @returns {Promise<void>}
+ */
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Calculate exponential backoff delay
+ * @param {number} attempt - Current attempt number (0-indexed)
+ * @returns {number} Delay in milliseconds
+ */
+function calculateBackoffDelay(attempt) {
+    const delay = RETRY_INITIAL_DELAY * Math.pow(RETRY_BACKOFF_MULTIPLIER, attempt);
+    return Math.min(delay, RETRY_MAX_DELAY);
+}
+
+/**
+ * Call Google Gemini API with timeout and retry logic
  * @param {string} message - User message
  * @param {Object} context - Context object
+ * @param {number} attempt - Current attempt number (for retry logic)
  * @returns {Promise<Object>} API response
  */
-async function callGeminiAPI(message, context) {
+async function callGeminiAPI(message, context, attempt = 0) {
     const apiKey = process.env.GEMINI_API_KEY;
     
     if (!apiKey) {
@@ -137,9 +163,19 @@ async function callGeminiAPI(message, context) {
         });
         
         clearTimeout(timeoutId);
-        
+
         if (!response.ok) {
             const errorText = await response.text();
+
+            // Handle 503 errors (model overloaded) with retry logic
+            if (response.status === 503 && attempt < RETRY_MAX_ATTEMPTS) {
+                const delay = calculateBackoffDelay(attempt);
+                console.log(`⚠️ Gemini API 503 error (attempt ${attempt + 1}/${RETRY_MAX_ATTEMPTS}). Retrying in ${delay}ms...`);
+
+                await sleep(delay);
+                return callGeminiAPI(message, context, attempt + 1);
+            }
+
             throw new Error(`Gemini API error: ${response.status} - ${errorText}`);
         }
         

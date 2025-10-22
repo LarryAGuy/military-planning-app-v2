@@ -30,7 +30,14 @@ export class GeminiProvider {
         this.available = true;
         this.timeout = 30000; // 30 seconds
         this.apiEndpoint = this.getApiEndpoint();
-        
+
+        // Health check caching to avoid excessive API calls
+        this.healthCheckCache = {
+            status: null,           // true (healthy), false (unhealthy), null (not checked)
+            timestamp: null,        // Last health check timestamp
+            ttl: 5 * 60 * 1000     // Cache TTL: 5 minutes
+        };
+
         console.log(`✅ GeminiProvider initialized (endpoint: ${this.apiEndpoint})`);
     }
     
@@ -129,10 +136,23 @@ export class GeminiProvider {
     }
     
     /**
-     * Check provider health and availability
+     * Check provider health and availability (with caching)
+     * @param {boolean} forceCheck - Force health check even if cached result is available
      * @returns {Promise<boolean>} Health status (true if healthy, false otherwise)
      */
-    async checkHealth() {
+    async checkHealth(forceCheck = false) {
+        const now = Date.now();
+
+        // Return cached result if available and not expired
+        if (!forceCheck && this.healthCheckCache.status !== null && this.healthCheckCache.timestamp) {
+            const age = now - this.healthCheckCache.timestamp;
+            if (age < this.healthCheckCache.ttl) {
+                const remainingSeconds = Math.floor((this.healthCheckCache.ttl - age) / 1000);
+                console.log(`🏥 GeminiProvider: Using cached health status (${this.healthCheckCache.status ? 'healthy' : 'unhealthy'}, expires in ${remainingSeconds}s)`);
+                return this.healthCheckCache.status;
+            }
+        }
+
         console.log('🏥 GeminiProvider: Running health check...');
 
         try {
@@ -148,14 +168,22 @@ export class GeminiProvider {
             // Verify response has content
             if (!response.content || response.content.trim().length === 0) {
                 console.error('❌ GeminiProvider: Health check failed - Empty response from API');
+                this.healthCheckCache.status = false;
+                this.healthCheckCache.timestamp = now;
                 return false;
             }
 
             console.log('✅ GeminiProvider: Health check passed');
+            this.healthCheckCache.status = true;
+            this.healthCheckCache.timestamp = now;
             return true;
 
         } catch (error) {
             console.error('❌ GeminiProvider: Health check failed:', error);
+
+            // Cache unhealthy status
+            this.healthCheckCache.status = false;
+            this.healthCheckCache.timestamp = now;
             return false;
         }
     }
@@ -217,14 +245,43 @@ export class GeminiProvider {
     }
     
     /**
-     * Get provider status for UI
-     * @returns {string} Status message
+     * Get provider status for UI (includes health check cache status)
+     * @returns {Object} Status information
      */
     getStatus() {
-        if (this.available) {
-            return 'Available';
-        } else {
-            return 'Unavailable';
+        const now = Date.now();
+        const cacheAge = this.healthCheckCache.timestamp ? now - this.healthCheckCache.timestamp : null;
+        const cacheExpired = cacheAge !== null && cacheAge >= this.healthCheckCache.ttl;
+
+        return {
+            available: this.available,
+            healthy: this.healthCheckCache.status,
+            lastCheck: this.healthCheckCache.timestamp ? new Date(this.healthCheckCache.timestamp).toISOString() : null,
+            cacheAge: cacheAge ? Math.floor(cacheAge / 1000) : null, // seconds
+            cacheExpired: cacheExpired,
+            message: this.getStatusMessage()
+        };
+    }
+
+    /**
+     * Get human-readable status message
+     * @returns {string} Status message
+     */
+    getStatusMessage() {
+        if (!this.available) {
+            return 'Provider unavailable';
+        }
+
+        if (this.healthCheckCache.status === null) {
+            return 'Health status unknown (not checked yet)';
+        }
+
+        if (this.healthCheckCache.status === true) {
+            return 'Healthy and available';
+        }
+
+        if (this.healthCheckCache.status === false) {
+            return 'Unhealthy (API may be overloaded or experiencing issues)';
         }
     }
     
