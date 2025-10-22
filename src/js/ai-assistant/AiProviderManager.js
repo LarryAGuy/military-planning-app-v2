@@ -3,7 +3,7 @@
  *
  * Orchestrates multiple AI providers with:
  * - Provider selection logic with health checks
- * - Fallback cascade (HuggingFace → Ollama → Fallback)
+ * - Fallback cascade (Gemini → Ollama → Fallback)
  * - Classification-aware provider filtering
  * - EventBus integration for cross-component communication
  *
@@ -60,8 +60,8 @@ export class AiProviderManager {
 
         // Provider priority cascade
         const providerPriority = allowCloudProviders
-            ? ['huggingface', 'ollama', 'fallback']  // Cloud allowed
-            : ['ollama', 'fallback'];                 // Cloud NOT allowed
+            ? ['gemini', 'ollama', 'fallback']  // Cloud allowed
+            : ['ollama', 'fallback'];            // Cloud NOT allowed
 
         // Select first healthy provider
         for (const providerName of providerPriority) {

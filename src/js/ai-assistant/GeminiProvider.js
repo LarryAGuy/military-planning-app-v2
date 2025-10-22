@@ -130,11 +130,11 @@ export class GeminiProvider {
     
     /**
      * Check provider health and availability
-     * @returns {Promise<Object>} Health check result
+     * @returns {Promise<boolean>} Health status (true if healthy, false otherwise)
      */
     async checkHealth() {
         console.log('🏥 GeminiProvider: Running health check...');
-        
+
         try {
             // Send a simple test message
             const testMessage = 'Hello';
@@ -142,35 +142,21 @@ export class GeminiProvider {
                 workspace: 'dashboard',
                 classification: 'UNCLASSIFIED'
             };
-            
+
             const response = await this.generateResponse(testMessage, testContext);
-            
+
             // Verify response has content
             if (!response.content || response.content.trim().length === 0) {
-                throw new Error('Empty response from API');
+                console.error('❌ GeminiProvider: Health check failed - Empty response from API');
+                return false;
             }
-            
+
             console.log('✅ GeminiProvider: Health check passed');
-            
-            return {
-                healthy: true,
-                provider: this.name,
-                model: this.model,
-                message: 'Gemini API is available',
-                timestamp: new Date().toISOString()
-            };
-            
+            return true;
+
         } catch (error) {
             console.error('❌ GeminiProvider: Health check failed:', error);
-            
-            return {
-                healthy: false,
-                provider: this.name,
-                model: this.model,
-                message: `Health check failed: ${error.message}`,
-                error: error.message,
-                timestamp: new Date().toISOString()
-            };
+            return false;
         }
     }
     
