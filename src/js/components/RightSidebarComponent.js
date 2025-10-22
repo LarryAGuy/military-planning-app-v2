@@ -1,4 +1,5 @@
 import { SystemMonitor } from '../utils/SystemMonitor.js';
+import { AiProviderManager } from '../ai-assistant/AiProviderManager.js';
 
 export class RightSidebarComponent {
     constructor(container, eventBus) {
@@ -7,6 +8,7 @@ export class RightSidebarComponent {
         this.collapsed = false;
         this.sections = new Map();
         this.systemMonitor = new SystemMonitor(eventBus);
+        this.aiProviderManager = null; // Initialize in async initialize()
         this.operationInfo = {
             operation: 'TRAINING EXERCISE',
             phase: 'PLANNING',
@@ -21,6 +23,10 @@ export class RightSidebarComponent {
         this.setupEventListeners();
         this.initializeSections();
         this.systemMonitor.startMonitoring();
+
+        // Initialize AI Provider Manager with EventBus instance
+        this.aiProviderManager = new AiProviderManager(this.eventBus);
+        console.log('🤖 AI Provider Manager initialized');
 
         console.log('✅ RightSidebarComponent initialized');
     }
@@ -145,8 +151,8 @@ export class RightSidebarComponent {
                 </div>
                 <div class="section-content p-0">
                     <!-- Chat Messages Area -->
-                    <div id="ai-chat-messages" class="h-48 overflow-y-auto p-3 space-y-2 bg-gray-850">
-                        <div class="flex items-start space-x-2">
+                    <div id="ai-chat-messages" class="h-48 overflow-y-auto p-3 space-y-2 bg-gray-850" style="scroll-behavior: smooth;">
+                        <div class="flex items-start space-x-2" data-message-id="welcome">
                             <div class="w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-robot text-xs text-white"></i>
                             </div>
@@ -165,31 +171,28 @@ export class RightSidebarComponent {
                     <!-- Chat Input Area -->
                     <div class="p-3 border-t border-gray-600">
                         <div class="flex space-x-2">
-                            <input
+                            <textarea
                                 id="ai-chat-input"
-                                type="text"
-                                placeholder="Ask about military planning..."
-                                class="flex-1 bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
-                                disabled
-                            >
+                                rows="3"
+                                placeholder="Type your message... (Shift+Enter for new line, Enter to send)"
+                                class="flex-1 bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 resize-y"
+                                style="min-height: 60px; max-height: 150px;"
+                            ></textarea>
                             <button
                                 id="ai-chat-send"
                                 class="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-3 py-2 rounded-lg transition-colors"
-                                disabled
-                                title="AI Chat - Coming Soon"
                             >
                                 <i class="fas fa-paper-plane text-sm"></i>
                             </button>
                         </div>
                         <div class="flex items-center justify-between mt-2">
                             <div class="flex items-center space-x-2">
-                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                                <span class="text-xs text-gray-400">AI Integration: Coming Soon</span>
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-xs text-gray-400">Operational</span>
                             </div>
                             <button
                                 id="ai-chat-clear"
                                 class="text-xs text-gray-400 hover:text-white transition-colors"
-                                disabled
                             >
                                 Clear Chat
                             </button>
@@ -200,16 +203,16 @@ export class RightSidebarComponent {
                     <div class="p-3 border-t border-gray-600">
                         <div class="text-xs text-gray-400 mb-2">Quick Actions:</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button class="bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors disabled:opacity-50" disabled>
+                            <button class="ai-quick-action bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors" data-action="OPORD Help">
                                 <i class="fas fa-file-alt mr-1"></i>OPORD Help
                             </button>
-                            <button class="bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors disabled:opacity-50" disabled>
+                            <button class="ai-quick-action bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors" data-action="Tactical Guide">
                                 <i class="fas fa-map mr-1"></i>Tactical Guide
                             </button>
-                            <button class="bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors disabled:opacity-50" disabled>
+                            <button class="ai-quick-action bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors" data-action="Doctrine Ref">
                                 <i class="fas fa-book mr-1"></i>Doctrine Ref
                             </button>
-                            <button class="bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors disabled:opacity-50" disabled>
+                            <button class="ai-quick-action bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 px-3 rounded transition-colors" data-action="Suggestions">
                                 <i class="fas fa-lightbulb mr-1"></i>Suggestions
                             </button>
                         </div>
@@ -275,72 +278,253 @@ export class RightSidebarComponent {
     }
 
     setupAIChatListeners() {
-        // Chat input handling (currently disabled)
+        // Chat input handling
         const chatInput = document.getElementById('ai-chat-input');
         const chatSend = document.getElementById('ai-chat-send');
         const chatClear = document.getElementById('ai-chat-clear');
 
         if (chatInput && chatSend) {
-            // Enter key to send message (when enabled)
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && !chatInput.disabled) {
+            // Keyboard shortcuts: Enter to send, Shift+Enter for new line
+            chatInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
                     this.sendAIMessage();
                 }
+                // Shift+Enter allows default behavior (new line)
             });
 
-            // Send button click (when enabled)
+            // Send button click
             chatSend.addEventListener('click', () => {
-                if (!chatSend.disabled) {
-                    this.sendAIMessage();
-                }
+                this.sendAIMessage();
             });
         }
 
         if (chatClear) {
             chatClear.addEventListener('click', () => {
-                if (!chatClear.disabled) {
-                    this.clearAIChat();
-                }
+                this.clearAIChat();
             });
         }
 
         // Quick action buttons
-        const quickActionButtons = document.querySelectorAll('#right-sidebar .grid button');
+        const quickActionButtons = document.querySelectorAll('.ai-quick-action');
         quickActionButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                if (!button.disabled) {
-                    const buttonText = e.target.textContent.trim();
-                    this.handleAIQuickAction(buttonText);
-                }
+                const action = button.dataset.action;
+                this.handleAIQuickAction(action);
             });
         });
     }
 
-    sendAIMessage() {
+    /**
+     * Send AI message
+     */
+    async sendAIMessage() {
         const chatInput = document.getElementById('ai-chat-input');
         const message = chatInput?.value.trim();
 
-        if (message) {
-            // Framework for future AI integration
-            console.log('AI Message (Framework):', message);
-            this.eventBus.emit('ai:message-sent', { message });
-            chatInput.value = '';
+        if (!message) {
+            return;
+        }
+
+        console.log('📤 AI Message:', message);
+
+        // Add user message
+        this.addAIMessage({
+            role: 'user',
+            content: message,
+            timestamp: new Date().toISOString()
+        });
+
+        // Clear input
+        chatInput.value = '';
+
+        // Emit event
+        this.eventBus.emit('ai:message-sent', { message });
+
+        // Generate AI response using provider
+        try {
+            const context = this.gatherContext();
+            const response = await this.aiProviderManager.generateResponse(message, context);
+
+            this.addAIMessage({
+                role: 'assistant',
+                content: response.content,
+                timestamp: new Date().toISOString()
+            });
+        } catch (error) {
+            console.error('❌ AI Error:', error);
+            this.addAIMessage({
+                role: 'assistant',
+                content: 'I apologize, but I encountered an error processing your request. Please try again or rephrase your question.',
+                timestamp: new Date().toISOString()
+            });
         }
     }
 
+    /**
+     * Clear AI chat history
+     */
     clearAIChat() {
+        if (!confirm('Are you sure you want to clear the chat history?')) {
+            return;
+        }
+
         const messagesArea = document.getElementById('ai-chat-messages');
         if (messagesArea) {
-            // Framework for future implementation
-            console.log('AI Chat cleared (Framework)');
+            // Remove all messages except welcome message
+            const messages = messagesArea.querySelectorAll('[data-message-id]:not([data-message-id="welcome"])');
+            messages.forEach(msg => msg.remove());
+
+            console.log('🗑️ AI Chat cleared');
             this.eventBus.emit('ai:chat-cleared');
         }
     }
 
+    /**
+     * Handle quick action button clicks
+     * @param {string} action - Action name
+     */
     handleAIQuickAction(action) {
-        // Framework for future AI integration
-        console.log('AI Quick Action (Framework):', action);
+        console.log('⚡ AI Quick Action:', action);
+
+        const chatInput = document.getElementById('ai-chat-input');
+        if (!chatInput) return;
+
+        // Map actions to predefined messages
+        const actionMessages = {
+            'OPORD Help': 'How do I create an OPORD?',
+            'Tactical Guide': 'What tactical considerations should I include?',
+            'Doctrine Ref': 'What are the relevant doctrinal references?',
+            'Suggestions': 'What suggestions do you have for my current planning task?'
+        };
+
+        const message = actionMessages[action];
+        if (message) {
+            // Auto-populate and send
+            chatInput.value = message;
+            this.sendAIMessage();
+        }
+
         this.eventBus.emit('ai:quick-action', { action });
+    }
+
+    /**
+     * Add AI message to chat
+     * @param {Object} message - Message object with role, content, timestamp
+     */
+    addAIMessage(message) {
+        const messagesArea = document.getElementById('ai-chat-messages');
+        if (!messagesArea) return;
+
+        // Format timestamp
+        const date = new Date(message.timestamp);
+        const timeStr = date.toLocaleTimeString('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
+
+        // Escape HTML to prevent XSS
+        const escapeHtml = (text) => {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        };
+
+        // Create message element
+        const messageEl = document.createElement('div');
+        messageEl.className = 'flex items-start space-x-2';
+        messageEl.dataset.messageId = `msg-${Date.now()}`;
+        messageEl.style.opacity = '0';
+        messageEl.style.transform = 'translateY(10px)';
+        messageEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+        if (message.role === 'user') {
+            messageEl.innerHTML = `
+                <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-user text-xs text-white"></i>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-2 max-w-full border-l-4 border-blue-500">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-xs text-gray-400">You</span>
+                        <span class="text-xs text-gray-500">${timeStr}</span>
+                    </div>
+                    <p class="text-sm text-white">${escapeHtml(message.content)}</p>
+                </div>
+            `;
+        } else {
+            messageEl.innerHTML = `
+                <div class="w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-robot text-xs text-white"></i>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-2 max-w-full border-l-4 border-purple-500">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-xs text-gray-400">AI Assistant</span>
+                        <span class="text-xs text-gray-500">${timeStr}</span>
+                    </div>
+                    <p class="text-sm text-white">${escapeHtml(message.content)}</p>
+                </div>
+            `;
+        }
+
+        messagesArea.appendChild(messageEl);
+
+        // Trigger animation
+        setTimeout(() => {
+            messageEl.style.opacity = '1';
+            messageEl.style.transform = 'translateY(0)';
+        }, 10);
+
+        // Auto-scroll to bottom
+        messagesArea.scrollTop = messagesArea.scrollHeight;
+    }
+
+    /**
+     * Gather context for AI provider
+     * @returns {Object} Context object
+     */
+    gatherContext() {
+        // Detect current workspace from URL or active tool
+        const currentPath = window.location.hash || '';
+        let workspace = 'default';
+
+        if (currentPath.includes('opord-draft') || currentPath.includes('draft-opord')) {
+            workspace = 'opord-draft';
+        } else if (currentPath.includes('mdmp')) {
+            workspace = 'mdmp';
+        } else if (currentPath.includes('jpp')) {
+            workspace = 'jpp';
+        } else if (currentPath.includes('tactics')) {
+            workspace = 'tactics';
+        } else if (currentPath.includes('battle-drills')) {
+            workspace = 'battle-drills';
+        }
+
+        // Get classification from classification banner (if available)
+        let classification = 'UNCLASSIFIED';
+        const classificationBanner = document.querySelector('.classification-banner');
+        if (classificationBanner) {
+            const bannerText = classificationBanner.textContent || '';
+            if (bannerText.includes('TOP SECRET')) {
+                classification = 'TOP SECRET';
+            } else if (bannerText.includes('SECRET')) {
+                classification = 'SECRET';
+            } else if (bannerText.includes('CONFIDENTIAL')) {
+                classification = 'CONFIDENTIAL';
+            }
+        }
+
+        // Get operation info
+        const { operation, phase, user } = this.operationInfo;
+
+        return {
+            workspace,
+            classification,
+            operation,
+            phase,
+            user,
+            timestamp: new Date().toISOString()
+        };
     }
 
     setupResponsiveBehavior() {
