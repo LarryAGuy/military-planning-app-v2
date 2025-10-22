@@ -11,7 +11,7 @@
  * @param {EventBus} eventBus - EventBus instance for cross-component communication
  */
 import { FallbackProvider } from './FallbackProvider.js';
-import { HuggingFaceProvider } from './HuggingFaceProvider.js';
+import { GeminiProvider } from './GeminiProvider.js';
 
 export class AiProviderManager {
     constructor(eventBus) {
@@ -33,9 +33,9 @@ export class AiProviderManager {
         const fallbackProvider = new FallbackProvider();
         this.providers.set('fallback', fallbackProvider);
 
-        // Phase 3: HuggingFace provider (IBM Granite 3.3 8B, UNCLASSIFIED only)
-        const huggingFaceProvider = new HuggingFaceProvider();
-        this.providers.set('huggingface', huggingFaceProvider);
+        // Phase 3: Gemini provider (Google Gemini 2.5 Flash, UNCLASSIFIED only)
+        const geminiProvider = new GeminiProvider();
+        this.providers.set('gemini', geminiProvider);
 
         // Phase 6: Ollama provider (local inference, all classifications)
         // const ollamaProvider = new OllamaProvider();
